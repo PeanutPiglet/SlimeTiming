@@ -10,3 +10,6 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		position.x += 100*delta
+
+func something():
+	position.x += 64
