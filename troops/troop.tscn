@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://beq1dbn4nc4kr"]
+
+[ext_resource type="Script" uid="uid://d3v2uxni8455s" path="res://troop.gd" id="1_5kdfg"]
+[ext_resource type="Texture2D" uid="uid://drn0fnw1km3fi" path="res://assets/pixil-frame-0 (18).png" id="2_5kdfg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkp47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5kdfg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="troop" type="Node2D" unique_id=1447375838]
+script = ExtResource("1_5kdfg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
+sprite_frames = SubResource("SpriteFrames_hkp47")
