@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ph6wer2ergyp" path="res://scripts/passivetower.gd" id="1_g27oo"]
 [ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_tk4ql"]
+[ext_resource type="PackedScene" uid="uid://cywfsccnwjw74" path="res://common/unit_collison.tscn" id="3_tmlxi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7q2v"]
 atlas = ExtResource("1_tk4ql")
@@ -33,3 +34,5 @@ sprite_frames = SubResource("SpriteFrames_0xmcs")
 autoplay = "default"
 frame_progress = 0.32578346
 centered = false
+
+[node name="UnitCollison" parent="." unique_id=1220848906 instance=ExtResource("3_tmlxi")]

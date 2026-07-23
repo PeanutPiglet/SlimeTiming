@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_6ypjt"]
 [ext_resource type="Script" uid="uid://ctofk8muo8p7q" path="res://scripts/towerprojectile.gd" id="1_unru1"]
+[ext_resource type="PackedScene" uid="uid://cywfsccnwjw74" path="res://common/unit_collison.tscn" id="3_4ql0x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylv1t"]
 atlas = ExtResource("1_6ypjt")
@@ -28,6 +29,8 @@ animations = [{
 
 [node name="Towerprojectile" type="Node2D" unique_id=243332100]
 script = ExtResource("1_unru1")
+
+[node name="UnitCollison" parent="." unique_id=1220848906 instance=ExtResource("3_4ql0x")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=885127618]
 position = Vector2(32, 32)

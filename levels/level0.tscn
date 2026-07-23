@@ -26,12 +26,16 @@ position = Vector2(64, 64)
 
 [node name="Passivetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("3_7sc02")]
 position = Vector2(640, 192)
+script = null
 
 [node name="Passivetower2" parent="tower_list" unique_id=1092260193 instance=ExtResource("3_7sc02")]
 position = Vector2(768, 192)
+script = null
 
 [node name="Passivetower3" parent="tower_list" unique_id=1065181475 instance=ExtResource("3_7sc02")]
 position = Vector2(768, 128)
+script = null
 
 [node name="Passivetower4" parent="tower_list" unique_id=2081310366 instance=ExtResource("3_7sc02")]
 position = Vector2(640, 128)
+script = null
