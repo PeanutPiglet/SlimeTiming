@@ -53,6 +53,8 @@ func activate(type):
 func _on_timer_timeout():
 	for t in troop_list.get_children():
 		t.move()
+	if len(get_towers()) <= 0:
+		win()
 
 func get_towers():
 	return $tower_list.get_children()
