@@ -42,3 +42,6 @@ position = Vector2(32, 32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=203640174]
 scale = Vector2(3.2, 3.2)
 shape = SubResource("RectangleShape2D_ddpoh")
+
+[node name="Center" type="Node2D" parent="." unique_id=1947214323]
+position = Vector2(32, 32)
