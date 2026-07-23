@@ -11,7 +11,7 @@ func _ready():
 	#slight delay before can move
 	await get_tree().create_timer(0.25).timeout
 	moveable = true
-
+	
 func set_grid_and_path(_grid, _path):
 	grid = _grid
 	path = _path
@@ -23,9 +23,15 @@ func _process(_delta):
 		
 func move():
 	if moveable:
-		path_progress += movespeed
-		print(path[path_progress])
-		position = grid.map_to_local(path[path_progress])
+		for i in range(movespeed):
+			path_progress += 1
+			if path_progress >= len(path):
+				print(2)
+				queue_free()
+			else:
+				position = grid.map_to_local(path[path_progress])
+			
+		
 		
 func active(): 
 	pass

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var beattime = 0.75
+@export var beattime:float = 0.75
 
 @onready var grid: TileMapLayer = $Grid
 
