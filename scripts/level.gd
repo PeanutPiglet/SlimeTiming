@@ -10,6 +10,9 @@ const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 var troop_list: Node2D
 
 var path = []
+var counting = false
+var time_counter = 0
+var spawn_counter = 0
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -38,12 +41,14 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 
 func spawn(type):
+	counting = true
 	var t 
 	match type:
 		1: t = E_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
 	t.set_grid_and_path(grid,path)
 	troop_list.add_child(t)
+	spawn_counter += 1 
 	
 func activate(type):
 	for t in troop_list.get_children():
@@ -55,6 +60,9 @@ func _on_timer_timeout():
 		t.move()
 	if len(get_towers()) <= 0:
 		win()
+	if counting:
+		time_counter += 1
+		
 
 func get_towers():
 	return $tower_list.get_children()
@@ -83,6 +91,7 @@ func find_path():
 	return path
 		
 func win():
+	print("time:", time_counter, "spawn:", spawn_counter)
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var next_level = current_scene_file.to_int() + 1
 	if next_level != 10000:
