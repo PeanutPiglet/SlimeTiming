@@ -3,7 +3,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
 
 [node name="SquareExplosion" type="Area2D" unique_id=1896635771]
-monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1780386707]
