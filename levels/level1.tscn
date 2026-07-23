@@ -16,8 +16,8 @@ position = Vector2(128, 512)
 
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
-[node name="Passivetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("3_61w3m")]
+[node name="Zaptower" parent="tower_list" unique_id=1669962692 instance=ExtResource("3_61w3m")]
 position = Vector2(640, 192)
 
-[node name="Passivetower2" parent="tower_list" unique_id=1092260193 instance=ExtResource("3_61w3m")]
+[node name="Zaptower2" parent="tower_list" unique_id=236269371 instance=ExtResource("3_61w3m")]
 position = Vector2(768, 192)

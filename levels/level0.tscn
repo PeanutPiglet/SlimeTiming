@@ -24,18 +24,14 @@ position = Vector2(64, 64)
 
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
-[node name="Passivetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("3_7sc02")]
-position = Vector2(640, 192)
-script = null
-
-[node name="Passivetower2" parent="tower_list" unique_id=1092260193 instance=ExtResource("3_7sc02")]
-position = Vector2(768, 192)
-script = null
-
-[node name="Passivetower3" parent="tower_list" unique_id=1065181475 instance=ExtResource("3_7sc02")]
-position = Vector2(768, 128)
-script = null
-
-[node name="Passivetower4" parent="tower_list" unique_id=2081310366 instance=ExtResource("3_7sc02")]
+[node name="Zaptower" parent="tower_list" unique_id=1669962692 instance=ExtResource("3_7sc02")]
 position = Vector2(640, 128)
-script = null
+
+[node name="Zaptower2" parent="tower_list" unique_id=214971694 instance=ExtResource("3_7sc02")]
+position = Vector2(640, 192)
+
+[node name="Zaptower3" parent="tower_list" unique_id=1541894991 instance=ExtResource("3_7sc02")]
+position = Vector2(768, 128)
+
+[node name="Zaptower4" parent="tower_list" unique_id=155571258 instance=ExtResource("3_7sc02")]
+position = Vector2(768, 192)
