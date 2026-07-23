@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
+const TOTAL_LEVELS = 2
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 
@@ -94,8 +95,10 @@ func win():
 	print("time:", time_counter, "spawn:", spawn_counter)
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	var next_level = current_scene_file.to_int() + 1
-	if next_level != 10000:
+	if next_level <= TOTAL_LEVELS:
 		var next_level_path = "res://levels/level" + str(next_level) + ".tscn"
 		get_tree().change_scene_to_file(next_level_path)
+	else:
+		print("You ran out of levels. :/")
 	
 	

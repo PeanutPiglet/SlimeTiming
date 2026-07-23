@@ -1,6 +1,38 @@
 [gd_scene format=4 uid="uid://b1rxcvtae7ibo"]
 
 [ext_resource type="Texture2D" uid="uid://qt0qcq0fw1o6" path="res://assets/pixil-frame-0 (9).png" id="1_ebq2e"]
+[ext_resource type="Texture2D" uid="uid://h4wyb35aavdg" path="res://assets/tiles.png" id="1_i746b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6gqy4"]
+texture = ExtResource("1_i746b")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/0 = 0
+2:1/0/custom_data_0 = true
+3:1/0 = 0
+3:1/0/custom_data_0 = true
+0:2/0 = 0
+0:2/0/custom_data_0 = true
+1:2/0 = 0
+1:2/0/custom_data_0 = true
+2:2/0 = 0
+2:2/0/custom_data_0 = true
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_65i6o"]
 texture = ExtResource("1_ebq2e")
@@ -17,7 +49,8 @@ navigation_layer_0/layers = 1
 custom_data_layer_0/name = "path"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_65i6o")
+sources/0 = SubResource("TileSetAtlasSource_6gqy4")
 
 [node name="Grid" type="TileMapLayer" unique_id=1628908688]
-tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAEAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_2y4pi")

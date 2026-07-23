@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dv0454mirea16"]
+
+[ext_resource type="Texture2D" uid="uid://h4wyb35aavdg" path="res://assets/tiles.png" id="1_vjtop"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46n7h"]
+atlas = ExtResource("1_vjtop")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5gjr"]
+atlas = ExtResource("1_vjtop")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46n7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5gjr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Drummer" type="Node2D" unique_id=1523063569]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=485967452]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_cymu5")
+autoplay = "default"

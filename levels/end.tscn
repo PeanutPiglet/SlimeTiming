@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://col4rlq87npdh"]
+
+[node name="End" type="Node2D" unique_id=1771090445]
+
+[node name="Node" type="Node" parent="." unique_id=83364113]
