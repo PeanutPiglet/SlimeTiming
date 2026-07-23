@@ -2,6 +2,8 @@ extends Node2D
 
 @export var beattime = 0.75
 
+@onready var grid: TileMapLayer = $Grid
+
 const TROOP_SCENE = preload("res://troops/troop.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +27,8 @@ func _process(_delta):
 
 func spawn():
 	var t = TROOP_SCENE.instantiate()
-	t.global_position = Vector2(64,64)
+	t.global_position = Vector2(96,96)
+	t.set_grid(grid)
 	troop_list.add_child(t)
 
 func _on_timer_timeout():
