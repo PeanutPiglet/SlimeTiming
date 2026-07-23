@@ -6,6 +6,7 @@ var grid:TileMapLayer
 var path:Array
 @export var movespeed:float = 1
 @export var health = 3
+@export var destroy_on_death = true
 
 var path_progress = 0
 
@@ -50,7 +51,12 @@ func move_animation(target_pos):
 func take_damage(d:int):
 	health -= d
 	if health <= 0:
-		queue_free()
+		on_death()
+		if destroy_on_death:
+			queue_free()
+		
+func on_death():
+	pass
 
 @abstract func activate()
 	
