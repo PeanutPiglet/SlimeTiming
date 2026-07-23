@@ -7,6 +7,7 @@ extends Node2D
 const TOTAL_LEVELS = 2
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
+const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
 
 var troop_list: Node2D
 
@@ -34,6 +35,9 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
 		spawn(1)
+	if Input.is_action_just_pressed("spawn2"):
+		print("aojkdfsd")
+		spawn(2)
 	if Input.is_action_just_pressed("ui_down"):
 		activate(1)
 	if Input.is_action_just_pressed("ui_right"):
@@ -46,6 +50,7 @@ func spawn(type):
 	var t 
 	match type:
 		1: t = E_TROOP_SCENE.instantiate()
+		2: t = D_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
 	t.set_grid_and_path(grid,path)
 	troop_list.add_child(t)
@@ -67,7 +72,8 @@ func _on_timer_timeout():
 
 func get_towers():
 	return $tower_list.get_children()
-	
+func get_troops():
+	return troop_list.get_children()
 	
 func find_path():
 	path = []

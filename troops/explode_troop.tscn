@@ -15,7 +15,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="troop" type="Node2D" unique_id=1447375838]
+[node name="e-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_yqhyb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]

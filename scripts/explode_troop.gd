@@ -10,4 +10,5 @@ func activate():
 	print(explosion.get_overlapping_bodies())
 	for body in explosion.get_overlapping_bodies():
 		body.queue_free()
+
 	queue_free()
