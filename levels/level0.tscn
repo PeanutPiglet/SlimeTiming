@@ -1,14 +1,10 @@
 [gd_scene format=4 uid="uid://cnt3d5gfy8yp0"]
 
 [ext_resource type="Script" uid="uid://d1f2qo6m5k8js" path="res://levels/level.gd" id="1_7sc02"]
-[ext_resource type="PackedScene" uid="uid://beq1dbn4nc4kr" path="res://troops/troop.tscn" id="1_h6fn6"]
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://grid.tscn" id="2_4lkc1"]
 
 [node name="Level0" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
-
-[node name="troop" parent="." unique_id=1447375838 instance=ExtResource("1_h6fn6")]
-position = Vector2(64, 64)
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_4lkc1")]
 z_index = -1000

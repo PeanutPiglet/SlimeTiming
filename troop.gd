@@ -1,15 +1,18 @@
 extends Node2D
 
-
+var moveable = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#slight delay before can move
+	await get_tree().create_timer(0.25).timeout
+	moveable = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_pressed("ui_right"):
-		position.x += 100*delta
+func _process(_delta):
+	pass
+		
 
-func something():
-	position.x += 64
+func move():
+	if moveable:
+		position.x += 64
