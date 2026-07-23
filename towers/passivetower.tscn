@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ph6wer2ergyp" path="res://scripts/passivetower.gd" id="1_g27oo"]
 [ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_tk4ql"]
-[ext_resource type="PackedScene" uid="uid://cywfsccnwjw74" path="res://common/unit_collison.tscn" id="3_tmlxi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7q2v"]
 atlas = ExtResource("1_tk4ql")
@@ -26,6 +25,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+
 [node name="Zaptower" type="Node2D" unique_id=1669962692]
 script = ExtResource("1_g27oo")
 
@@ -35,4 +36,9 @@ autoplay = "default"
 frame_progress = 0.32578346
 centered = false
 
-[node name="UnitCollison" parent="." unique_id=1220848906 instance=ExtResource("3_tmlxi")]
+[node name="Area2D" type="Area2D" parent="." unique_id=1952805656]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=203640174]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("RectangleShape2D_ddpoh")
