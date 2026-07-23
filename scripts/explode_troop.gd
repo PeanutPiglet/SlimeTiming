@@ -12,5 +12,6 @@ func activate():
 		var targets = [grid_pos + Vector2i(1,0), grid_pos + Vector2i(-1,0), grid_pos + Vector2i(0,1), grid_pos + Vector2i(0,-1)]
 		if grid.local_to_map(to.position) in targets:
 			print(1)
-			to.queue_free()
+			if to is Tower:
+				to.take_damage(1)
 	queue_free()

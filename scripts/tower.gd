@@ -1,11 +1,12 @@
+@abstract class_name Tower
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var health = 1
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@abstract func activate()
+	
+func take_damage(d:int):
+	health -= d
+	if health <= 0:
+		queue_free()

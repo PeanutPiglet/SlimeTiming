@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bf2cy6mf34wyl"]
 
+[ext_resource type="Script" uid="uid://ph6wer2ergyp" path="res://scripts/passivetower.gd" id="1_g27oo"]
 [ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_tk4ql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7q2v"]
@@ -25,6 +26,7 @@ animations = [{
 }]
 
 [node name="Zaptower" type="Node2D" unique_id=1669962692]
+script = ExtResource("1_g27oo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141598221]
 sprite_frames = SubResource("SpriteFrames_0xmcs")

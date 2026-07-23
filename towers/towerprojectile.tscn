@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5dw5ufs5kfjt"]
 
 [ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_6ypjt"]
-[ext_resource type="Script" uid="uid://ctofk8muo8p7q" path="res://towers/towerprojectile.gd" id="1_unru1"]
+[ext_resource type="Script" uid="uid://ctofk8muo8p7q" path="res://scripts/towerprojectile.gd" id="1_unru1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylv1t"]
 atlas = ExtResource("1_6ypjt")

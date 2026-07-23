@@ -1,4 +1,4 @@
-class_name Troop
+@abstract class_name Troop
 extends Node2D
 
 var moveable = false
@@ -52,6 +52,5 @@ func take_damage(d:int):
 	if health <= 0:
 		queue_free()
 
-
-func active(): 
-	pass
+@abstract func activate()
+	
