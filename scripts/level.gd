@@ -4,10 +4,14 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
+
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 
-# Called when the node enters the scene tree for the first time.
 var troop_list: Node2D
+
+var path = []
+# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	#timer 
 	var timer = Timer.new()
@@ -19,6 +23,8 @@ func _ready():
 	
 	troop_list = Node2D.new()
 	add_child(troop_list)
+	
+	find_path()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -29,10 +35,9 @@ func _process(_delta):
 
 func spawn():
 	var t = E_TROOP_SCENE.instantiate()
-	t.global_position = $Spawn.position
-	t.set_grid(grid)
+	t.global_position = grid.local_to_map($Spawn.position)
+	t.set_grid_and_path(grid,path)
 	troop_list.add_child(t)
-
 func _on_timer_timeout():
 	for t in troop_list.get_children():
 		t.move()
@@ -41,3 +46,29 @@ func activate_explode():
 		t.activate()
 func get_towers():
 	return $tower_list.get_children()
+	
+	
+func find_path():
+	path = []
+	var current = grid.local_to_map($Spawn.position)
+	while true:
+		path.append(current)
+		var targets = GridHelper.adjacent(current)
+		var found_next = false
+		
+		for i in targets:
+			if i not in path:
+				var tile_data = grid.get_cell_tile_data(i)
+				if tile_data != null and tile_data.get_custom_data("path"):
+					current = i
+					found_next = true
+					break 
+		
+		if not found_next:
+			break 
+			
+	print("Found path: ", path)
+	return path
+		
+	
+	

@@ -3,15 +3,19 @@ extends Node2D
 
 var moveable = false
 var grid:TileMapLayer
+var path:Array
+var movespeed = 1
+var path_progress = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = grid.map_to_local(grid.local_to_map(position))
 	#slight delay before can move
 	await get_tree().create_timer(0.25).timeout
 	moveable = true
 
-func set_grid(_grid):
+func set_grid_and_path(_grid, _path):
 	grid = _grid
+	path = _path
+	position = grid.map_to_local(path[0])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -19,8 +23,9 @@ func _process(_delta):
 		
 func move():
 	if moveable:
-		position.x += 64
-		position = grid.map_to_local(grid.local_to_map(position))
+		path_progress += movespeed
+		print(path[path_progress])
+		position = grid.map_to_local(path[path_progress])
 		
 func active(): 
 	pass
