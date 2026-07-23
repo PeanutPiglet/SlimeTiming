@@ -27,7 +27,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
 
-[node name="Zaptower" type="Node2D" unique_id=1669962692]
+[node name="Zaptower" type="Node2D" unique_id=1669962692 groups=["tower_damageable"]]
 script = ExtResource("1_g27oo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141598221]

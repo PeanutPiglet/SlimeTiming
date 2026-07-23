@@ -9,5 +9,7 @@ func activate():
 	explosion.monitoring = true
 	print(explosion.get_overlapping_areas())
 	for body in explosion.get_overlapping_areas():
-		body.queue_free()  # right now this is deleting the area2D
+		var tower = body.get_parent()
+		if tower.is_in_group("tower_damageable"):
+			tower.queue_free()
 	queue_free()

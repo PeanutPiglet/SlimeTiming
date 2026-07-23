@@ -24,6 +24,10 @@ LevelCompleted="*uid://dq2cr875pjpn0"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+tower_damageable="a tower that can be damaged"
+
 [input]
 
 reload={
