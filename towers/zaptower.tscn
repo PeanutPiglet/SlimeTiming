@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bf2cy6mf34wyl"]
+
+[ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_tk4ql"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xmcs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tk4ql")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Zaptower" type="Node2D" unique_id=1669962692]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141598221]
+sprite_frames = SubResource("SpriteFrames_0xmcs")
+centered = false

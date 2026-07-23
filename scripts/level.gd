@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
-const TROOP_SCENE = preload("res://troops/troop.tscn")
+const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 
 # Called when the node enters the scene tree for the first time.
 var troop_list: Node2D
@@ -24,14 +24,20 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
 		spawn()
+	if Input.is_action_just_pressed("ui_down"):
+		activate_explode()
 
 func spawn():
-	var t = TROOP_SCENE.instantiate()
-	t.global_position = Vector2(96,96)
+	var t = E_TROOP_SCENE.instantiate()
+	t.global_position = $Spawn.position
 	t.set_grid(grid)
 	troop_list.add_child(t)
 
 func _on_timer_timeout():
-	print(1)
 	for t in troop_list.get_children():
 		t.move()
+func activate_explode():
+	for t in troop_list.get_children():
+		t.activate()
+func get_towers():
+	return $tower_list.get_children()

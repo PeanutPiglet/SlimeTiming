@@ -1,9 +1,11 @@
+class_name Troop
 extends Node2D
 
 var moveable = false
 var grid:TileMapLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	position = grid.map_to_local(grid.local_to_map(position))
 	#slight delay before can move
 	await get_tree().create_timer(0.25).timeout
 	moveable = true
@@ -18,4 +20,7 @@ func _process(_delta):
 func move():
 	if moveable:
 		position.x += 64
-		print(grid.local_to_map(position))
+		position = grid.map_to_local(grid.local_to_map(position))
+		
+func active(): 
+	pass
