@@ -2,6 +2,9 @@ extends Node2D
 
 @export var speed = 400
 @export var duration = 3
+@export var damage = 1
+
+var already_hit = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,4 +35,15 @@ func deactivate():
 func _physics_process(delta: float) -> void:
 	var direction = -transform.y
 	position += direction * speed * delta
-	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("troop_damageable"):
+		print(area)
+		if area in already_hit:
+			return
+		already_hit.append(area)
+		var troop = area.get_parent() as Troop
+		if troop:
+			troop.take_damage(damage)
+		
