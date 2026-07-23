@@ -14,8 +14,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvkdq"]
+
 [node name="d-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_xvkdq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 sprite_frames = SubResource("SpriteFrames_hkp47")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1039792275 groups=["troop_damageable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1840191176]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("RectangleShape2D_xvkdq")

@@ -50,6 +50,7 @@ func move_animation(target_pos):
 
 func take_damage(d:int):
 	health -= d
+	print("health: " + str(health))
 	if health <= 0:
 		on_death()
 		if destroy_on_death:
