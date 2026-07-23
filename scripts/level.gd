@@ -34,6 +34,8 @@ func _process(_delta):
 		activate(1)
 	if Input.is_action_just_pressed("ui_right"):
 		win()
+	if Input.is_action_just_pressed("reload"):
+		get_tree().reload_current_scene()
 
 func spawn(type):
 	var t 
