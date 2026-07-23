@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dps5y65x15tl2" path="res://scripts/explode_troop.gd" id="1_yqhyb"]
 [ext_resource type="Texture2D" uid="uid://drn0fnw1km3fi" path="res://assets/pixil-frame-0 (18).png" id="2_a5135"]
+[ext_resource type="PackedScene" uid="uid://cxm254vkhne7u" path="res://common/square_explosion.tscn" id="3_a5135"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkp47"]
 animations = [{
@@ -20,3 +21,6 @@ script = ExtResource("1_yqhyb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_hkp47")
+
+[node name="SquareExplosion" parent="." unique_id=661827662 instance=ExtResource("3_a5135")]
+scale = Vector2(0.5, 0.5)

@@ -5,13 +5,9 @@ func _ready():
 	super._ready()
 	
 func activate():
-	var towers = get_tree().current_scene.get_towers()
-	print(towers)
-	for to in towers:
-		var grid_pos = grid.local_to_map(position)
-		var targets = [grid_pos + Vector2i(1,0), grid_pos + Vector2i(-1,0), grid_pos + Vector2i(0,1), grid_pos + Vector2i(0,-1)]
-		if grid.local_to_map(to.position) in targets:
-			print(1)
-			if to is Tower:
-				to.take_damage(1)
+	var explosion = $SquareExplosion
+	explosion.monitoring = true
+	print(explosion.get_overlapping_bodies())
+	for body in explosion.get_overlapping_bodies():
+		body.queue_free()
 	queue_free()
