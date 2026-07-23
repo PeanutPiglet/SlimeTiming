@@ -4,6 +4,7 @@ extends Node2D
 	
 
 @export var health = 1
+@export var destroy_on_death = true
 @export var actionthreshold = 4
 var actioncounter = 0
 var grid:TileMapLayer
@@ -22,7 +23,12 @@ func _ready():
 func take_damage(d:int):
 	health -= d
 	if health <= 0:
-		queue_free()
+		on_death()
+		if destroy_on_death:
+			queue_free()
+		
+func on_death():
+	pass
 
 func increment(i:int):
 	actioncounter += i
