@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0454mirea16" path="res://towers/drummer.tscn" id="3_2etfj"]
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="3_7sc02"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="4_4kw1h"]
+[ext_resource type="PackedScene" uid="uid://drti133c0044i" path="res://towers/attacktower.tscn" id="6_4kw1h"]
 
 [node name="Level0" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
@@ -35,3 +36,7 @@ position = Vector2(768, 128)
 
 [node name="Zaptower4" parent="tower_list" unique_id=155571258 instance=ExtResource("3_7sc02")]
 position = Vector2(768, 192)
+
+[node name="attacktower" parent="tower_list" unique_id=618094080 instance=ExtResource("6_4kw1h")]
+position = Vector2(384, 128)
+targetDistance = Vector2i(0, -1)

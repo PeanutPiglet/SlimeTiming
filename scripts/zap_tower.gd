@@ -1,4 +1,4 @@
 extends Tower
 
 func activate():
-	pass
+	print("i am useless :(")

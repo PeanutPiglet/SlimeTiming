@@ -36,7 +36,6 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
 		spawn(1)
 	if Input.is_action_just_pressed("spawn2"):
-		print("aojkdfsd")
 		spawn(2)
 	if Input.is_action_just_pressed("ui_down"):
 		activate(1)
@@ -62,8 +61,13 @@ func activate(type):
 	
 	
 func _on_timer_timeout():
-	for t in troop_list.get_children():
+	for t in get_troops():
 		t.move()
+	
+	for to in get_towers():
+		if to is Tower:
+			to.increment(1)
+	
 	if len(get_towers()) <= 0:
 		win()
 	if counting:
@@ -74,6 +78,8 @@ func get_towers():
 	return $tower_list.get_children()
 func get_troops():
 	return troop_list.get_children()
+func get_grid():
+	return grid
 	
 func find_path():
 	path = []
@@ -94,7 +100,6 @@ func find_path():
 		if not found_next:
 			break 
 			
-	print("Found path: ", path)
 	return path
 
 func win():

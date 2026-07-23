@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://drti133c0044i"]
+
+[ext_resource type="Script" uid="uid://c7wglmptia8yu" path="res://scripts/attacktower.gd" id="1_b8jde"]
+[ext_resource type="Texture2D" uid="uid://3nds3prh56o5" path="res://assets/firetower.png" id="2_b8jde"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xmcs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b8jde")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8jde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b8jde")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="attacktower" type="Node2D" unique_id=1669962692 groups=["tower_damageable"]]
+script = ExtResource("1_b8jde")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141598221]
+sprite_frames = SubResource("SpriteFrames_0xmcs")
+autoplay = "default"
+frame_progress = 0.32578346
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1952805656]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=203640174]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("RectangleShape2D_ddpoh")
+
+[node name="firesprite" type="AnimatedSprite2D" parent="." unique_id=583236358]
+visible = false
+sprite_frames = SubResource("SpriteFrames_b8jde")
