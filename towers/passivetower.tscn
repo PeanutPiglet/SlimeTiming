@@ -2,11 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://8t3s2yc61hqt" path="res://assets/zaptower.png" id="1_tk4ql"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7q2v"]
+atlas = ExtResource("1_tk4ql")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g27oo"]
+atlas = ExtResource("1_tk4ql")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xmcs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_tk4ql")
+"texture": SubResource("AtlasTexture_y7q2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g27oo")
 }],
 "loop": 1,
 "name": &"default",
@@ -17,4 +28,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141598221]
 sprite_frames = SubResource("SpriteFrames_0xmcs")
+frame_progress = 0.32578346
 centered = false
