@@ -29,21 +29,29 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_left"):
-		spawn()
+		spawn(1)
 	if Input.is_action_just_pressed("ui_down"):
-		activate_explode()
+		activate(1)
+	if Input.is_action_just_pressed("ui_right"):
+		win()
 
-func spawn():
-	var t = E_TROOP_SCENE.instantiate()
+func spawn(type):
+	var t 
+	match type:
+		1: t = E_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
 	t.set_grid_and_path(grid,path)
 	troop_list.add_child(t)
+	
+func activate(type):
+	for t in troop_list.get_children():
+		t.activate()
+	
+	
 func _on_timer_timeout():
 	for t in troop_list.get_children():
 		t.move()
-func activate_explode():
-	for t in troop_list.get_children():
-		t.activate()
+
 func get_towers():
 	return $tower_list.get_children()
 	
@@ -70,5 +78,11 @@ func find_path():
 	print("Found path: ", path)
 	return path
 		
+func win():
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	var next_level = current_scene_file.to_int() + 1
+	if next_level != 10000:
+		var next_level_path = "res://levels/level" + str(next_level) + ".tscn"
+		get_tree().change_scene_to_file(next_level_path)
 	
 	
