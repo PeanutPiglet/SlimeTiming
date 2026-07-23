@@ -26,11 +26,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+
 [node name="Towerprojectile" type="Node2D" unique_id=243332100]
 script = ExtResource("1_unru1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=885127618]
-position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_unru1")
 animation = &"vertical"
 autoplay = "vertical"
+frame = 1
+frame_progress = 0.8023153
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1253368644]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1022860571]
+scale = Vector2(1.6, 3.2)
+shape = SubResource("RectangleShape2D_ddpoh")
+debug_color = Color(0.8700246, 0.3514162, 0, 0.41960785)
