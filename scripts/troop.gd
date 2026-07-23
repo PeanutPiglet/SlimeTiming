@@ -4,7 +4,7 @@ extends Node2D
 var moveable = false
 var grid:TileMapLayer
 var path:Array
-var movespeed = 1
+var movespeed:float = 1
 var path_progress = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,15 +23,26 @@ func _process(_delta):
 		
 func move():
 	if moveable:
-		for i in range(movespeed):
-			path_progress += 1
-			if path_progress >= len(path):
+		if movespeed >= 1:
+			for i in range(movespeed):
+				path_progress += 1
+				if floor(path_progress) >= len(path):
+					print(2)
+					queue_free()
+				else:
+					move_animation(grid.map_to_local(path[path_progress]))
+		else: 
+			path_progress += movespeed 
+			if floor(path_progress) >= len(path):
 				print(2)
 				queue_free()
 			else:
-				position = grid.map_to_local(path[path_progress])
-			
-		
-		
+				move_animation(grid.map_to_local(path[path_progress]))
+func move_animation(target_pos):
+	var tween = create_tween()
+	tween.tween_property(self, "position", target_pos, 0.2)\
+		 .set_trans(Tween.TRANS_SINE)\
+		 .set_ease(Tween.EASE_OUT)
+
 func active(): 
 	pass

@@ -89,7 +89,7 @@ func find_path():
 			
 	print("Found path: ", path)
 	return path
-		
+
 func win():
 	print("time:", time_counter, "spawn:", spawn_counter)
 	var current_scene_file = get_tree().current_scene.scene_file_path
