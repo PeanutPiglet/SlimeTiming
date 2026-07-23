@@ -4,8 +4,11 @@ extends Node2D
 var moveable = false
 var grid:TileMapLayer
 var path:Array
-var movespeed:float = 1
+@export var movespeed:float = 1
+@export var health = 3
+
 var path_progress = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#slight delay before can move
@@ -43,6 +46,12 @@ func move_animation(target_pos):
 	tween.tween_property(self, "position", target_pos, 0.2)\
 		 .set_trans(Tween.TRANS_SINE)\
 		 .set_ease(Tween.EASE_OUT)
+
+func take_damage(d:int):
+	health -= d
+	if health <= 0:
+		queue_free()
+
 
 func active(): 
 	pass

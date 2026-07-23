@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b1rxcvtae7ibo"]
+[gd_scene format=3 uid="uid://b1rxcvtae7ibo"]
 
 [ext_resource type="Texture2D" uid="uid://qt0qcq0fw1o6" path="res://assets/pixil-frame-0 (9).png" id="1_ebq2e"]
 [ext_resource type="Texture2D" uid="uid://h4wyb35aavdg" path="res://assets/tiles.png" id="1_i746b"]
@@ -52,5 +52,4 @@ sources/1 = SubResource("TileSetAtlasSource_65i6o")
 sources/0 = SubResource("TileSetAtlasSource_6gqy4")
 
 [node name="Grid" type="TileMapLayer" unique_id=1628908688]
-tile_map_data = PackedByteArray("AAAAAAAAAQABAAEAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_2y4pi")
