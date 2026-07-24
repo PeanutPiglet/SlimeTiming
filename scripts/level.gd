@@ -4,11 +4,12 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
-const TOTAL_LEVELS = 2
+const TOTAL_LEVELS = 5
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
 const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
+const C_TROOP_SCENE = preload("res://troops/cross_troop.tscn")
 
 const END_SCREEN = "res://levels/end.tscn"
 
@@ -44,6 +45,8 @@ func _process(_delta):
 			activate(2)
 		if Input.is_action_just_pressed("spawn3"):
 			activate(3)
+		if Input.is_action_just_pressed("spawn4"):
+			activate(4)
 	else:
 		if Input.is_action_just_pressed("spawn1"):
 			spawn(1)
@@ -51,7 +54,8 @@ func _process(_delta):
 			spawn(2)
 		if Input.is_action_just_pressed("spawn3"):
 			spawn(3)
-			
+		if Input.is_action_just_pressed("spawn4"):
+			spawn(4)
 	
 	if Input.is_action_just_pressed("ui_down"):
 		activate(1)
@@ -70,6 +74,7 @@ func spawn(type):
 		1: t = E_TROOP_SCENE.instantiate()
 		2: t = D_TROOP_SCENE.instantiate()
 		3: t = B_TROOP_SCENE.instantiate()
+		4: t = C_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
 	t.init(grid,path,beattime)
 	troop_list.add_child(t)
@@ -87,6 +92,7 @@ func activate(type):
 			1: correct = t is Explode_troop
 			2: correct = t is Defense_troop
 			3: correct = t is Booster_troop
+			4: correct = t is Cross_troop
 		if correct:
 			t.activate()
 	
@@ -95,12 +101,15 @@ func _on_timer_timeout():
 	for t in get_troops():
 		t.move()
 	
+	var wincheck = true
 	for to in get_towers():
 		if to is Tower:
 			to.increment(1)
-	
-	if len(get_towers()) <= 0:
+			if to.wincon:
+				wincheck = false
+	if wincheck:
 		win()
+
 	if counting:
 		time_counter += 1
 	print("time:", time_counter, "spawn:", spawn_counter)

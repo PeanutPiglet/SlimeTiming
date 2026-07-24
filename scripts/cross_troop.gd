@@ -1,4 +1,4 @@
-class_name Explode_troop
+class_name Cross_troop
 extends Troop
 
 var fx_explosion = preload("res://common/fx_explosion.tscn")
@@ -8,7 +8,7 @@ func _ready():
 	
 func activate():
 	super.activate()
-	var explosion = $SquareExplosion
+	var explosion = $Explosion
 	explosion.monitoring = true
 	print(explosion.get_overlapping_areas())
 	for area in explosion.get_overlapping_areas():
