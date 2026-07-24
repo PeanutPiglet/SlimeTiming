@@ -20,7 +20,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53yen"]
 
-[node name="Base" type="Node2D" unique_id=2088341078 groups=["tower_damageable"]]
+[node name="Base" type="Node2D" unique_id=2088341078]
 script = ExtResource("1_ng87y")
 wincon = true
 
