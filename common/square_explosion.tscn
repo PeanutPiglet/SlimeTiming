@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxm254vkhne7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+size = Vector2(33.333332, 33.333332)
 
 [node name="SquareExplosion" type="Area2D" unique_id=1896635771]
 monitorable = false
