@@ -1,18 +1,9 @@
 [gd_scene format=3 uid="uid://drti133c0044i"]
 
-[ext_resource type="Script" uid="uid://c7wglmptia8yu" path="res://scripts/attacktower.gd" id="1_b8jde"]
+[ext_resource type="Script" uid="uid://c5x11qx71c71e" path="res://towers/attacktower.gd" id="1_b8jde"]
 [ext_resource type="Texture2D" uid="uid://3nds3prh56o5" path="res://assets/firetower.png" id="2_b8jde"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xmcs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_b8jde")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
 

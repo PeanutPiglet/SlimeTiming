@@ -1,15 +1,12 @@
 extends Tower
 
-@export var targetDistance: Vector2i = Vector2i(1,0)
+var towerproj = load("res://towers/projectiles/fireball.tscn")
 
-func _ready():
-	super._ready()
-	
+@export var angles: Array[float] = [0.0]
+
 func activate():
-	
-	var grid_pos = grid.local_to_map(position)
-	var target = grid_pos + targetDistance
-	
-	
-func increment(i:int):
-	super.increment(i)
+	for angle in angles:
+		var proj = towerproj.instantiate()
+		proj.global_position = $Center.global_position
+		proj.rotation = deg_to_rad(angle)
+		get_tree().current_scene.add_child(proj)
