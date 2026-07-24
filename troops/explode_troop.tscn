@@ -16,6 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+size = Vector2(19.999996, 19.999996)
 
 [node name="e-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_yqhyb")

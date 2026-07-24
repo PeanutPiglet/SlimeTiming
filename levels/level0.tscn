@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="3_7sc02"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="4_4kw1h"]
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_4kw1h"]
+[ext_resource type="PackedScene" uid="uid://d2j5oolsvoady" path="res://towers/hammertower.tscn" id="7_3vj3r"]
 
 [node name="Level1" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
@@ -41,3 +42,6 @@ angles = Array[float]([180.0])
 
 [node name="Base" parent="tower_list" unique_id=2088341078 instance=ExtResource("4_4kw1h")]
 position = Vector2(896, 64)
+
+[node name="Hammertower" parent="tower_list" unique_id=1346624466 instance=ExtResource("7_3vj3r")]
+position = Vector2(768, 128)

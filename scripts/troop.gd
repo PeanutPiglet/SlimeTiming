@@ -19,9 +19,12 @@ var path_progress = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	#slight delay before can move
 	await get_tree().create_timer(0.25).timeout
 	moveable = true
+	$AnimatedSprite2D.top_level = true
+	$AnimatedSprite2D.position = position 
 	
 func init(_grid, _path,_beattime ):
 	grid = _grid
@@ -64,10 +67,14 @@ func move():
 		overlap = false
 	
 func move_animation(target_pos):
+	# 1. Root moves instantly (logic/hitboxes)
+	global_position = target_pos
+	
+	# 2. Animate sprite's global position from where it sits right now to target_pos
 	var tween = create_tween()
-	tween.tween_property(self, "position", target_pos, beattime/3 -0.05)\
-		 .set_trans(Tween.TRANS_SINE)\
-		 .set_ease(Tween.EASE_OUT)
+	tween.tween_property($AnimatedSprite2D, "global_position", target_pos, 0.05)\
+		 .set_trans(Tween.TRANS_CUBIC)\
+	 	.set_ease(Tween.EASE_IN_OUT)
 
 func take_damage(d:int):
 	if ability_counters["defense"] > 0:
