@@ -3,6 +3,7 @@ extends Node2D
 @export var speed = 1250
 @export var duration = 3
 @export var damage = 0
+@export var pause_power = 1
 
 var already_hit = []
 
@@ -46,4 +47,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var troop = area.get_parent() as Troop
 		if troop:
 			troop.take_damage(damage)
+			troop.pause_increment(pause_power)
 		

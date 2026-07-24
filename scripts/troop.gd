@@ -90,8 +90,8 @@ func take_damage(d:int):
 		if destroy_on_death:
 			queue_free()
 			
-func pause_increment():
-	pause_counter += 1
+func pause_increment(delta: int):
+	pause_counter += delta
 		
 func on_death():
 	pass
