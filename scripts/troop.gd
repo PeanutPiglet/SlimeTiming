@@ -42,7 +42,7 @@ func move():
 		pause_counter -= 1
 		return
 	if moveable:
-		modulate.a -=0.20
+		$AnimatedSprite2D.modulate.a -=0.20
 		if movespeed >= 1:
 			for i in range(movespeed):
 				path_progress += 1
@@ -71,10 +71,7 @@ func move():
 		overlap = false
 	
 func move_animation(target_pos):
-	# 1. Root moves instantly (logic/hitboxes)
 	global_position = target_pos
-	
-	# 2. Animate sprite's global position from where it sits right now to target_pos
 	var tween = create_tween()
 	tween.tween_property($AnimatedSprite2D, "global_position", target_pos, 0.05)\
 		 .set_trans(Tween.TRANS_CUBIC)\
@@ -101,12 +98,12 @@ var ability_counters = {"defense": 0, "boost": 0}
 func defense():
 	ability_counters["defense"] = 3
 	print("defended!")
-	modulate.a = 1
+	$AnimatedSprite2D.modulate.a = 1
 func boost():
 	ability_counters["boost"] = 3
 	print("boosted!")
 	damage += 1
-	modulate.a = 1
+	$AnimatedSprite2D.modulate.a = 1
 
 func defense_over():
 	print("defend over")
