@@ -7,6 +7,7 @@ extends Node2D
 @export var destroy_on_death = true
 @export var actionthreshold = 4
 @export var actioncounter = 0
+@export var wincon = false
 var grid:TileMapLayer
 
 	

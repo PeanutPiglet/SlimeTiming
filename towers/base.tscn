@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bptuvu374ctg8"]
 
 [ext_resource type="Texture2D" uid="uid://h4wyb35aavdg" path="res://assets/tiles.png" id="1_53yen"]
-[ext_resource type="Script" uid="uid://chqrg4tubq435" path="res://towers/base.gd" id="1_ng87y"]
+[ext_resource type="Script" uid="uid://chqrg4tubq435" path="res://scripts/base.gd" id="1_ng87y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng87y"]
 atlas = ExtResource("1_53yen")
@@ -20,8 +20,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53yen"]
 
-[node name="Base" type="Node2D" unique_id=2088341078]
+[node name="Base" type="Node2D" unique_id=2088341078 groups=["tower_damageable"]]
 script = ExtResource("1_ng87y")
+wincon = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166744344]
 position = Vector2(32, 32)

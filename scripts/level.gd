@@ -95,12 +95,15 @@ func _on_timer_timeout():
 	for t in get_troops():
 		t.move()
 	
+	var wincheck = true
 	for to in get_towers():
 		if to is Tower:
 			to.increment(1)
-	
-	if len(get_towers()) <= 0:
+			if to.wincon:
+				wincheck = false
+	if wincheck:
 		win()
+
 	if counting:
 		time_counter += 1
 	print("time:", time_counter, "spawn:", spawn_counter)
