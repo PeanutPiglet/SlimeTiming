@@ -18,7 +18,7 @@ animations = [{
 
 [node name="d-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_xvkdq")
-movespeed = 3.0
+movespeed = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 sprite_frames = SubResource("SpriteFrames_hkp47")
