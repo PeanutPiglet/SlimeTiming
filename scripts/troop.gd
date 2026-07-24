@@ -5,6 +5,7 @@ var moveable = false
 var overlap = true
 var grid:TileMapLayer
 var path:Array
+var beattime:float
 @export var movespeed:float = 1
 @export var health = 3
 @export var destroy_on_death = true
@@ -17,9 +18,10 @@ func _ready():
 	await get_tree().create_timer(0.25).timeout
 	moveable = true
 	
-func set_grid_and_path(_grid, _path):
+func init(_grid, _path,_beattime ):
 	grid = _grid
 	path = _path
+	beattime = _beattime
 	position = grid.map_to_local(path[0])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,7 +51,7 @@ func move():
 		overlap = false
 func move_animation(target_pos):
 	var tween = create_tween()
-	tween.tween_property(self, "position", target_pos, 0.2)\
+	tween.tween_property(self, "position", target_pos, beattime/3 -0.05)\
 		 .set_trans(Tween.TRANS_SINE)\
 		 .set_ease(Tween.EASE_OUT)
 

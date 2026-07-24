@@ -54,7 +54,7 @@ func spawn(type):
 		1: t = E_TROOP_SCENE.instantiate()
 		2: t = D_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
-	t.set_grid_and_path(grid,path)
+	t.init(grid,path,beattime)
 	troop_list.add_child(t)
 	spawn_counter += 1 
 	if(!counting):
