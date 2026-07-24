@@ -1,6 +1,8 @@
 class_name Troop
 extends Node2D
 
+var fx_explosion = preload("res://common/fx_explosion.tscn") 
+
 var moveable = false
 var overlap = true
 var grid:TileMapLayer
@@ -10,8 +12,10 @@ var beattime:float
 @export var damage = 1
 @export var health = 3
 @export var destroy_on_death = true
+@export var activate_name = "explode"
 
 var path_progress = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -96,8 +100,11 @@ func defense_over():
 	pass
 func boost_over():
 	print("boost over")
-	
 	damage -= 1
 
 func activate():
-	modulate.a = 1
+	var fx = fx_explosion.instantiate()
+	fx.global_position = global_position
+	fx.play(activate_name)
+	get_tree().current_scene.add_child(fx)
+	queue_free()

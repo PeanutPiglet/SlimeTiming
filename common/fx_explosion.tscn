@@ -47,20 +47,87 @@ animations = [{
 }, {
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_cbyqk")
+}],
+"loop": 0,
+"name": &"boost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_n1n1d")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tnyes")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1bqqq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6f7m7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_agngm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cbyqk")
+}],
+"loop": 0,
+"name": &"cross",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_n1n1d")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tnyes")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1bqqq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6f7m7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_agngm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cbyqk")
+}],
+"loop": 0,
+"name": &"defense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_n1n1d")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tnyes")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1bqqq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6f7m7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_agngm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cbyqk")
 }, {
 "duration": 1.0,
 "texture": null
 }],
 "loop": 0,
-"name": &"default",
+"name": &"explode",
 "speed": 5.0
 }]
 
 [node name="FxExplosion" type="AnimatedSprite2D" unique_id=551965781]
 sprite_frames = SubResource("SpriteFrames_5u842")
-autoplay = "default"
-frame = 6
-frame_progress = 1.0
+animation = &"boost"
 script = ExtResource("2_n1n1d")
 
 [node name="Timer" type="Timer" parent="." unique_id=1906485138]

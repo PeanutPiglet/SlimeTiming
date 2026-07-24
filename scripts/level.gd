@@ -4,12 +4,13 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
-const TOTAL_LEVELS = 5
+const TOTAL_LEVELS = 10
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
-const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
 const C_TROOP_SCENE = preload("res://troops/cross_troop.tscn")
+const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
+
 
 const END_SCREEN = "res://levels/end.tscn"
 
@@ -73,8 +74,8 @@ func spawn(type):
 	match type:
 		1: t = E_TROOP_SCENE.instantiate()
 		2: t = D_TROOP_SCENE.instantiate()
-		3: t = B_TROOP_SCENE.instantiate()
-		4: t = C_TROOP_SCENE.instantiate()
+		3: t = C_TROOP_SCENE.instantiate()
+		4: t = B_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
 	t.init(grid,path,beattime)
 	troop_list.add_child(t)
@@ -91,8 +92,8 @@ func activate(type):
 		match type:
 			1: correct = t is Explode_troop
 			2: correct = t is Defense_troop
-			3: correct = t is Booster_troop
-			4: correct = t is Cross_troop
+			3: correct = t is Cross_troop
+			4: correct = t is Booster_troop
 		if correct:
 			t.activate()
 	

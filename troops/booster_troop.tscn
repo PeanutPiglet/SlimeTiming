@@ -20,6 +20,7 @@ animations = [{
 script = ExtResource("1_x4kr1")
 movespeed = 3.0
 damage = 0
+activate_name = "boost"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 sprite_frames = SubResource("SpriteFrames_hkp47")

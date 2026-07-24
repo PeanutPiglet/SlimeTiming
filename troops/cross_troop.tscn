@@ -18,6 +18,7 @@ animations = [{
 
 [node name="c-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_d53h2")
+activate_name = "cross"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 position = Vector2(0, -9)
