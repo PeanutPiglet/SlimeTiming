@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="4_4kw1h"]
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_4kw1h"]
 [ext_resource type="PackedScene" uid="uid://d2j5oolsvoady" path="res://towers/hammertower.tscn" id="7_3vj3r"]
+[ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="8_p8yh6"]
 
 [node name="Level1" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
@@ -24,6 +25,7 @@ position = Vector2(64, 64)
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
 [node name="Firetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("5_4kw1h")]
+z_index = 5
 position = Vector2(452, 128)
 
 [node name="Zaptower" parent="tower_list" unique_id=141794231 instance=ExtResource("3_7sc02")]
@@ -45,3 +47,12 @@ position = Vector2(896, 64)
 
 [node name="Hammertower" parent="tower_list" unique_id=1346624466 instance=ExtResource("7_3vj3r")]
 position = Vector2(768, 128)
+
+[node name="TowerTeleporter" parent="tower_list" unique_id=464087738 node_paths=PackedStringArray("destination", "tower") instance=ExtResource("8_p8yh6")]
+position = Vector2(452, 128)
+destination = NodePath("../TowerTeleporter2")
+tower = NodePath("../Firetower")
+
+[node name="TowerTeleporter2" parent="tower_list" unique_id=974687577 node_paths=PackedStringArray("destination") instance=ExtResource("8_p8yh6")]
+position = Vector2(256, 128)
+destination = NodePath("../TowerTeleporter")

@@ -48,6 +48,7 @@ script = ExtResource("1_hggn5")
 health = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=954795611]
+position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_ddpoh")
 
 [node name="Timer" type="Timer" parent="." unique_id=1406150353]

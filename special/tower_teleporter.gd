@@ -16,7 +16,10 @@ func _process(delta: float) -> void:
 func activate():
 	print("TELEPORTING")
 	if tower:
+		$AnimatedSprite2D.play()
 		$Timer.start()
+		if not destination.tower:
+			destination.get_node("AnimatedSprite2D").play()
 
 
 func _on_timer_timeout() -> void:
