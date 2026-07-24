@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="4_4kw1h"]
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_4kw1h"]
 
-[node name="Level0" type="Node2D" unique_id=1507277628]
+[node name="Level1" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
 
 [node name="Drummer" parent="." unique_id=1523063569 instance=ExtResource("3_2etfj")]
