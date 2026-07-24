@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
-const TOTAL_LEVELS = 2
+const TOTAL_LEVELS = 5
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
