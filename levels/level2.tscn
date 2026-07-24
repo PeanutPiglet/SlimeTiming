@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_py88r"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_g1dg4"]
 
-[node name="Level0" type="Node2D" unique_id=1507277628]
+[node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_qyb5k")
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_py88r")]
