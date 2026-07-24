@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://cxm254vkhne7u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
-size = Vector2(33.333332, 33.333332)
-
 [node name="SquareExplosion" type="Area2D" unique_id=1896635771]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1780386707]
-scale = Vector2(9.6, 9.6)
-shape = SubResource("RectangleShape2D_ddpoh")
-debug_color = Color(0.8847678, 0.32579696, 0.18668488, 0.41960785)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=756217281]
+polygon = PackedVector2Array(0, 0, 0, -160, -96, -96, -160, 0, -96, 96, 0, 160, 96, 96, 160, 0, 96, -96, 0, -160)
