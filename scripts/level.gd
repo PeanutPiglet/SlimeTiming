@@ -45,7 +45,10 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 
 func spawn(type):
-	counting = true
+	for i in get_troops():
+		if grid.local_to_map(i.position) == grid.local_to_map($Spawn.position):
+			if (i.overlap):
+				return
 	var t 
 	match type:
 		1: t = E_TROOP_SCENE.instantiate()
@@ -54,6 +57,9 @@ func spawn(type):
 	t.set_grid_and_path(grid,path)
 	troop_list.add_child(t)
 	spawn_counter += 1 
+	if(!counting):
+		await get_tree().create_timer(0.25).timeout
+		counting = true
 	
 func activate(type):
 	for t in troop_list.get_children():
@@ -72,7 +78,7 @@ func _on_timer_timeout():
 		win()
 	if counting:
 		time_counter += 1
-		
+	print("time:", time_counter, "spawn:", spawn_counter)
 
 func get_towers():
 	return $tower_list.get_children()

@@ -2,6 +2,7 @@
 extends Node2D
 
 var moveable = false
+var overlap = true
 var grid:TileMapLayer
 var path:Array
 @export var movespeed:float = 1
@@ -42,6 +43,10 @@ func move():
 				queue_free()
 			else:
 				move_animation(grid.map_to_local(path[path_progress]))
+		overlap = false
+	else:
+		await get_tree().create_timer(0.5).timeout
+		overlap = false
 func move_animation(target_pos):
 	var tween = create_tween()
 	tween.tween_property(self, "position", target_pos, 0.2)\
