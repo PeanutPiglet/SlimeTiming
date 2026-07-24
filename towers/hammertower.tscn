@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2j5oolsvoady"]
 
 [ext_resource type="Texture2D" uid="uid://ds7tgnwlw27st" path="res://assets/hammertower.png" id="1_5rhy2"]
+[ext_resource type="Script" uid="uid://b0oy7a7etmm48" path="res://scripts/hammertower.gd" id="1_xyv83"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyv83"]
 atlas = ExtResource("1_5rhy2")
@@ -45,6 +46,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_xyv83")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xyv83")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6v36u")
 }, {
 "duration": 1.0,
@@ -68,15 +72,32 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fc1dk")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+
 [node name="Hammertower" type="Node2D" unique_id=1346624466]
+script = ExtResource("1_xyv83")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=438520911]
-position = Vector2(64, 33)
+position = Vector2(65, 32)
 sprite_frames = SubResource("SpriteFrames_cymu5")
-frame = 5
-frame_progress = 0.2618972
+frame = 9
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=193421005]
+position = Vector2(96, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1797223989]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ddpoh")
+debug_color = Color(0.9009274, 0.3115503, 0, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=894199012]
+wait_time = 0.75
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
