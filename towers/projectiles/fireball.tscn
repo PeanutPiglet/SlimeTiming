@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cb6vwenumt2ts"]
+
+[ext_resource type="Script" uid="uid://ctofk8muo8p7q" path="res://scripts/towerprojectile.gd" id="1_7vtg2"]
+[ext_resource type="Texture2D" uid="uid://3nds3prh56o5" path="res://assets/firetower.png" id="2_7vtg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmo32"]
+atlas = ExtResource("2_7vtg2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_117w3"]
+atlas = ExtResource("2_7vtg2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unru1"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmo32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_117w3")
+}],
+"loop": 1,
+"name": &"vertical",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+
+[node name="Fireball" type="Node2D" unique_id=243332100]
+z_index = 10
+script = ExtResource("1_7vtg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=885127618]
+sprite_frames = SubResource("SpriteFrames_unru1")
+animation = &"vertical"
+autoplay = "vertical"
+frame = 1
+frame_progress = 0.8023153
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1253368644]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1022860571]
+scale = Vector2(1.6, 3.2)
+shape = SubResource("RectangleShape2D_ddpoh")
+debug_color = Color(0.8700246, 0.3514162, 0, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
