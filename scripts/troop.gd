@@ -7,6 +7,7 @@ var grid:TileMapLayer
 var path:Array
 var beattime:float
 @export var movespeed:float = 1
+@export var damage = 1
 @export var health = 3
 @export var destroy_on_death = true
 
@@ -46,9 +47,17 @@ func move():
 			else:
 				move_animation(grid.map_to_local(path[path_progress]))
 		overlap = false
+		for a in ability_counters:
+			if ability_counters[a] >= 1:
+				ability_counters[a] -= 1
+				if ability_counters[a] <= 0:
+					var str = a + "_over"
+					call(str)
+		
 	else:
 		await get_tree().create_timer(0.5).timeout
 		overlap = false
+	
 func move_animation(target_pos):
 	var tween = create_tween()
 	tween.tween_property(self, "position", target_pos, beattime/3 -0.05)\
@@ -56,6 +65,8 @@ func move_animation(target_pos):
 		 .set_ease(Tween.EASE_OUT)
 
 func take_damage(d:int):
+	if ability_counters["defense"] > 0:
+		return
 	health -= d
 	print("health: " + str(health))
 	if health <= 0:
@@ -65,6 +76,23 @@ func take_damage(d:int):
 		
 func on_death():
 	pass
+#troop ability procs
+var ability_counters = {"defense": 0, "boost": 0}
+
+func defense():
+	ability_counters["defense"] = 3
+	print("defended!")
+func boost():
+	ability_counters["boost"] = 3
+	print("boosted!")
+	damage += 1
+
+func defense_over():
+	print("defend over")
+	pass
+func boost_over():
+	print("boost over")
+	damage -= 1
 
 @abstract func activate()
 	
