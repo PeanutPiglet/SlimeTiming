@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bbxmo26xqqhv8"]
+
+[ext_resource type="Script" uid="uid://dlky40xb8ibtk" path="res://scripts/wind.gd" id="1_2hgql"]
+[ext_resource type="Texture2D" uid="uid://1kt8r806cix8" path="res://assets/windtower.png" id="2_2hgql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8dpm"]
+atlas = ExtResource("2_2hgql")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vumu"]
+atlas = ExtResource("2_2hgql")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unru1"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8dpm")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_6vumu")
+}],
+"loop": 2,
+"name": &"vertical",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+size = Vector2(10, 5)
+
+[node name="Wind" type="Node2D" unique_id=243332100]
+z_index = 10
+script = ExtResource("1_2hgql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=885127618]
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_unru1")
+animation = &"vertical"
+autoplay = "vertical"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1253368644]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1022860571]
+scale = Vector2(1.6, 3.2)
+shape = SubResource("RectangleShape2D_ddpoh")
+debug_color = Color(0.8700246, 0.3514162, 0, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

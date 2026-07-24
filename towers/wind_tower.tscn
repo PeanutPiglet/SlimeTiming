@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ddwiuu2bt0d8m"]
+
+[ext_resource type="Script" uid="uid://c5qkl2mb6na7q" path="res://scripts/wind_tower.gd" id="1_t6br4"]
+[ext_resource type="Texture2D" uid="uid://1kt8r806cix8" path="res://assets/windtower.png" id="2_t6br4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo2ee"]
+atlas = ExtResource("2_t6br4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4w1d"]
+atlas = ExtResource("2_t6br4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xcom"]
+atlas = ExtResource("2_t6br4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlmrx"]
+atlas = ExtResource("2_t6br4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awf3s"]
+atlas = ExtResource("2_t6br4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xmcs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo2ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4w1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xcom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlmrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awf3s")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
+
+[node name="Windtower" type="Node2D" unique_id=1669962692 groups=["tower_damageable"]]
+script = ExtResource("1_t6br4")
+actionthreshold = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141598221]
+sprite_frames = SubResource("SpriteFrames_0xmcs")
+autoplay = "default"
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1952805656 groups=["tower_damageable"]]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=203640174]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("RectangleShape2D_ddpoh")
+
+[node name="Center" type="Node2D" parent="." unique_id=1947214323]
+position = Vector2(32, 32)
