@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drti133c0044i"]
 
-[ext_resource type="Script" uid="uid://c7wglmptia8yu" path="res://scripts/attacktower.gd" id="1_b8jde"]
+[ext_resource type="Script" uid="uid://c7wglmptia8yu" path="res://scripts/fire_tower.gd" id="1_b8jde"]
 [ext_resource type="Texture2D" uid="uid://3nds3prh56o5" path="res://assets/firetower.png" id="2_b8jde"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xmcs"]

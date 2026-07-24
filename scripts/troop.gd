@@ -1,4 +1,4 @@
-@abstract class_name Troop
+class_name Troop
 extends Node2D
 
 var moveable = false
@@ -31,6 +31,7 @@ func _process(_delta):
 		
 func move():
 	if moveable:
+		modulate.a -=0.20
 		if movespeed >= 1:
 			for i in range(movespeed):
 				path_progress += 1
@@ -82,17 +83,21 @@ var ability_counters = {"defense": 0, "boost": 0}
 func defense():
 	ability_counters["defense"] = 3
 	print("defended!")
+	modulate.a = 1
 func boost():
 	ability_counters["boost"] = 3
 	print("boosted!")
 	damage += 1
+	modulate.a = 1
 
 func defense_over():
 	print("defend over")
+	
 	pass
 func boost_over():
 	print("boost over")
+	
 	damage -= 1
 
-@abstract func activate()
-	
+func activate():
+	modulate.a = 1
