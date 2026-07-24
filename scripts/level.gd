@@ -8,6 +8,7 @@ const TOTAL_LEVELS = 2
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
+const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
 
 var troop_list: Node2D
 
@@ -33,10 +34,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_left"):
-		spawn(1)
-	if Input.is_action_just_pressed("spawn2"):
-		spawn(2)
+	
+	if Input.is_action_pressed("active"):
+		if Input.is_action_just_pressed("spawn1"):
+			activate(1)
+		if Input.is_action_just_pressed("spawn2"):
+			activate(2)
+		if Input.is_action_just_pressed("spawn3"):
+			activate(3)
+	else:
+		if Input.is_action_just_pressed("spawn1"):
+			spawn(1)
+		if Input.is_action_just_pressed("spawn2"):
+			spawn(2)
+		if Input.is_action_just_pressed("spawn3"):
+			spawn(3)
+			
+	
 	if Input.is_action_just_pressed("ui_down"):
 		activate(1)
 	if Input.is_action_just_pressed("ui_right"):
@@ -53,6 +67,7 @@ func spawn(type):
 	match type:
 		1: t = E_TROOP_SCENE.instantiate()
 		2: t = D_TROOP_SCENE.instantiate()
+		3: t = B_TROOP_SCENE.instantiate()
 	t.global_position = grid.local_to_map($Spawn.position)
 	t.init(grid,path,beattime)
 	troop_list.add_child(t)
@@ -62,8 +77,16 @@ func spawn(type):
 		counting = true
 	
 func activate(type):
+	
+		
 	for t in troop_list.get_children():
-		t.activate()
+		var correct = false
+		match type:
+			1: correct = t is Explode_troop
+			2: correct = t is Defense_troop
+			3: correct = t is Booster_troop
+		if correct:
+			t.activate()
 	
 	
 func _on_timer_timeout():

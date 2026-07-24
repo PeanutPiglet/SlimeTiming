@@ -9,3 +9,10 @@ static func diagonal(grid_pos:Vector2i):
 
 static func eightaround(grid_pos:Vector2i):
 	return (adjacent(grid_pos) + diagonal(grid_pos))
+
+static func three_by_three(grid_pos:Vector2i):
+	var total = []
+	for i in [-2,-1,0,1,2]:
+		for j in [-2,-1,0,1,2]:
+			total.append(grid_pos + Vector2i(i,j))
+	return total
