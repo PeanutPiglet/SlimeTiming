@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ceusvvbxxqo4l"]
+
+[ext_resource type="Script" uid="uid://bnuyuj4g6w38o" path="res://special/tower_teleporter.gd" id="1_hggn5"]
+[ext_resource type="Texture2D" uid="uid://n2q8gk24iiho" path="res://assets/teleporter.png" id="1_qnnvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnnvd"]
+atlas = ExtResource("1_qnnvd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hggn5"]
+atlas = ExtResource("1_qnnvd")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddpoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnnvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hggn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnnvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hggn5")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_hggn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnnvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hggn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnnvd")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TowerTeleporter" type="Node2D" unique_id=464087738]
+script = ExtResource("1_hggn5")
+health = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=954795611]
+sprite_frames = SubResource("SpriteFrames_ddpoh")
+
+[node name="Timer" type="Timer" parent="." unique_id=1406150353]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
