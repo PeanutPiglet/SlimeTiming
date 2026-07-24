@@ -15,6 +15,7 @@ var beattime:float
 @export var activate_name = "explode"
 
 var path_progress = 0
+var pause_counter = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,6 +38,9 @@ func _process(_delta):
 	pass
 		
 func move():
+	if pause_counter > 0:
+		pause_counter -= 1
+		return
 	if moveable:
 		modulate.a -=0.20
 		if movespeed >= 1:
@@ -85,6 +89,9 @@ func take_damage(d:int):
 		on_death()
 		if destroy_on_death:
 			queue_free()
+			
+func pause_increment():
+	pause_counter += 1
 		
 func on_death():
 	pass
