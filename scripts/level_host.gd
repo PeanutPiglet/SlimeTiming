@@ -3,6 +3,7 @@ extends Node
 @export var beattime:float = 0.75
 
 const TOTAL_LEVELS:int = 20
+var current_level:int = 0  # note: change to 1 for release
 var active_level:GameLevel;
 
 const END_SCREEN = "res://levels/end.tscn"
@@ -16,6 +17,8 @@ func _ready() -> void:
 	timer.autostart = true
 	timer.timeout.connect(_on_timer_timeout)
 	add_child(timer)
+	
+	load_level("res://levels/level" + str(current_level) + ".tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,11 +31,33 @@ func _on_timer_timeout():
 		active_level.beat()
 
 
-func win():
-	var current_scene_file = get_tree().current_scene.scene_file_path
-	var next_level = current_scene_file.to_int() + 1
-	if next_level < TOTAL_LEVELS:
-		var next_level_path = "res://levels/level" + str(next_level) + ".tscn"
-		get_tree().change_scene_to_file(next_level_path)
+func load_level(level_path: String):
+	var level = load(level_path)
+	if not level:
+		print("Failed to load level at ", level_path)
+		return
+	if active_level:
+		active_level.queue_free()
+	
+	active_level = level.instantiate()
+	active_level.beattime = beattime
+	var allowed_troops = {
+		1: true,
+		2: current_level >= 5,
+		3: current_level >= 10,
+		4: current_level >= 15
+	}
+	active_level.allowed_troops = allowed_troops
+	active_level.win_host_callback = next_level
+	
+	add_child(active_level)
+	
+
+func next_level():
+	current_level += 1
+	if current_level <= TOTAL_LEVELS:
+		var next_level_path = "res://levels/level" + str(current_level) + ".tscn"
+		load_level(next_level_path)
 	else:
 		get_tree().change_scene_to_file(END_SCREEN)
+		
