@@ -1,6 +1,7 @@
 extends Node
 
 @export var beattime:float = 0.75
+var beat_counter = -1
 
 const TOTAL_LEVELS:int = 20
 var current_level:int = 0  # note: change to 1 for release
@@ -27,6 +28,12 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout():
+	beat_counter += 1
+	if beat_counter % 4 == 0:  # music bar
+		pass
+	if beat_counter % 384 == 0:  # music length
+		$BackgroundMusic.play()
+	
 	if active_level:
 		active_level.beat()
 
