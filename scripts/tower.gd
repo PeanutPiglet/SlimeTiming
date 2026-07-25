@@ -9,7 +9,6 @@ var fx_explosion = preload("res://common/fx_explosion.tscn")
 @export var actioncounter = 0
 @export var wincon = false
 var og_health = health
-var dead = false
 var grid:TileMapLayer
 
 	
@@ -38,8 +37,6 @@ func on_death():
 	queue_free()
 
 func increment(i:int):
-	if dead:
-		return
 	actioncounter += i
 	if actioncounter >= actionthreshold:
 		actioncounter -= actionthreshold

@@ -3,29 +3,11 @@
 [ext_resource type="Script" uid="uid://chqrg4tubq435" path="res://scripts/base.gd" id="1_ng87y"]
 [ext_resource type="Texture2D" uid="uid://cfo8npi8h1bjv" path="res://assets/base.png" id="2_214gd"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ng87y"]
-load_path = "res://.godot/imported/pixil-layer-1.png-540d6437075db19885808f4fa9722f03.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lkwu1"]
-load_path = "res://.godot/imported/pixil-layer-2.png-e81d25a3da8c4c4e9785a1a05bce6899.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_da8ww"]
-load_path = "res://.godot/imported/pixil-layer-3.png-b3a336f34982d03f8ef9f629f130e2c3.ctex"
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_214gd")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_ng87y")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_lkwu1")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_da8ww")
 }],
 "loop": 0,
 "name": &"default",

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dny4mh3oixk0b" path="res://scripts/cross_troop.gd" id="1_d53h2"]
 [ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_d53h2"]
+[ext_resource type="Texture2D" uid="uid://ctu0hnp62ws7i" path="res://assets/shields.png" id="3_83pps"]
+[ext_resource type="Texture2D" uid="uid://dsqgv3qq8d7qy" path="res://assets/effects.png" id="4_nkwyf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vvq7f"]
 atlas = ExtResource("2_d53h2")
@@ -27,6 +29,81 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddpoh"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpnx8"]
+atlas = ExtResource("3_83pps")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xclf"]
+atlas = ExtResource("3_83pps")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqjja"]
+atlas = ExtResource("3_83pps")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp7oi"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpnx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xclf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqjja")
+}],
+"loop": 0,
+"name": &"shield",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjb5"]
+atlas = ExtResource("4_nkwyf")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs1s4"]
+atlas = ExtResource("4_nkwyf")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bboul"]
+atlas = ExtResource("4_nkwyf")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe3my"]
+atlas = ExtResource("4_nkwyf")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bc88p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs1s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bboul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe3my")
+}],
+"loop": 0,
+"name": &"buff",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="c-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_d53h2")
 health = 1
@@ -49,3 +126,13 @@ shape = SubResource("RectangleShape2D_ddpoh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Explosion" unique_id=1869752438]
 polygon = PackedVector2Array(0, 0, 0, 192, 16, 16, 192, 0, 16, -16, 0, -192, -16, -16, -192, 0, -16, 16, 0, 192)
+
+[node name="shield" type="AnimatedSprite2D" parent="." unique_id=54831997]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_wp7oi")
+autoplay = "default"
+
+[node name="buff" type="AnimatedSprite2D" parent="." unique_id=420223768]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_bc88p")
+autoplay = "default"

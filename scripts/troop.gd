@@ -2,6 +2,7 @@ class_name Troop
 extends Node2D
 
 var fx_explosion = preload("res://common/fx_explosion.tscn") 
+var fx_death = preload("res://common/fx_death.tscn") 
 
 var moveable = false
 var overlap = true
@@ -91,7 +92,11 @@ func pause_increment(delta: int):
 	pause_counter += delta
 		
 func on_death():
-	pass
+	var fx = fx_death.instantiate()
+	fx.global_position = global_position
+	fx.play(activate_name)
+	get_tree().current_scene.add_child(fx)
+
 #troop ability procs
 var ability_counters = {"defense": 0, "boost": 0}
 
@@ -99,17 +104,23 @@ func defense():
 	ability_counters["defense"] = 4
 	print("defended!")
 	$AnimatedSprite2D.modulate.a = 1
+	$shield.visible = true
+	$shield.play("shield")
 func boost():
 	ability_counters["boost"] = 4
 	print("boosted!")
 	damage = 2
+	$buff.visible = true
+	$buff.play("buff")
 	$AnimatedSprite2D.modulate.a = 1
 
 func defense_over():
 	print("defend over")
+	$shield.visible = false
 	
 	pass
 func boost_over():
+	$buff.visible = false
 	print("boost over")
 	damage = 1
 

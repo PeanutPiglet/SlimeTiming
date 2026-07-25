@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cxd4nrsdbyqtv" path="res://scripts/defense_troop.gd" id="1_xvkdq"]
 [ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_xvkdq"]
+[ext_resource type="Texture2D" uid="uid://ctu0hnp62ws7i" path="res://assets/shields.png" id="3_8ivcx"]
+[ext_resource type="Texture2D" uid="uid://dsqgv3qq8d7qy" path="res://assets/effects.png" id="4_u3tqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_juxks"]
 atlas = ExtResource("2_xvkdq")
@@ -27,6 +29,81 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvkdq"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpnx8"]
+atlas = ExtResource("3_8ivcx")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xclf"]
+atlas = ExtResource("3_8ivcx")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqjja"]
+atlas = ExtResource("3_8ivcx")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myhin"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpnx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xclf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqjja")
+}],
+"loop": 0,
+"name": &"shield",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjb5"]
+atlas = ExtResource("4_u3tqb")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs1s4"]
+atlas = ExtResource("4_u3tqb")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bboul"]
+atlas = ExtResource("4_u3tqb")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe3my"]
+atlas = ExtResource("4_u3tqb")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81j0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs1s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bboul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe3my")
+}],
+"loop": 0,
+"name": &"buff",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="d-troop" type="Node2D" unique_id=1447375838]
 script = ExtResource("1_xvkdq")
 movespeed = 2.0
@@ -42,3 +119,13 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1840191176]
 scale = Vector2(3.2, 3.2)
 shape = SubResource("RectangleShape2D_xvkdq")
+
+[node name="shield" type="AnimatedSprite2D" parent="." unique_id=2139718277]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_myhin")
+autoplay = "default"
+
+[node name="buff" type="AnimatedSprite2D" parent="." unique_id=1215326218]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_81j0y")
+autoplay = "default"
