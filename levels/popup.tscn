@@ -32,12 +32,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mtlko")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SystemFont" id="SystemFont_oodjo"]
+subpixel_positioning = 0
 
 [node name="Popup" type="Node2D" unique_id=1956957411]
 scale = Vector2(2, 2)
@@ -47,16 +48,22 @@ script = ExtResource("1_vfibl")
 texture = ExtResource("2_i6by5")
 
 [node name="star1" type="AnimatedSprite2D" parent="." unique_id=884254089]
-position = Vector2(0, -18)
+position = Vector2(-3, -16)
 sprite_frames = SubResource("SpriteFrames_cymu5")
+frame = 2
+frame_progress = 1.0
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1282754466]
-position = Vector2(62, -7)
+position = Vector2(59, -7)
 sprite_frames = SubResource("SpriteFrames_cymu5")
+frame = 2
+frame_progress = 1.0
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=397890098]
-position = Vector2(-61, -7)
+position = Vector2(-63, -7)
 sprite_frames = SubResource("SpriteFrames_cymu5")
+frame = 2
+frame_progress = 1.0
 
 [node name="restart" type="TextureButton" parent="." unique_id=1738587376]
 offset_left = -16.0

@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide_stars()
 	self.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,13 +24,35 @@ func activate() -> void:
 	$levelN.text = "LEVEL %d" % curlevel;
 	
 	# stars
+	var stars_punchcard = LevelCompleted["stars"][curlevel];
+	var stars : int = 0;
+	for star in stars_punchcard:
+		if star:
+			stars += 1
+	hide_stars()
+	
+	# set visible
+	self.visible = true
+	play_stars(stars)
+
+func play_stars(stars) -> void:
+	if stars > 1:
+		$star1.visible = true
+		$star1.play()
+	if stars > 0:  # middle star
+		$star1.visible = true
+		$star1.play()
+	if stars > 2:
+		$star1.visible = true
+		$star1.play()
+
+func hide_stars() -> void:
 	$star1.visible = false
 	$star2.visible = false
 	$star3.visible = false
-	
-	self.visible = true
 
 func deactivate() -> void:
+	hide_stars()
 	self.visible = false
 
 func _on_restart_pressed() -> void:
@@ -47,5 +70,4 @@ func _on_previous_pressed() -> void:
 func _get_viewport_center() -> Vector2:
 	#var scale : Vector2 = transform.get_scale()
 	var size: Vector2 = get_viewport_rect().size;
-	print(size, scale)
 	return Vector2(size[0] / 2, size[1] / 2)
