@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://comwdvb5utsao"]
+
+[ext_resource type="Script" uid="uid://chqrg4tubq435" path="res://scripts/base.gd" id="1_mfei6"]
+[ext_resource type="Texture2D" uid="uid://dh015a1lehfyn" path="res://assets/Ccat.png" id="2_mfei6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mfei6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53yen"]
+
+[node name="Strongbase" type="Node2D" unique_id=2088341078]
+script = ExtResource("1_mfei6")
+health = 2
+wincon = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166744344]
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_cymu5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=618184255 groups=["tower_damageable"]]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1364717131]
+scale = Vector2(3.2, 3.2)
+shape = SubResource("RectangleShape2D_53yen")

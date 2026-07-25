@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_4kw1h"]
 [ext_resource type="PackedScene" uid="uid://d2j5oolsvoady" path="res://towers/hammertower.tscn" id="7_3vj3r"]
 [ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="8_p8yh6"]
+[ext_resource type="PackedScene" uid="uid://ddwiuu2bt0d8m" path="res://towers/wind_tower.tscn" id="9_w2q2b"]
 
 [node name="Level1" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
@@ -56,3 +57,7 @@ tower = NodePath("../Firetower")
 [node name="TowerTeleporter2" parent="tower_list" unique_id=974687577 node_paths=PackedStringArray("destination") instance=ExtResource("8_p8yh6")]
 position = Vector2(256, 128)
 destination = NodePath("../TowerTeleporter")
+
+[node name="Windtower" parent="tower_list" unique_id=1891610017 instance=ExtResource("9_w2q2b")]
+position = Vector2(1024, 64)
+angles = Array[float]([270.0])

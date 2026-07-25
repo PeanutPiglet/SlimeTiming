@@ -21,12 +21,12 @@ position = Vector2(96, 352)
 position = Vector2(704, 384)
 
 [node name="Base2" parent="tower_list" unique_id=1757711936 instance=ExtResource("3_4m8hb")]
-position = Vector2(448, 384)
+position = Vector2(320, 384)
 
 [node name="Zaptower2" parent="tower_list" unique_id=79760373 instance=ExtResource("4_6ilhl")]
 position = Vector2(256, 256)
 angles = Array[float]([180.0])
 
 [node name="Zaptower" parent="tower_list" unique_id=1669962692 instance=ExtResource("4_6ilhl")]
-position = Vector2(576, 192)
+position = Vector2(576, 256)
 angles = Array[float]([180.0])
