@@ -74,5 +74,13 @@ func next_level():
 	else:
 		get_tree().change_scene_to_file(END_SCREEN)
 
-
+func previous_level():
+	$Popup.deactivate()
+	current_level -= 1
+	if current_level > 0:
+		var previous_level_path = "res://levels/level" + str(current_level) + ".tscn"
+		load_level(previous_level_path)
+	else:
+		print("Error: Zeroth't level has no previous level.")
+		get_tree().change_scene_to_file(END_SCREEN)
 		
