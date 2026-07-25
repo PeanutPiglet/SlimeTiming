@@ -19,8 +19,8 @@ func _ready():
 
 	#everythign else here
 	
-	await get_tree().current_scene.ready
-	grid = get_tree().current_scene.get_grid()
+	await get_tree().current_scene.active_level.ready
+	grid = get_tree().current_scene.active_level.get_grid()
 	
 func take_damage(d:int):
 	health -= d
