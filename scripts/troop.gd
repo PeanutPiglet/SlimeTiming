@@ -96,13 +96,13 @@ func on_death():
 var ability_counters = {"defense": 0, "boost": 0}
 
 func defense():
-	ability_counters["defense"] = 3
+	ability_counters["defense"] = 4
 	print("defended!")
 	$AnimatedSprite2D.modulate.a = 1
 func boost():
-	ability_counters["boost"] = 3
+	ability_counters["boost"] = 4
 	print("boosted!")
-	damage += 1
+	damage = 2
 	$AnimatedSprite2D.modulate.a = 1
 
 func defense_over():
@@ -111,7 +111,7 @@ func defense_over():
 	pass
 func boost_over():
 	print("boost over")
-	damage -= 1
+	damage = 1
 
 func activate():
 	var fx = fx_explosion.instantiate()

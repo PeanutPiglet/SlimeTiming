@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var grid: TileMapLayer = $Grid
 
-const TOTAL_LEVELS = 10
+const TOTAL_LEVELS = 20
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
@@ -39,24 +39,22 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
-	if Input.is_action_pressed("active"):
-		if Input.is_action_just_pressed("spawn1"):
-			activate(1)
-		if Input.is_action_just_pressed("spawn2"):
-			activate(2)
-		if Input.is_action_just_pressed("spawn3"):
-			activate(3)
-		if Input.is_action_just_pressed("spawn4"):
-			activate(4)
-	else:
-		if Input.is_action_just_pressed("spawn1"):
-			spawn(1)
-		if Input.is_action_just_pressed("spawn2"):
-			spawn(2)
-		if Input.is_action_just_pressed("spawn3"):
-			spawn(3)
-		if Input.is_action_just_pressed("spawn4"):
-			spawn(4)
+	if Input.is_action_just_pressed("act1"):
+		activate(1)
+	if Input.is_action_just_pressed("act2"):
+		activate(2)
+	if Input.is_action_just_pressed("act3"):
+		activate(3)
+	if Input.is_action_just_pressed("act4"):
+		activate(4)
+	if Input.is_action_just_pressed("spawn1"):
+		spawn(1)
+	if Input.is_action_just_pressed("spawn2"):
+		spawn(2)
+	if Input.is_action_just_pressed("spawn3"):
+		spawn(3)
+	if Input.is_action_just_pressed("spawn4"):
+		spawn(4)
 	
 	if Input.is_action_just_pressed("ui_down"):
 		activate(1)
