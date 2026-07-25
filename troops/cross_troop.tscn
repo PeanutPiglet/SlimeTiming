@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://csy8o3kosaigk"]
 
 [ext_resource type="Script" uid="uid://dny4mh3oixk0b" path="res://scripts/cross_troop.gd" id="1_d53h2"]
-[ext_resource type="Texture2D" uid="uid://bie4mnxjj327l" path="res://assets/Rrock.png" id="2_d53h2"]
+[ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_d53h2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvq7f"]
+atlas = ExtResource("2_d53h2")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83pps"]
+atlas = ExtResource("2_d53h2")
+region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkp47"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_d53h2")
+"texture": SubResource("AtlasTexture_vvq7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83pps")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,6 +35,7 @@ activate_name = "cross"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_hkp47")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1833834020 groups=["troop_damageable"]]
 visible = false

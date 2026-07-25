@@ -1,14 +1,25 @@
 [gd_scene format=3 uid="uid://beq1dbn4nc4kr"]
 
 [ext_resource type="Script" uid="uid://dps5y65x15tl2" path="res://scripts/explode_troop.gd" id="1_yqhyb"]
-[ext_resource type="Texture2D" uid="uid://drn0fnw1km3fi" path="res://assets/pixil-frame-0 (18).png" id="2_a5135"]
+[ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_a5135"]
 [ext_resource type="PackedScene" uid="uid://cxm254vkhne7u" path="res://common/square_explosion.tscn" id="3_a5135"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmw4e"]
+atlas = ExtResource("2_a5135")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mavsd"]
+atlas = ExtResource("2_a5135")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkp47"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_a5135")
+"texture": SubResource("AtlasTexture_rmw4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mavsd")
 }],
 "loop": 1,
 "name": &"default",
@@ -23,8 +34,8 @@ script = ExtResource("1_yqhyb")
 health = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_hkp47")
+autoplay = "default"
 
 [node name="SquareExplosion" parent="." unique_id=661827662 instance=ExtResource("3_a5135")]
 scale = Vector2(0.5, 0.5)

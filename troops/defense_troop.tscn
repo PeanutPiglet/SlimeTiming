@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://b32q5aoyfx8f0"]
 
 [ext_resource type="Script" uid="uid://cxd4nrsdbyqtv" path="res://scripts/defense_troop.gd" id="1_xvkdq"]
-[ext_resource type="Texture2D" uid="uid://dgldhesigfjk6" path="res://assets/Uumbrella.png" id="2_juxks"]
+[ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_xvkdq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juxks"]
+atlas = ExtResource("2_xvkdq")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ivcx"]
+atlas = ExtResource("2_xvkdq")
+region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkp47"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_juxks")
+"texture": SubResource("AtlasTexture_juxks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ivcx")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,6 +35,7 @@ activate_name = "defense"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1995517838]
 sprite_frames = SubResource("SpriteFrames_hkp47")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1039792275 groups=["troop_damageable"]]
 
