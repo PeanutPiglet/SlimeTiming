@@ -10,9 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func activate() -> void:
-	var vsize = get_viewport().get_size()
-	self.position.x = vsize[0]/2
-	self.position.y = vsize[1]/2
+	self.position = _get_viewport_center();
 	var curlevel = get_tree().current_scene.current_level;
 	if curlevel < get_tree().current_scene.TOTAL_LEVELS - 1:
 		$next.visible = true
@@ -45,3 +43,9 @@ func _on_next_pressed() -> void:
 func _on_previous_pressed() -> void:
 	self.deactivate()
 	get_tree().current_scene.previous_level()
+
+func _get_viewport_center() -> Vector2:
+	#var scale : Vector2 = transform.get_scale()
+	var size: Vector2 = get_viewport_rect().size;
+	print(size, scale)
+	return Vector2(size[0] / 2, size[1] / 2)
