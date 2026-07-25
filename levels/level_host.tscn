@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://be37rre4os2yn"]
 
 [ext_resource type="Script" uid="uid://dh3ri5dwmjsp2" path="res://scripts/level_host.gd" id="1_36nvt"]
-[ext_resource type="PackedScene" uid="uid://dw7tvqsmkb54t" path="res://levels/popup.tscn" id="2_0o6oq"]
+[ext_resource type="AudioStream" uid="uid://cre0doyd2cugx" path="res://assets/Focus.ogg" id="2_0o6oq"]
+[ext_resource type="PackedScene" uid="uid://dw7tvqsmkb54t" path="res://levels/popup.tscn" id="3_frel8"]
 
 [node name="LevelHost" type="Node2D" unique_id=1498637216]
 script = ExtResource("1_36nvt")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=667698954]
+stream = ExtResource("2_0o6oq")
 max_polyphony = 2
 
-[node name="Popup" parent="." unique_id=1956957411 instance=ExtResource("2_0o6oq")]
+[node name="Popup" parent="." unique_id=1956957411 instance=ExtResource("3_frel8")]
