@@ -123,11 +123,34 @@ animations = [{
 "loop": 0,
 "name": &"explode",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_n1n1d")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tnyes")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1bqqq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6f7m7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_agngm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cbyqk")
+}],
+"loop": 0,
+"name": &"tower",
+"speed": 5.0
 }]
 
 [node name="FxExplosion" type="AnimatedSprite2D" unique_id=551965781]
 sprite_frames = SubResource("SpriteFrames_5u842")
-animation = &"boost"
+animation = &"tower"
 script = ExtResource("2_n1n1d")
 
 [node name="Timer" type="Timer" parent="." unique_id=1906485138]

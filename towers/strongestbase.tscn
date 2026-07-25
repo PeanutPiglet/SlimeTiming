@@ -1,13 +1,49 @@
 [gd_scene format=3 uid="uid://ccsn6t30diomv"]
 
 [ext_resource type="Script" uid="uid://chqrg4tubq435" path="res://scripts/base.gd" id="1_wx6nj"]
-[ext_resource type="Texture2D" uid="uid://bacncd7iio806" path="res://assets/Ggrass.png" id="2_wx6nj"]
+[ext_resource type="Texture2D" uid="uid://dpqrf7gg24frd" path="res://assets/strongest/pixil-layer-4.png" id="2_q1unm"]
+[ext_resource type="Texture2D" uid="uid://dl846kpm821k" path="res://assets/strongest/pixil-layer-3.png" id="3_d3g66"]
+[ext_resource type="Texture2D" uid="uid://bwy681exsnfb1" path="res://assets/strongest/pixil-layer-2.png" id="4_fphyo"]
+[ext_resource type="Texture2D" uid="uid://dr52ysxxqec1p" path="res://assets/strongest/pixil-layer-1.png" id="5_lm3tp"]
+[ext_resource type="Texture2D" uid="uid://cs7browmmdcpu" path="res://assets/strongest/pixil-layer-0.png" id="6_dv536"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wx6nj")
+"texture": ExtResource("2_q1unm")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d3g66")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fphyo")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lm3tp")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dv536")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,6 +60,8 @@ wincon = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166744344]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_cymu5")
+animation = &"1"
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=618184255 groups=["tower_damageable"]]
 position = Vector2(32, 32)

@@ -4,22 +4,38 @@
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_0fm5q"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_cpie4"]
 
-[node name="Level" type="Node2D" unique_id=1507277628]
+[node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_aaqj5")
 
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
 [node name="Base3" parent="tower_list" unique_id=1609091506 groups=["tower_damageable"] instance=ExtResource("3_cpie4")]
 position = Vector2(640, 320)
+health = null
+destroy_on_death = null
+actionthreshold = null
+actioncounter = null
 
 [node name="Base4" parent="tower_list" unique_id=1342489211 groups=["tower_damageable"] instance=ExtResource("3_cpie4")]
 position = Vector2(448, 256)
+health = null
+destroy_on_death = null
+actionthreshold = null
+actioncounter = null
 
 [node name="Base5" parent="tower_list" unique_id=100407652 groups=["tower_damageable"] instance=ExtResource("3_cpie4")]
 position = Vector2(320, 192)
+health = null
+destroy_on_death = null
+actionthreshold = null
+actioncounter = null
 
 [node name="Base2" parent="tower_list" unique_id=1757711936 groups=["tower_damageable"] instance=ExtResource("3_cpie4")]
 position = Vector2(256, 128)
+health = null
+destroy_on_death = null
+actionthreshold = null
+actioncounter = null
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_0fm5q")]
 z_index = -1000

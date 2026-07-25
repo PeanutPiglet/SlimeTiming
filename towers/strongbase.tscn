@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://comwdvb5utsao"]
 
 [ext_resource type="Script" uid="uid://chqrg4tubq435" path="res://scripts/base.gd" id="1_mfei6"]
-[ext_resource type="Texture2D" uid="uid://dh015a1lehfyn" path="res://assets/Ccat.png" id="2_mfei6"]
+[ext_resource type="Texture2D" uid="uid://csnmdyjhrqemy" path="res://assets/stronger/pixil-layer-3.png" id="2_p187v"]
+[ext_resource type="Texture2D" uid="uid://mii6ijsc0vrw" path="res://assets/stronger/pixil-layer-0.png" id="3_qwj83"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mfei6")
+"texture": ExtResource("2_p187v")
 }],
-"loop": 1,
+"loop": 0,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qwj83")
+}],
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -24,6 +33,8 @@ wincon = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=166744344]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_cymu5")
+animation = &"1"
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=618184255 groups=["tower_damageable"]]
 position = Vector2(32, 32)
