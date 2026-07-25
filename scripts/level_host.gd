@@ -44,9 +44,9 @@ func load_level(level_path: String):
 	active_level.beattime = beattime
 	var allowed_troops:Dictionary[int, bool] = {
 		1: true,
-		2: current_level >= 5,
-		3: current_level >= 10,
-		4: current_level >= 15
+		2: current_level >= 5 or current_level == 0,
+		3: current_level >= 10 or current_level == 0,
+		4: current_level >= 15 or current_level == 0
 	}
 	active_level.allowed_troops = allowed_troops
 	active_level.win_host_callback = next_level
