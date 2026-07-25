@@ -13,11 +13,8 @@ func _process(delta: float) -> void:
 func activate() -> void:
 	self.position = _get_viewport_center();
 	var curlevel = get_tree().current_scene.current_level;
-	if curlevel < get_tree().current_scene.TOTAL_LEVELS - 1:
-		$next.visible = true
-	else:
-		$next.visible = false
-	if curlevel > 0:
+	$next.visible = true
+	if curlevel > 1:
 		$previous.visible = true
 	else:
 		$previous.visible = false

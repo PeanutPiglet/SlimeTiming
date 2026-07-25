@@ -23,7 +23,7 @@ func _ready():
 					button.add_child(star)
 
 func _on_exit_pressed():
-	get_tree().change_scene_to_file("res://scenes/menus/main.tscn")
+	get_parent().open_main()
 func _on_start_pressed(name):
 	var file = ("res://levels/level"+ str(name)+ ".tscn")
 	get_tree().current_scene.load_level(file, int(name))

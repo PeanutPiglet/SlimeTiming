@@ -12,5 +12,9 @@ func _process(delta: float) -> void:
 	
 	
 func play_game():
-	get_tree().change_scene_to_file("res://levels/level_host.tscn")
+	get_parent().main_start()
 	
+
+
+func _on_button_button_up():
+	play_game()

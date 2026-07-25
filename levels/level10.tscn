@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://d1f2qo6m5k8js" path="res://scripts/level.gd" id="1_woihn"]
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_3qo2i"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="2_okowm"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="2_okowm"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_okowm"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_3qo2i"]
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="5_i18um"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_okowm"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="8_8oooe"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_woihn")
@@ -59,3 +60,14 @@ position = Vector2(576, 320)
 texture = ExtResource("6_okowm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=225781587]
+offset_left = 512.0
+offset_top = 32.0
+offset_right = 832.0
+offset_bottom = 320.0
+theme = ExtResource("8_8oooe")
+theme_override_font_sizes/normal_font_size = 35
+text = "another new slime! try them out! "
+horizontal_alignment = 1
+vertical_alignment = 1

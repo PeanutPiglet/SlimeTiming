@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="4_4f5gp"]
 [ext_resource type="PackedScene" uid="uid://comwdvb5utsao" path="res://towers/strongbase.tscn" id="4_qc6k0"]
 [ext_resource type="PackedScene" uid="uid://ccsn6t30diomv" path="res://towers/strongestbase.tscn" id="5_4f5gp"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="8_qc6k0"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="8_qc6k0"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_xeoya")

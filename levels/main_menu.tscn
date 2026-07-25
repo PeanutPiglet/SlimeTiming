@@ -4,3 +4,13 @@
 
 [node name="MainMenu" type="Node2D" unique_id=307367670]
 script = ExtResource("1_0ettg")
+
+[node name="Button" type="Button" parent="." unique_id=28455932]
+offset_left = 328.0
+offset_top = 174.0
+offset_right = 701.0
+offset_bottom = 429.0
+text = "START
+"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

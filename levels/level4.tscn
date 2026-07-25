@@ -6,32 +6,33 @@
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="4_lpgdq"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_8s3b3"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_cc5tm"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="7_cc5tm"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="7_cc5tm"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="8_mj76i"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_lpgdq")
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_1jw75")]
 z_index = -1000
-tile_map_data = PackedByteArray("AAAPAAkAAAADAAMAAAAQAAkAAAADAAMAAAARAAkAAAADAAMAAAARAAgAAAADAAMAAAARAAcAAAADAAMAAAARAAYAAAADAAMAAAARAAUAAAADAAMAAAARAAQAAAADAAMAAAARAAMAAAADAAMAAAARAAIAAAADAAMAAAARAAEAAAADAAMAAAARAAAAAAADAAMAAAAQAAAAAAADAAMAAAAPAAAAAAADAAMAAAAFAAIAAAADAAAAAAAFAAMAAAADAAEAAAAFAAcAAAADAAEAAAAPAAcAAAADAAMAAAAPAAgAAAADAAMAAAAQAAgAAAADAAMAAAAQAAcAAAADAAMAAAAQAAYAAAADAAMAAAAQAAUAAAADAAMAAAAQAAQAAAADAAMAAAAQAAMAAAADAAMAAAAQAAIAAAADAAMAAAAQAAEAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAADAAMAAAANAAgAAAADAAEAAGAMAAgAAAADAAEAAGALAAgAAAADAAEAAGAKAAgAAAADAAEAAGAJAAgAAAADAAEAAGAIAAgAAAADAAEAAGAHAAgAAAADAAEAAGAGAAgAAAADAAEAAGAFAAgAAAAAAAIAAAAFAAQAAAADAAEAAAAFAAUAAAADAAEAAAAFAAYAAAADAAEAAAAOAAgAAAADAAEAAFA=")
+tile_map_data = PackedByteArray("AAAPAAkAAAADAAMAAAAQAAkAAAADAAMAAAARAAkAAAADAAMAAAARAAgAAAADAAMAAAARAAcAAAADAAMAAAARAAYAAAADAAMAAAARAAUAAAADAAMAAAARAAQAAAADAAMAAAARAAMAAAADAAMAAAARAAIAAAADAAMAAAARAAEAAAADAAMAAAARAAAAAAADAAMAAAAQAAAAAAADAAMAAAAPAAAAAAADAAMAAAAPAAcAAAADAAMAAAAPAAgAAAADAAMAAAAQAAgAAAADAAMAAAAQAAcAAAADAAMAAAAQAAYAAAADAAMAAAAQAAUAAAADAAMAAAAQAAQAAAADAAMAAAAQAAMAAAADAAMAAAAQAAIAAAADAAMAAAAQAAEAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAADAAMAAAAFAAgAAAADAAEAAGAGAAgAAAADAAEAAGAHAAgAAAADAAEAAGAIAAgAAAADAAEAAGAJAAgAAAADAAEAAGAKAAgAAAADAAEAAGALAAgAAAADAAEAAFACAAIAAAADAAAAAAACAAMAAAADAAEAAAACAAQAAAADAAEAAAACAAUAAAADAAEAAAACAAYAAAADAAEAAAACAAcAAAADAAEAAAACAAgAAAAAAAIAAAADAAgAAAADAAEAAGAEAAgAAAADAAEAAGAMAAgAAAADAAEAAFANAAgAAAADAAEAAFAOAAgAAAADAAEAAFA=")
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1990253497]
-position = Vector2(352, 160)
+position = Vector2(160, 160)
 
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
 [node name="Base" parent="tower_list" unique_id=2088341078 groups=["tower_damageable"] instance=ExtResource("3_8s3b3")]
-position = Vector2(704, 448)
+position = Vector2(512, 448)
 
 [node name="Base2" parent="tower_list" unique_id=1757711936 groups=["tower_damageable"] instance=ExtResource("3_8s3b3")]
-position = Vector2(768, 448)
+position = Vector2(576, 448)
 
 [node name="Firetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("4_lpgdq")]
-position = Vector2(512, 448)
+position = Vector2(320, 448)
 angles = Array[float]([180.0])
 
 [node name="Firetower2" parent="tower_list" unique_id=1087241375 instance=ExtResource("4_lpgdq")]
-position = Vector2(384, 320)
+position = Vector2(192, 320)
 angles = Array[float]([270.0])
 
 [node name="visuals" type="Node2D" parent="." unique_id=14690103]
@@ -51,14 +52,18 @@ texture = ExtResource("6_cc5tm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=1142322449]
-offset_left = 448.0
-offset_top = 160.0
-offset_right = 896.0
-offset_bottom = 264.0
-text = "Watch out for dangerous towers! 
-You only need to destroy green ones, but 
-you can destroy dangerous ones if they give you trouble"
-
 [node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("7_cc5tm")]
 position = Vector2(1024, 320)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=222653212]
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 416.0
+theme = ExtResource("8_mj76i")
+theme_override_font_sizes/normal_font_size = 35
+text = "Watch out for dangerous towers! 
+
+You only need to destroy green ones, but you can destroy dangerous ones if they give you trouble"
+horizontal_alignment = 1
+vertical_alignment = 1

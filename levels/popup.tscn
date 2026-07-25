@@ -84,10 +84,12 @@ texture_normal = ExtResource("6_mtlko")
 texture_pressed = ExtResource("7_m0lxr")
 
 [node name="previous" type="TextureButton" parent="." unique_id=1593440582]
-offset_left = -157.0
-offset_top = 48.0
-offset_right = -93.0
-offset_bottom = 112.0
+offset_left = -87.0
+offset_top = 47.0
+offset_right = -23.0
+offset_bottom = 111.0
+rotation = -6.2831855
+scale = Vector2(-1, 1)
 theme = ExtResource("8_mtlko")
 texture_normal = ExtResource("6_mtlko")
 texture_pressed = ExtResource("7_m0lxr")

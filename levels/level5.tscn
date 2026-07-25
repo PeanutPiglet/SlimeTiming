@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="4_s216a"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_0dsjn"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_ldkys"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="7_ldkys"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="7_ldkys"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="8_dm5g0"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_s216a")
@@ -44,13 +45,19 @@ texture = ExtResource("6_ldkys")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=872991252]
-offset_left = 192.0
-offset_top = 96.0
-offset_right = 680.0
-offset_bottom = 200.0
-text = "Try using your new slime with W to make it through!
-"
-
 [node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("7_ldkys")]
 position = Vector2(1024, 320)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=609899404]
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 800.0
+offset_bottom = 224.0
+theme = ExtResource("8_dm5g0")
+theme_override_font_sizes/normal_font_size = 35
+text = "You got a new slime! 
+they explode into a shield in a 3x3 area when activated
+
+Check the controls on the right!"
+horizontal_alignment = 1
+vertical_alignment = 1

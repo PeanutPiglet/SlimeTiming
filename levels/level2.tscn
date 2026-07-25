@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_g1dg4"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="4_g1dg4"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="5_s1bpp"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="6_s1bpp"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="6_s1bpp"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="7_76ugp"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_qyb5k")
@@ -42,12 +43,18 @@ texture = ExtResource("5_s1bpp")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=538844376]
-offset_left = 96.0
-offset_top = 160.0
-offset_right = 808.0
-offset_bottom = 264.0
-text = "You can have many slimes at once!"
-
 [node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("6_s1bpp")]
 position = Vector2(1024, 320)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1455776169]
+offset_left = 96.0
+offset_top = 96.0
+offset_right = 704.0
+offset_bottom = 288.0
+theme = ExtResource("7_76ugp")
+theme_override_font_sizes/normal_font_size = 35
+text = "You can have many slimes at once! 
+
+Try to get 3 Stars by using few slimes and winning fast!"
+horizontal_alignment = 1
+vertical_alignment = 1

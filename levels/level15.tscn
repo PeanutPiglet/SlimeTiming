@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://comwdvb5utsao" path="res://towers/strongbase.tscn" id="4_ck5vp"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_3045h"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_841x3"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="7_841x3"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="7_841x3"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="8_aradp"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_jfr8v")
-min_beats = null
-min_troops = null
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_ck5vp")]
 z_index = -1000
@@ -48,3 +47,13 @@ region_rect = Rect2(0, 0, 1152, 640)
 
 [node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("7_841x3")]
 position = Vector2(1024, 320)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=638459435]
+offset_left = 192.0
+offset_right = 704.0
+offset_bottom = 288.0
+theme = ExtResource("8_aradp")
+theme_override_font_sizes/normal_font_size = 35
+text = "Another new slime! they increase damage by 1 in a large area!"
+horizontal_alignment = 1
+vertical_alignment = 1
