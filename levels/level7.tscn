@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="4_jt2a3"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_f5oyx"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_jt2a3"]
+[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="7_jt2a3"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_iqepm")
@@ -50,3 +51,6 @@ position = Vector2(576, 320)
 texture = ExtResource("6_jt2a3")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("7_jt2a3")]
+position = Vector2(1024, 320)

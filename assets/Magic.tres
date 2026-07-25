@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dlua00gbmh0tc"]
+
+[ext_resource type="FontFile" uid="uid://bqo0l3japd41f" path="res://assets/QuiteMagicalRegular-8VA2.ttf" id="1_bryxs"]
+
+[resource]
+default_font = ExtResource("1_bryxs")
+default_font_size = 25
