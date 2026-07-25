@@ -27,13 +27,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
-		if level_selector:
-			pass
-		elif active_level:
-			active_level.queue_free()
-			level_selector = level_selector_scene.instantiate()
-			add_child(level_selector)
+		toggle_selector()
 
+func toggle_selector():
+	if level_selector:
+		level_selector.queue_free()
+	else:
+		level_selector = level_selector_scene.instantiate()
+		add_child(level_selector)
 
 func _on_timer_timeout():
 	beat_counter += 1
