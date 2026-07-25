@@ -50,10 +50,14 @@ func load_level(level_path: String):
 	}
 	active_level.allowed_troops = allowed_troops
 	active_level.win_host_callback = next_level
+	active_level.restart_callback = restart_level
 	
 	add_child(active_level)
 	
-
+func restart_level():
+	var next_level_path = "res://levels/level" + str(current_level) + ".tscn"
+	load_level(next_level_path)
+	
 func next_level():
 	current_level += 1
 	if current_level <= TOTAL_LEVELS:
@@ -61,4 +65,6 @@ func next_level():
 		load_level(next_level_path)
 	else:
 		get_tree().change_scene_to_file(END_SCREEN)
+
+
 		

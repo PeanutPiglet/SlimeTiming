@@ -4,6 +4,7 @@ class_name GameLevel extends Node2D
 var beattime:float;
 var allowed_troops:Dictionary[int, bool];
 var win_host_callback:Callable;
+var restart_callback:Callable;
 
 @onready var grid: TileMapLayer = $Grid
 
@@ -61,9 +62,10 @@ func _process(_delta):
 			spawn(4)
 	
 	if Input.is_action_just_pressed("reload"):
-		get_tree().reload_current_scene()
+		restart_callback.call()
 	if Input.is_action_just_pressed("escape"):
-		get_tree().change_scene_to_file("res://levels/menus/level_select_screen.tscn")
+		#PLS FIX!!!!
+		pass
 
 func spawn(type):
 	if not allowed_troops[type]:
