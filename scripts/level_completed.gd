@@ -6,9 +6,7 @@ func _ready():
 	updateFurthest()
 	
 func updateFurthest():
-	var current = get_tree().current_scene.scene_file_path
-	if(current.to_int() is int):
-		current= current.to_int()
-		
+	var current = get_tree().current_scene.current_level
 	if(current is int && furthest<current):
+		print("CHECKPOINT ", current)
 		furthest = current

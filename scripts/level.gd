@@ -145,6 +145,7 @@ func find_path():
 
 func win():
 	print("time:", time_counter, "spawn:", spawn_counter)
+	LevelCompleted.updateFurthest()
 	win_host_callback.call()
 	
 	
