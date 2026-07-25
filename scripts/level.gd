@@ -13,7 +13,7 @@ const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
 const C_TROOP_SCENE = preload("res://troops/cross_troop.tscn")
 const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
 
-@export var min_beats:int = 1000
+@export var min_beats:int = 100
 @export var min_troops:int = 100
 
 var troop_list: Node2D
@@ -29,7 +29,7 @@ func _ready():
 	
 	troop_list = Node2D.new()
 	add_child(troop_list)
-
+	$Sidebar.update(min_troops, spawn_counter, min_beats, time_counter)
 	find_path()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -121,6 +121,7 @@ func beat():
 	if counting:
 		time_counter += 1
 	print("time:", time_counter, "spawn:", spawn_counter)
+	$Sidebar.update(min_troops, spawn_counter, min_beats, time_counter)
 
 func get_towers():
 	return $tower_list.get_children()

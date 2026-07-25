@@ -12,7 +12,6 @@ func _ready():
 		$cross.visible = true
 	if level >= 15: 
 		$boost.visible = true
-	update(1,2,2,1)
 	
 	
 func update(maxt,troop, maxb, beats):

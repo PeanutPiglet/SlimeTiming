@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1vtkvgigcsvp"]
+[gd_scene format=3 uid="uid://chorypnox8uxp"]
 
 [ext_resource type="Script" uid="uid://joldxcfmycve" path="res://common/sidebar.gd" id="1_geqne"]
 [ext_resource type="Texture2D" uid="uid://dwvu21buvn44k" path="res://assets/sidebar1.png" id="1_ksp2n"]
@@ -135,6 +135,7 @@ Activate with
 Shift + q or 1 or A"
 
 [node name="defense" type="Node2D" parent="." unique_id=1122954073]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="defense" unique_id=529749863]
 position = Vector2(-70, -20)
@@ -153,6 +154,7 @@ Activate with
 Shift + W or 2 or S"
 
 [node name="cross" type="Node2D" parent="." unique_id=1050518950]
+visible = false
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="cross" unique_id=147380409]
 position = Vector2(-70, 116)
@@ -171,6 +173,7 @@ Activate with
 Shift + E or 3 or D"
 
 [node name="boost" type="Node2D" parent="." unique_id=1805860286]
+visible = false
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="boost" unique_id=649359359]
 position = Vector2(-73, 229)
