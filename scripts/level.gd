@@ -155,7 +155,6 @@ func win():
 	print([true,min_troops >= spawn_counter,time_counter <= min_beats])
 	LevelCompleted.updateFurthest(scene_file_path.to_int(), [true,min_troops >= spawn_counter,time_counter <= min_beats])
 	print("time:", time_counter, "spawn:", spawn_counter)
-	LevelCompleted.updateFurthest()
 	win_host_callback.call()
 	
 	
