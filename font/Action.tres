@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bennoirdf5pl2"]
+
+[ext_resource type="FontFile" uid="uid://do3ekmvsagx75" path="res://font/Action_Man.ttf" id="1_nox84"]
+
+[resource]
+default_font = ExtResource("1_nox84")
+default_font_size = 19

@@ -24,7 +24,7 @@ func update(maxt,troop, maxb, beats):
 		b = 0
 		$star2.visible = false
 	
-	$Troops.text = "Troops left for star: " + str(t)
-	$Beats.text = "Beats left for star: " + str(b)
+	$Troops.text = "Troops for star: " + str(t)
+	$Beats.text = "Beats for star: " + str(b)
 	
 	

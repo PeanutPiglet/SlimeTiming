@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cweqs4c4uco55" path="res://assets/buttons/restart_button/restart_pressed.png" id="6_captd"]
 [ext_resource type="Texture2D" uid="uid://cl2168gbsvy7k" path="res://assets/buttons/next_button/next_noraml.png" id="6_mtlko"]
 [ext_resource type="Texture2D" uid="uid://mdw85k16fapl" path="res://assets/buttons/next_button/next_pressed.png" id="7_m0lxr"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="8_mtlko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mejo"]
 atlas = ExtResource("3_ulybg")
@@ -37,69 +38,69 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="SystemFont" id="SystemFont_oodjo"]
-subpixel_positioning = 0
-
 [node name="Popup" type="Node2D" unique_id=1956957411]
 z_index = 100
-scale = Vector2(2, 2)
 script = ExtResource("1_vfibl")
 
 [node name="background" type="Sprite2D" parent="." unique_id=278535552]
+scale = Vector2(2, 2)
 texture = ExtResource("2_i6by5")
 
 [node name="star1" type="AnimatedSprite2D" parent="." unique_id=884254089]
-position = Vector2(-3, -16)
+position = Vector2(-6, -32)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
 frame_progress = 1.0
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1282754466]
-position = Vector2(59, -7)
+position = Vector2(118, -14)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
 frame_progress = 1.0
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=397890098]
-position = Vector2(-63, -7)
+position = Vector2(-126, -14)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
 frame_progress = 1.0
 
 [node name="restart" type="TextureButton" parent="." unique_id=1738587376]
-offset_left = -16.0
-offset_top = 21.0
-offset_right = 48.0
-offset_bottom = 85.0
-scale = Vector2(0.5, 0.5)
+offset_left = -31.0
+offset_top = 48.0
+offset_right = 33.0
+offset_bottom = 112.0
 texture_normal = ExtResource("5_1mejo")
 texture_pressed = ExtResource("6_captd")
 
 [node name="next" type="TextureButton" parent="." unique_id=1312201741]
-offset_left = 77.0
-offset_top = 23.0
-offset_right = 141.0
-offset_bottom = 87.0
-scale = Vector2(0.5, 0.5)
+offset_left = 90.0
+offset_top = 48.0
+offset_right = 154.0
+offset_bottom = 112.0
 texture_normal = ExtResource("6_mtlko")
 texture_pressed = ExtResource("7_m0lxr")
 
 [node name="previous" type="TextureButton" parent="." unique_id=1593440582]
-offset_left = -76.0
-offset_top = 23.0
-offset_right = -12.0
-offset_bottom = 87.0
-scale = Vector2(-0.5, 0.5)
+offset_left = -157.0
+offset_top = 48.0
+offset_right = -93.0
+offset_bottom = 112.0
+theme = ExtResource("8_mtlko")
 texture_normal = ExtResource("6_mtlko")
 texture_pressed = ExtResource("7_m0lxr")
 
-[node name="levelN" type="RichTextLabel" parent="." unique_id=1529612444]
-offset_left = -29.0
-offset_top = -64.0
-offset_right = 38.0
-offset_bottom = -23.0
-theme_override_fonts/normal_font = SubResource("SystemFont_oodjo")
-text = "Level N"
+[node name="levelN" type="RichTextLabel" parent="." unique_id=540786031]
+offset_left = -128.0
+offset_top = -108.0
+offset_right = 128.0
+offset_bottom = -76.0
+theme = ExtResource("8_mtlko")
+theme_override_font_sizes/normal_font_size = 35
+text = "level N"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]

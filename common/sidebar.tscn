@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://joldxcfmycve" path="res://common/sidebar.gd" id="1_geqne"]
 [ext_resource type="Texture2D" uid="uid://dwvu21buvn44k" path="res://assets/sidebar1.png" id="1_ksp2n"]
 [ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_cvd14"]
-[ext_resource type="Theme" uid="uid://dlua00gbmh0tc" path="res://assets/Magic.tres" id="4_i141i"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="4_i141i"]
 [ext_resource type="Texture2D" uid="uid://vx7pbrei3j5l" path="res://assets/stars.png" id="5_ksp2n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so385"]
@@ -119,15 +119,15 @@ metadata/_edit_lock_ = true
 [node name="explode" type="Node2D" parent="." unique_id=144168104]
 
 [node name="slime" type="AnimatedSprite2D" parent="explode" unique_id=403434904]
-position = Vector2(-69, -142)
+position = Vector2(-80, -136)
 sprite_frames = SubResource("SpriteFrames_0xmcs")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="explode" unique_id=404675642]
-offset_left = -25.0
-offset_top = -175.0
-offset_right = 110.0
-offset_bottom = -98.0
+offset_left = -40.0
+offset_top = -167.0
+offset_right = 120.0
+offset_bottom = -85.0
 theme = ExtResource("4_i141i")
 text = "Summon with q 
 
@@ -138,15 +138,15 @@ Shift + q or 1 or A"
 visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="defense" unique_id=529749863]
-position = Vector2(-70, -20)
+position = Vector2(-80, -24)
 sprite_frames = SubResource("SpriteFrames_hkp47")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="defense" unique_id=1285986759]
-offset_left = -22.0
-offset_top = -47.0
-offset_right = 113.0
-offset_bottom = 30.0
+offset_left = -42.0
+offset_top = -48.0
+offset_right = 126.0
+offset_bottom = 29.0
 theme = ExtResource("4_i141i")
 text = "Summon with W
 
@@ -157,15 +157,15 @@ Shift + W or 2 or S"
 visible = false
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="cross" unique_id=147380409]
-position = Vector2(-70, 116)
+position = Vector2(-80, 112)
 sprite_frames = SubResource("SpriteFrames_jwswx")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="cross" unique_id=96182149]
-offset_left = -21.0
-offset_top = 79.0
-offset_right = 114.0
-offset_bottom = 156.0
+offset_left = -43.0
+offset_top = 80.0
+offset_right = 125.0
+offset_bottom = 157.0
 theme = ExtResource("4_i141i")
 text = "Summon with E
 
@@ -176,14 +176,14 @@ Shift + E or 3 or D"
 visible = false
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="boost" unique_id=649359359]
-position = Vector2(-73, 229)
+position = Vector2(-83, 219)
 sprite_frames = SubResource("SpriteFrames_1olay")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="boost" unique_id=2124938839]
-offset_left = -20.0
+offset_left = -44.0
 offset_top = 191.0
-offset_right = 115.0
+offset_right = 123.0
 offset_bottom = 268.0
 theme = ExtResource("4_i141i")
 text = "Summon with R
@@ -192,40 +192,40 @@ Activate with
 Shift + R or 4 or F"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=8766539]
-offset_left = -113.0
-offset_top = -306.0
-offset_right = 82.0
-offset_bottom = -229.0
+offset_left = -120.0
+offset_top = -304.0
+offset_right = 96.0
+offset_bottom = -227.0
 theme = ExtResource("4_i141i")
 text = "Destroy green towers"
 
 [node name="Beats" type="RichTextLabel" parent="." unique_id=1175343161]
-offset_left = -107.0
-offset_top = -223.0
-offset_right = 88.0
-offset_bottom = -191.0
+offset_left = -120.0
+offset_top = -216.0
+offset_right = 80.0
+offset_bottom = -184.0
 theme = ExtResource("4_i141i")
 text = "Beats Left: "
 
 [node name="Troops" type="RichTextLabel" parent="." unique_id=1474357132]
-offset_left = -108.0
-offset_top = -265.0
-offset_right = 87.0
-offset_bottom = -232.0
+offset_left = -120.0
+offset_top = -264.0
+offset_right = 80.0
+offset_bottom = -231.0
 theme = ExtResource("4_i141i")
 text = "Troops Left:"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=168781169]
-position = Vector2(101.00001, -299)
+position = Vector2(104, -296)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1207717911]
-position = Vector2(102, -253)
+position = Vector2(104, -256)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=594928605]
-position = Vector2(103, -212)
+position = Vector2(104, -208)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
