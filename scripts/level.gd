@@ -1,4 +1,4 @@
-@abstract class_name GameLevel extends Node2D
+class_name GameLevel extends Node2D
 
 # set by host
 var beattime:float;
@@ -41,21 +41,29 @@ func _process(_delta):
 		activate(3)
 	if Input.is_action_just_pressed("act4"):
 		activate(4)
-	if Input.is_action_just_pressed("spawn1"):
-		spawn(1)
-	if Input.is_action_just_pressed("spawn2"):
-		spawn(2)
-	if Input.is_action_just_pressed("spawn3"):
-		spawn(3)
-	if Input.is_action_just_pressed("spawn4"):
-		spawn(4)
+	if Input.is_action_pressed("active"):
+		if Input.is_action_just_pressed("spawn1"):
+			activate(1)
+		if Input.is_action_just_pressed("spawn2"):
+			activate(2)
+		if Input.is_action_just_pressed("spawn3"):
+			activate(3)
+		if Input.is_action_just_pressed("spawn4"):
+			activate(4)
+	else:
+		if Input.is_action_just_pressed("spawn1"):
+			spawn(1)
+		if Input.is_action_just_pressed("spawn2"):
+			spawn(2)
+		if Input.is_action_just_pressed("spawn3"):
+			spawn(3)
+		if Input.is_action_just_pressed("spawn4"):
+			spawn(4)
 	
-	if Input.is_action_just_pressed("ui_down"):
-		activate(1)
-	if Input.is_action_just_pressed("ui_right"):
-		win()
 	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://levels/menus/level_select_screen.tscn")
 
 func spawn(type):
 	if not allowed_troops[type]:

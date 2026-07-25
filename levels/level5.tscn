@@ -42,3 +42,11 @@ position = Vector2(576, 320)
 texture = ExtResource("6_ldkys")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=872991252]
+offset_left = 192.0
+offset_top = 96.0
+offset_right = 680.0
+offset_bottom = 200.0
+text = "Try using your new slime with W to make it through!
+"

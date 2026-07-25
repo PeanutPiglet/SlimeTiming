@@ -49,3 +49,12 @@ position = Vector2(576, 320)
 texture = ExtResource("6_cc5tm")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1142322449]
+offset_left = 448.0
+offset_top = 160.0
+offset_right = 896.0
+offset_bottom = 264.0
+text = "Watch out for dangerous towers! 
+You only need to destroy green ones, but 
+you can destroy dangerous ones if they give you trouble"
