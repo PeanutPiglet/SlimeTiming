@@ -39,9 +39,10 @@ func load_level(level_path: String):
 	if active_level:
 		active_level.queue_free()
 	
-	active_level = level.instantiate()
+	var instance = level.instantiate()
+	active_level = instance as GameLevel
 	active_level.beattime = beattime
-	var allowed_troops = {
+	var allowed_troops:Dictionary[int, bool] = {
 		1: true,
 		2: current_level >= 5,
 		3: current_level >= 10,

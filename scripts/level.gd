@@ -1,4 +1,4 @@
-@abstract class_name GameLevel extends Node2D
+class_name GameLevel extends Node2D
 
 # set by host
 var beattime:float;
