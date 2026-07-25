@@ -45,7 +45,7 @@ func _on_timer_timeout():
 		active_level.beat()
 
 
-func load_level(level_path: String):
+func load_level(level_path: String, new_level_id: int = -1):
 	if level_selector:
 		level_selector.queue_free()
 	
@@ -69,6 +69,8 @@ func load_level(level_path: String):
 	active_level.win_host_callback = $Popup.activate
 	active_level.restart_callback = restart_level
 	
+	if new_level_id >= 0:
+		current_level = new_level_id
 	add_child(active_level)
 	
 func restart_level():

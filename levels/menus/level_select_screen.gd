@@ -7,7 +7,7 @@ func _ready():
 		var node = str(i)
 		get_node(node).set_visible(false)
 		
-	for i in range (1, LevelCompleted.furthest+1):
+	for i in range (1, LevelCompleted.furthest + 1 + 1):
 		var node = str(i)
 		if(i!=21):
 			get_node(node).set_visible(true)
@@ -22,4 +22,4 @@ func _physics_process(_delta):
 		get_tree().change_scene_to_file("res://scenes/menus/main.tscn")
 func _on_start_pressed(name):
 	var file = ("res://levels/level"+ str(name)+ ".tscn")
-	get_tree().current_scene.load_level(file)
+	get_tree().current_scene.load_level(file, int(name))
