@@ -29,6 +29,7 @@ func activate() -> void:
 	for star in stars_punchcard:
 		if star:
 			stars += 1
+	print(stars_punchcard, stars)
 	hide_stars()
 	
 	# set visible
@@ -40,11 +41,11 @@ func play_stars(stars) -> void:
 		$star1.visible = true
 		$star1.play()
 	if stars > 0:  # middle star
-		$star1.visible = true
-		$star1.play()
+		$star2.visible = true
+		$star2.play()
 	if stars > 2:
-		$star1.visible = true
-		$star1.play()
+		$star3.visible = true
+		$star3.play()
 
 func hide_stars() -> void:
 	$star1.visible = false
