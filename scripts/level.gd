@@ -1,10 +1,11 @@
-extends Node2D
+@abstract class_name GameLevel extends Node2D
 
-@export var beattime:float = 0.75
+# set by host
+var beattime:float;
+var allowed_troops:Dictionary[int, bool];
+var win_host_callback:Callable;
 
 @onready var grid: TileMapLayer = $Grid
-
-const TOTAL_LEVELS = 20
 
 const E_TROOP_SCENE = preload("res://troops/explode_troop.tscn")
 const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
@@ -13,8 +14,6 @@ const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
 
 @export var min_beats:int = 1000
 @export var min_troops:int = 100
-
-const END_SCREEN = "res://levels/end.tscn"
 
 var troop_list: Node2D
 
@@ -25,13 +24,6 @@ var spawn_counter = 0
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	#timer 
-	var timer = Timer.new()
-	timer.wait_time = beattime
-	timer.one_shot = false
-	timer.autostart = true
-	timer.timeout.connect(_on_timer_timeout)
-	add_child(timer)
 	
 	troop_list = Node2D.new()
 	add_child(troop_list)
@@ -66,11 +58,11 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 
 func spawn(type):
-	var level = get_tree().current_scene.scene_file_path.to_int()
-	if level != 0: 
-		if type == 2 and level < 5: return 
-		if type == 3 and level < 10: return
-		if type == 4 and level < 15: return
+	#var level = get_tree().current_scene.scene_file_path.to_int()
+	#if level != 0: 
+		#if type == 2 and level < 5: return 
+		#if type == 3 and level < 10: return
+		#if type == 4 and level < 15: return
 	
 	for i in get_troops():
 		if grid.local_to_map(i.position) == grid.local_to_map($Spawn.position):
@@ -91,8 +83,6 @@ func spawn(type):
 		counting = true
 	
 func activate(type):
-	
-		
 	for t in troop_list.get_children():
 		var correct = false
 		match type:
@@ -104,7 +94,7 @@ func activate(type):
 			t.activate()
 	
 	
-func _on_timer_timeout():
+func beat():
 	for t in get_troops():
 		t.move()
 	
@@ -151,12 +141,6 @@ func find_path():
 
 func win():
 	print("time:", time_counter, "spawn:", spawn_counter)
-	var current_scene_file = get_tree().current_scene.scene_file_path
-	var next_level = current_scene_file.to_int() + 1
-	if next_level < TOTAL_LEVELS:
-		var next_level_path = "res://levels/level" + str(next_level) + ".tscn"
-		get_tree().change_scene_to_file(next_level_path)
-	else:
-		get_tree().change_scene_to_file(END_SCREEN)
+	win_host_callback.call()
 	
 	
