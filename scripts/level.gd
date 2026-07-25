@@ -2,7 +2,6 @@ class_name GameLevel extends Node2D
 
 # set by host
 var beattime:float;
-var allowed_troops:Dictionary[int, bool];
 var win_host_callback:Callable;
 
 @onready var grid: TileMapLayer = $Grid
@@ -66,8 +65,11 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://levels/menus/level_select_screen.tscn")
 
 func spawn(type):
-	if not allowed_troops[type]:
-		return
+	var level = scene_file_path.to_int()
+	if level != 0: 
+		if type == 2 and level < 5: return 
+		if type == 3 and level < 10: return
+		if type == 4 and level < 15: return
 	
 	for i in get_troops():
 		if grid.local_to_map(i.position) == grid.local_to_map($Spawn.position):
