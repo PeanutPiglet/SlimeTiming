@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://col4rlq87npdh"]
 
 [ext_resource type="Texture2D" uid="uid://dk5qanadswldt" path="res://assets/endscreen.png" id="1_0bd6o"]
+[ext_resource type="Script" uid="uid://dnnpaurdfjhp0" path="res://scripts/end.gd" id="1_xdo5y"]
 
 [node name="End" type="Node2D" unique_id=1771090445]
+script = ExtResource("1_xdo5y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1787135397]
 position = Vector2(575.99994, 324)
