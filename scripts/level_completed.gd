@@ -10,7 +10,10 @@ func _ready():
 	updateFurthest(0, [true,true,true])
 	
 func updateFurthest(lvl, arr):
-	if lvl > furthest:
-		furthest = lvl
-	stars[lvl] = arr
+	if lvl+1 > furthest:
+		furthest = lvl+1
+	for i in range(0,3):
+		if stars[lvl][i] == false:
+			if arr[i] == true:
+				stars[lvl][i] = true
 	

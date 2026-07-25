@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://do3qopr6spesc"]
 
 [ext_resource type="Script" uid="uid://b3gptksl4eklt" path="res://levels/menus/level_select_screen.gd" id="1_aj8jj"]
+[ext_resource type="Texture2D" uid="uid://e71slywp147w" path="res://assets/smallstar.png" id="2_a5iy1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ml4q"]
 content_margin_top = 7.0
@@ -123,10 +124,10 @@ text = "Exit
 "
 
 [node name="1" type="Button" parent="." unique_id=361449180]
-offset_left = 64.0
-offset_top = 128.0
-offset_right = 173.0
-offset_bottom = 170.0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -137,9 +138,9 @@ text = "1
 
 [node name="2" type="Button" parent="." unique_id=277690846]
 offset_left = 320.0
-offset_top = 128.0
-offset_right = 429.0
-offset_bottom = 170.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -149,10 +150,10 @@ text = "2
 "
 
 [node name="3" type="Button" parent="." unique_id=182925904]
-offset_left = 560.0
-offset_top = 128.0
-offset_right = 669.0
-offset_bottom = 170.0
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -162,10 +163,10 @@ text = "3
 "
 
 [node name="4" type="Button" parent="." unique_id=1348885084]
-offset_left = 784.0
-offset_top = 128.0
-offset_right = 893.0
-offset_bottom = 170.0
+offset_left = 704.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -175,10 +176,10 @@ text = "4
 "
 
 [node name="5" type="Button" parent="." unique_id=1760535912]
-offset_left = 1008.0
-offset_top = 128.0
-offset_right = 1117.0
-offset_bottom = 170.0
+offset_left = 896.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -188,10 +189,10 @@ text = "5
 "
 
 [node name="6" type="Button" parent="." unique_id=692455669]
-offset_left = 64.0
-offset_top = 288.0
-offset_right = 173.0
-offset_bottom = 330.0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 256.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -202,9 +203,9 @@ text = "6
 
 [node name="7" type="Button" parent="." unique_id=617967238]
 offset_left = 320.0
-offset_top = 288.0
-offset_right = 429.0
-offset_bottom = 330.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 256.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -214,10 +215,10 @@ text = "7
 "
 
 [node name="8" type="Button" parent="." unique_id=730585227]
-offset_left = 560.0
-offset_top = 288.0
-offset_right = 669.0
-offset_bottom = 330.0
+offset_left = 512.0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 256.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -227,10 +228,10 @@ text = "8
 "
 
 [node name="9" type="Button" parent="." unique_id=913704208]
-offset_left = 784.0
-offset_top = 288.0
-offset_right = 893.0
-offset_bottom = 330.0
+offset_left = 704.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 256.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -240,10 +241,10 @@ text = "9
 "
 
 [node name="10" type="Button" parent="." unique_id=166604990]
-offset_left = 992.0
-offset_top = 288.0
-offset_right = 1101.0
-offset_bottom = 330.0
+offset_left = 896.0
+offset_top = 192.0
+offset_right = 1024.0
+offset_bottom = 256.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -253,10 +254,10 @@ text = "10
 "
 
 [node name="11" type="Button" parent="." unique_id=1646265885]
-offset_left = 64.0
-offset_top = 384.0
-offset_right = 173.0
-offset_bottom = 426.0
+offset_left = 128.0
+offset_top = 320.0
+offset_right = 256.0
+offset_bottom = 384.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -267,9 +268,9 @@ text = "11
 
 [node name="12" type="Button" parent="." unique_id=203225156]
 offset_left = 320.0
-offset_top = 384.0
-offset_right = 429.0
-offset_bottom = 426.0
+offset_top = 320.0
+offset_right = 448.0
+offset_bottom = 384.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -279,10 +280,10 @@ text = "12
 "
 
 [node name="13" type="Button" parent="." unique_id=1739967468]
-offset_left = 560.0
-offset_top = 384.0
-offset_right = 669.0
-offset_bottom = 426.0
+offset_left = 512.0
+offset_top = 320.0
+offset_right = 640.0
+offset_bottom = 384.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -292,10 +293,10 @@ text = "13
 "
 
 [node name="14" type="Button" parent="." unique_id=1943060642]
-offset_left = 784.0
-offset_top = 384.0
-offset_right = 893.0
-offset_bottom = 426.0
+offset_left = 704.0
+offset_top = 320.0
+offset_right = 832.0
+offset_bottom = 384.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -305,10 +306,10 @@ text = "14
 "
 
 [node name="15" type="Button" parent="." unique_id=25316328]
-offset_left = 1008.0
-offset_top = 384.0
-offset_right = 1117.0
-offset_bottom = 426.0
+offset_left = 896.0
+offset_top = 320.0
+offset_right = 1024.0
+offset_bottom = 384.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
@@ -318,68 +319,77 @@ text = "15
 "
 
 [node name="16" type="Button" parent="." unique_id=738281953]
-offset_left = 64.0
-offset_top = 480.0
-offset_right = 173.0
-offset_bottom = 522.0
+offset_left = 128.0
+offset_top = 448.0
+offset_right = 256.0
+offset_bottom = 512.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ahh04")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j7tsi")
-text = "11
+text = "16
+
 "
 
 [node name="17" type="Button" parent="." unique_id=101236533]
 offset_left = 320.0
-offset_top = 480.0
-offset_right = 429.0
-offset_bottom = 522.0
+offset_top = 448.0
+offset_right = 448.0
+offset_bottom = 512.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ahh04")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j7tsi")
-text = "12
+text = "17
+
 "
 
 [node name="18" type="Button" parent="." unique_id=1832772393]
-offset_left = 560.0
-offset_top = 480.0
-offset_right = 669.0
-offset_bottom = 522.0
+offset_left = 512.0
+offset_top = 448.0
+offset_right = 640.0
+offset_bottom = 512.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ahh04")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j7tsi")
-text = "13
+text = "18
+
 "
 
 [node name="19" type="Button" parent="." unique_id=1125940132]
-offset_left = 784.0
-offset_top = 480.0
-offset_right = 893.0
-offset_bottom = 522.0
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 832.0
+offset_bottom = 512.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ahh04")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j7tsi")
-text = "14
+text = "19
+
 "
 
 [node name="20" type="Button" parent="." unique_id=1386638851]
-offset_left = 1008.0
-offset_top = 480.0
-offset_right = 1117.0
-offset_bottom = 522.0
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1024.0
+offset_bottom = 512.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_cr8hc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovywh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mw4pd")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ahh04")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j7tsi")
-text = "15
+text = "20
+
 "
+
+[node name="Smallstar" type="Sprite2D" parent="." unique_id=879004973]
+position = Vector2(160, 128)
+texture = ExtResource("2_a5iy1")
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
