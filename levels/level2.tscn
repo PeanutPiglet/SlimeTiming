@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_g1dg4"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="4_g1dg4"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="5_s1bpp"]
+[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="6_s1bpp"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_qyb5k")
@@ -47,3 +48,6 @@ offset_top = 160.0
 offset_right = 808.0
 offset_bottom = 264.0
 text = "You can have many slimes at once!"
+
+[node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("6_s1bpp")]
+position = Vector2(1024, 320)
