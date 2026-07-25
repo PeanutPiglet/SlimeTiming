@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_1jw75"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_8s3b3"]
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="4_lpgdq"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_8s3b3"]
+[ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_cc5tm"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_lpgdq")
@@ -30,3 +32,20 @@ angles = Array[float]([180.0])
 [node name="Firetower2" parent="tower_list" unique_id=1087241375 instance=ExtResource("4_lpgdq")]
 position = Vector2(384, 320)
 angles = Array[float]([270.0])
+
+[node name="visuals" type="Node2D" parent="." unique_id=14690103]
+metadata/_edit_lock_ = true
+
+[node name="Grass" type="Sprite2D" parent="visuals" unique_id=1476063007]
+z_index = -1001
+position = Vector2(608, 384)
+texture = ExtResource("5_8s3b3")
+metadata/_edit_lock_ = true
+
+[node name="Grid2" type="Sprite2D" parent="visuals" unique_id=603907167]
+modulate = Color(1, 1, 1, 0.22352941)
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("6_cc5tm")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 640)

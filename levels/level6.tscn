@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_nnkdi"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_4m8hb"]
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="4_6ilhl"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_4m8hb"]
+[ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_6ilhl"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_j1f0n")
@@ -30,3 +32,20 @@ angles = Array[float]([180.0])
 [node name="Zaptower" parent="tower_list" unique_id=1669962692 instance=ExtResource("4_6ilhl")]
 position = Vector2(576, 256)
 angles = Array[float]([180.0])
+
+[node name="visuals" type="Node2D" parent="." unique_id=383104559]
+metadata/_edit_lock_ = true
+
+[node name="Grass" type="Sprite2D" parent="visuals" unique_id=587851304]
+z_index = -1001
+position = Vector2(608, 384)
+texture = ExtResource("5_4m8hb")
+metadata/_edit_lock_ = true
+
+[node name="Grid2" type="Sprite2D" parent="visuals" unique_id=1843042690]
+modulate = Color(1, 1, 1, 0.22352941)
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("6_6ilhl")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 640)

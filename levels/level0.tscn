@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://d2j5oolsvoady" path="res://towers/hammertower.tscn" id="7_3vj3r"]
 [ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="8_p8yh6"]
 [ext_resource type="PackedScene" uid="uid://ddwiuu2bt0d8m" path="res://towers/wind_tower.tscn" id="9_w2q2b"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="10_f3act"]
+[ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="11_cxy21"]
 
 [node name="Level1" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_7sc02")
@@ -61,3 +63,20 @@ destination = NodePath("../TowerTeleporter")
 [node name="Windtower" parent="tower_list" unique_id=1891610017 instance=ExtResource("9_w2q2b")]
 position = Vector2(1024, 64)
 angles = Array[float]([270.0])
+
+[node name="visuals" type="Node2D" parent="." unique_id=11848216]
+metadata/_edit_lock_ = true
+
+[node name="Grass" type="Sprite2D" parent="visuals" unique_id=121485005]
+z_index = -1001
+position = Vector2(608, 384)
+texture = ExtResource("10_f3act")
+metadata/_edit_lock_ = true
+
+[node name="Grid2" type="Sprite2D" parent="visuals" unique_id=1075015456]
+modulate = Color(1, 1, 1, 0.22352941)
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("11_cxy21")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 640)
