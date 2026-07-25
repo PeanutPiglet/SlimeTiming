@@ -28,8 +28,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
 		if level_selector:
-			level_selector.queue_free()
-		else:
+			pass
+		elif active_level:
+			active_level.queue_free()
 			level_selector = level_selector_scene.instantiate()
 			add_child(level_selector)
 

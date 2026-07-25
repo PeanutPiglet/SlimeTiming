@@ -24,9 +24,6 @@ func _ready():
 
 func _on_exit_pressed():
 	get_tree().change_scene_to_file("res://scenes/menus/main.tscn")
-func _physics_process(_delta):
-	if(Input.is_action_just_pressed("escape")):
-		get_tree().change_scene_to_file("res://scenes/menus/main.tscn")
 func _on_start_pressed(name):
 	var file = ("res://levels/level"+ str(name)+ ".tscn")
 	get_tree().current_scene.load_level(file, int(name))

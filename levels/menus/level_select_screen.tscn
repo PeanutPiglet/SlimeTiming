@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://do3qopr6spesc"]
 
 [ext_resource type="Script" uid="uid://b3gptksl4eklt" path="res://levels/menus/level_select_screen.gd" id="1_aj8jj"]
-[ext_resource type="Texture2D" uid="uid://e71slywp147w" path="res://assets/smallstar.png" id="2_a5iy1"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="2_a5iy1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ml4q"]
 content_margin_top = 7.0
@@ -109,6 +109,10 @@ shadow_offset = Vector2(10, 4)
 
 [node name="LevelSelect" type="Node2D" unique_id=1595574472]
 script = ExtResource("1_aj8jj")
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=505362016]
+position = Vector2(544, 352)
+texture = ExtResource("2_a5iy1")
 
 [node name="exit" type="Button" parent="." unique_id=1196058293]
 offset_left = 25.0
@@ -387,9 +391,5 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_j7tsi")
 text = "20
 
 "
-
-[node name="Smallstar" type="Sprite2D" parent="." unique_id=879004973]
-position = Vector2(160, 128)
-texture = ExtResource("2_a5iy1")
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
