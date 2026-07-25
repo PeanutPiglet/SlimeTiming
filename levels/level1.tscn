@@ -37,3 +37,12 @@ position = Vector2(576, 320)
 texture = ExtResource("5_pdpul")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=504373882]
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 736.0
+offset_bottom = 184.0
+text = "Summon Your Slime with Q 
+Detonate with SHIFT+Q or A or 1  When you think your Slime is next to the enemy tower
+"

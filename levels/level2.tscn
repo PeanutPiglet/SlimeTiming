@@ -40,3 +40,10 @@ position = Vector2(576, 320)
 texture = ExtResource("5_s1bpp")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=538844376]
+offset_left = 96.0
+offset_top = 160.0
+offset_right = 808.0
+offset_bottom = 264.0
+text = "You can have many slimes at once!"
