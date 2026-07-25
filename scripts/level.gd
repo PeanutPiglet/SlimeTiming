@@ -63,9 +63,6 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("reload"):
 		restart_callback.call()
-	if Input.is_action_just_pressed("escape"):
-		#PLS FIX!!!!
-		pass
 
 func spawn(type):
 	if not allowed_troops[type]:
