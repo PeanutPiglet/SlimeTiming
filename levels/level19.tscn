@@ -48,3 +48,17 @@ position = Vector2(576, 320)
 texture = ExtResource("6_0ilef")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 640)
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=45315353]
+z_index = -1001
+position = Vector2(608, 384)
+texture = ExtResource("5_f2ep2")
+metadata/_edit_lock_ = true
+
+[node name="Grid2" type="Sprite2D" parent="." unique_id=1554140623]
+modulate = Color(1, 1, 1, 0.22352941)
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("6_0ilef")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 640)

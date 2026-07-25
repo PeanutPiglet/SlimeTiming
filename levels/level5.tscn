@@ -22,9 +22,6 @@ position = Vector2(160, 416)
 [node name="Base" parent="tower_list" unique_id=2088341078 instance=ExtResource("3_0dsjn")]
 position = Vector2(704, 448)
 
-[node name="Base2" parent="tower_list" unique_id=1757711936 instance=ExtResource("3_0dsjn")]
-position = Vector2(512, 448)
-
 [node name="Firetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("4_s216a")]
 position = Vector2(576, 256)
 angles = Array[float]([270.0])

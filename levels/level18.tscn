@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="4_0jg26"]
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_wmygf"]
 [ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="6_3yipn"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="7_3yipn"]
+[ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="8_ljohf"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_6j7hd")
@@ -16,7 +18,7 @@ tile_map_data = PackedByteArray("AAACAAMAAAADAAAAAGADAAMAAAADAAEAAFAJAAkAAAADAAE
 metadata/_edit_lock_ = true
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1990253497]
-position = Vector2(544, 96)
+position = Vector2(160, 224)
 
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
@@ -37,3 +39,18 @@ destination = NodePath("../TowerTeleporter")
 
 [node name="Firetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("5_wmygf")]
 position = Vector2(768, 448)
+angles = Array[float]([270.0])
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=1035555915]
+z_index = -1001
+position = Vector2(608, 384)
+texture = ExtResource("7_3yipn")
+metadata/_edit_lock_ = true
+
+[node name="Grid2" type="Sprite2D" parent="." unique_id=663662766]
+modulate = Color(1, 1, 1, 0.22352941)
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("8_ljohf")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 640)

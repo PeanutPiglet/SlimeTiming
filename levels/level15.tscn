@@ -4,9 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_ck5vp"]
 [ext_resource type="PackedScene" uid="uid://ccsn6t30diomv" path="res://towers/strongestbase.tscn" id="3_t8d5p"]
 [ext_resource type="PackedScene" uid="uid://comwdvb5utsao" path="res://towers/strongbase.tscn" id="4_ck5vp"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_3045h"]
+[ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_841x3"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_jfr8v")
+beattime = null
+min_beats = null
+min_troops = null
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_ck5vp")]
 z_index = -1000
@@ -26,3 +31,17 @@ position = Vector2(576, 448)
 
 [node name="Strongbase2" parent="tower_list" unique_id=14804887 instance=ExtResource("4_ck5vp")]
 position = Vector2(384, 384)
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=192161145]
+z_index = -1001
+position = Vector2(608, 384)
+texture = ExtResource("5_3045h")
+metadata/_edit_lock_ = true
+
+[node name="Grid2" type="Sprite2D" parent="." unique_id=1874534525]
+modulate = Color(1, 1, 1, 0.22352941)
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("6_841x3")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 640)

@@ -34,6 +34,7 @@ position = Vector2(576, 384)
 
 [node name="Zaptower3" parent="tower_list" unique_id=136459695 instance=ExtResource("4_pne10")]
 position = Vector2(320, 256)
+angles = Array[float]([180.0])
 actioncounter = 1
 
 [node name="Zaptower4" parent="tower_list" unique_id=146847847 instance=ExtResource("4_pne10")]

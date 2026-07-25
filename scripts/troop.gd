@@ -90,6 +90,7 @@ func take_damage(d:int):
 			
 func pause_increment(delta: int):
 	pause_counter += delta
+	$AnimatedSprite2D.modulate.a = 1
 		
 func on_death():
 	var fx = fx_death.instantiate()

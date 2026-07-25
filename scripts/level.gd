@@ -11,6 +11,8 @@ const D_TROOP_SCENE = preload("res://troops/defense_troop.tscn")
 const C_TROOP_SCENE = preload("res://troops/cross_troop.tscn")
 const B_TROOP_SCENE = preload("res://troops/booster_troop.tscn")
 
+@export var min_beats:int = 1000
+@export var min_troops:int = 100
 
 const END_SCREEN = "res://levels/end.tscn"
 
@@ -64,6 +66,12 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 
 func spawn(type):
+	var level = get_tree().current_scene.scene_file_path.to_int()
+	if level != 0: 
+		if type == 2 and level < 5: return 
+		if type == 3 and level < 10: return
+		if type == 4 and level < 15: return
+	
 	for i in get_troops():
 		if grid.local_to_map(i.position) == grid.local_to_map($Spawn.position):
 			if (i.overlap):
