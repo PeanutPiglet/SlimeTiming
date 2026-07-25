@@ -22,6 +22,7 @@ var path = []
 var counting = false
 var time_counter = 0
 var spawn_counter = 0
+var won = false
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -65,6 +66,8 @@ func _process(_delta):
 		restart_callback.call()
 
 func spawn(type):
+	if won:
+		return
 	if not allowed_troops[type]:
 		return
 	
@@ -87,6 +90,8 @@ func spawn(type):
 		counting = true
 	
 func activate(type):
+	if won:
+		return
 	for t in troop_list.get_children():
 		var correct = false
 		match type:
@@ -99,6 +104,8 @@ func activate(type):
 	
 	
 func beat():
+	if won:
+		return
 	for t in get_troops():
 		t.move()
 	
@@ -144,6 +151,9 @@ func find_path():
 	return path
 
 func win():
+	won = true
+	print([true,min_troops >= spawn_counter,time_counter <= min_beats])
+	LevelCompleted.updateFurthest(scene_file_path.to_int(), [true,min_troops >= spawn_counter,time_counter <= min_beats])
 	print("time:", time_counter, "spawn:", spawn_counter)
 	LevelCompleted.updateFurthest()
 	win_host_callback.call()
