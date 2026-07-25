@@ -2,6 +2,7 @@ extends Node
 
 @export var beattime:float = 0.75
 var beat_counter = -1
+var has_timer_began = false
 
 const TOTAL_LEVELS:int = 20
 var current_level:int = 0  # note: change to 1 for release
@@ -13,16 +14,18 @@ var level_selector: Node;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#timer 
+	toggle_selector()
+
+func try_start_timer():
+	if has_timer_began:
+		return
 	var timer = Timer.new()
 	timer.wait_time = beattime
 	timer.one_shot = false
 	timer.autostart = true
 	timer.timeout.connect(_on_timer_timeout)
 	add_child(timer)
-	
-	load_level("res://levels/level" + str(current_level) + ".tscn")
-
+	has_timer_began = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -74,6 +77,7 @@ func load_level(level_path: String, new_level_id: int = -1):
 	if new_level_id >= 0:
 		current_level = new_level_id
 	add_child(active_level)
+	try_start_timer()
 	
 func restart_level():
 	var next_level_path = "res://levels/level" + str(current_level) + ".tscn"
