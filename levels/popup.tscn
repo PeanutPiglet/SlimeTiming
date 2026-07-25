@@ -38,6 +38,7 @@ animations = [{
 }]
 
 [node name="Popup" type="Node2D" unique_id=1956957411]
+z_index = 100
 scale = Vector2(2, 2)
 script = ExtResource("1_vfibl")
 
