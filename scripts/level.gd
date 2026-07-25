@@ -28,7 +28,7 @@ func _ready():
 	
 	troop_list = Node2D.new()
 	add_child(troop_list)
-	
+
 	find_path()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

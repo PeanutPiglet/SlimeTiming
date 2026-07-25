@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dw7tvqsmkb54t"]
+
+[ext_resource type="Script" uid="uid://dcdqtetdoptcs" path="res://scripts/popup.gd" id="1_vfibl"]
+[ext_resource type="Texture2D" uid="uid://q4i511v1ve25" path="res://assets/popup.png" id="2_i6by5"]
+[ext_resource type="Texture2D" uid="uid://vx7pbrei3j5l" path="res://assets/stars.png" id="3_ulybg"]
+[ext_resource type="Texture2D" uid="uid://bwfx5p2d7gvbj" path="res://assets/buttons/restart_button/restart_noraml.png" id="5_1mejo"]
+[ext_resource type="Texture2D" uid="uid://cweqs4c4uco55" path="res://assets/buttons/restart_button/restart_pressed.png" id="6_captd"]
+[ext_resource type="Texture2D" uid="uid://cl2168gbsvy7k" path="res://assets/buttons/next_button/next_noraml.png" id="6_mtlko"]
+[ext_resource type="Texture2D" uid="uid://mdw85k16fapl" path="res://assets/buttons/next_button/next_pressed.png" id="7_m0lxr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mejo"]
+atlas = ExtResource("3_ulybg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_captd"]
+atlas = ExtResource("3_ulybg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtlko"]
+atlas = ExtResource("3_ulybg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mejo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_captd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtlko")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Popup" type="Node2D" unique_id=1956957411]
+scale = Vector2(2, 2)
+script = ExtResource("1_vfibl")
+
+[node name="background" type="Sprite2D" parent="." unique_id=278535552]
+texture = ExtResource("2_i6by5")
+
+[node name="star1" type="AnimatedSprite2D" parent="." unique_id=884254089]
+position = Vector2(0, -18)
+sprite_frames = SubResource("SpriteFrames_cymu5")
+
+[node name="star2" type="AnimatedSprite2D" parent="." unique_id=1282754466]
+position = Vector2(62, -7)
+sprite_frames = SubResource("SpriteFrames_cymu5")
+
+[node name="star3" type="AnimatedSprite2D" parent="." unique_id=397890098]
+position = Vector2(-61, -7)
+sprite_frames = SubResource("SpriteFrames_cymu5")
+
+[node name="restart" type="TextureButton" parent="." unique_id=1738587376]
+offset_left = -16.0
+offset_top = 21.0
+offset_right = 48.0
+offset_bottom = 85.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_1mejo")
+texture_pressed = ExtResource("6_captd")
+
+[node name="next" type="TextureButton" parent="." unique_id=1312201741]
+offset_left = 77.0
+offset_top = 23.0
+offset_right = 141.0
+offset_bottom = 87.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_mtlko")
+texture_pressed = ExtResource("7_m0lxr")
+
+[node name="previous" type="TextureButton" parent="." unique_id=1593440582]
+offset_left = -76.0
+offset_top = 23.0
+offset_right = -12.0
+offset_bottom = 87.0
+scale = Vector2(-0.5, 0.5)
+texture_normal = ExtResource("6_mtlko")
+texture_pressed = ExtResource("7_m0lxr")
+
+[node name="levelN" type="RichTextLabel" parent="." unique_id=1529612444]
+offset_left = -29.0
+offset_top = -64.0
+offset_right = 38.0
+offset_bottom = -23.0
+text = "Level N"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]

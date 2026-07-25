@@ -56,7 +56,7 @@ func load_level(level_path: String):
 		4: current_level >= 15 or current_level == 0
 	}
 	active_level.allowed_troops = allowed_troops
-	active_level.win_host_callback = next_level
+	active_level.win_host_callback = $Popup.activate
 	active_level.restart_callback = restart_level
 	
 	add_child(active_level)
@@ -66,6 +66,7 @@ func restart_level():
 	load_level(next_level_path)
 	
 func next_level():
+	$Popup.deactivate()
 	current_level += 1
 	if current_level <= TOTAL_LEVELS:
 		var next_level_path = "res://levels/level" + str(current_level) + ".tscn"
