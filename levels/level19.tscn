@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1f2qo6m5k8js" path="res://scripts/level.gd" id="1_gjhwx"]
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_p12sf"]
 [ext_resource type="PackedScene" uid="uid://ccsn6t30diomv" path="res://towers/strongestbase.tscn" id="4_q6ydw"]
+[ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="5_0ilef"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="5_f2ep2"]
 [ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="5_nfa13"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="6_0ilef"]
@@ -15,7 +16,7 @@ min_troops = 4
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_p12sf")]
 z_index = -1000
-tile_map_data = PackedByteArray("AAAPAAkAAAADAAMAAAAQAAkAAAADAAMAAAARAAkAAAADAAMAAAARAAgAAAADAAMAAAARAAcAAAADAAMAAAARAAYAAAADAAMAAAARAAUAAAADAAMAAAARAAQAAAADAAMAAAARAAMAAAADAAMAAAARAAIAAAADAAMAAAARAAEAAAADAAMAAAARAAAAAAADAAMAAAAQAAAAAAADAAMAAAAPAAAAAAADAAMAAAAPAAcAAAADAAMAAAAPAAgAAAADAAMAAAAQAAgAAAADAAMAAAAQAAcAAAADAAMAAAAQAAYAAAADAAMAAAAQAAUAAAADAAMAAAAQAAQAAAADAAMAAAAQAAMAAAADAAMAAAAQAAIAAAADAAMAAAAQAAEAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAADAAMAAAAGAAQAAAAEAAAAAAAGAAUAAAADAAEAAAAGAAYAAAAEAAAAADAHAAYAAAADAAEAAFAIAAYAAAAEAAAAAAAEAAQAAAADAAAAAGAFAAQAAAADAAEAAFAIAAcAAAADAAEAAAAIAAgAAAADAAEAAAAIAAkAAAADAAEAAAA=")
+tile_map_data = PackedByteArray("AAAPAAkAAAADAAMAAAAQAAkAAAADAAMAAAARAAkAAAADAAMAAAARAAgAAAADAAMAAAARAAcAAAADAAMAAAARAAYAAAADAAMAAAARAAUAAAADAAMAAAARAAQAAAADAAMAAAARAAMAAAADAAMAAAARAAIAAAADAAMAAAARAAEAAAADAAMAAAARAAAAAAADAAMAAAAQAAAAAAADAAMAAAAPAAAAAAADAAMAAAAPAAcAAAADAAMAAAAPAAgAAAADAAMAAAAQAAgAAAADAAMAAAAQAAcAAAADAAMAAAAQAAYAAAADAAMAAAAQAAUAAAADAAMAAAAQAAQAAAADAAMAAAAQAAMAAAADAAMAAAAQAAIAAAADAAMAAAAQAAEAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAADAAMAAAAGAAQAAAADAAEAAFAIAAYAAAADAAEAAAAEAAQAAAADAAAAAGAFAAQAAAADAAEAAFAIAAcAAAADAAEAAAAIAAgAAAADAAEAAAAIAAkAAAADAAEAAAAHAAQAAAADAAEAAFAIAAQAAAAEAAAAAAAIAAUAAAADAAEAAAA=")
 metadata/_edit_lock_ = true
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1990253497]
@@ -24,7 +25,7 @@ position = Vector2(288, 288)
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
 [node name="TowerTeleporter" parent="tower_list" unique_id=464087738 node_paths=PackedStringArray("destination") instance=ExtResource("5_nfa13")]
-position = Vector2(512, 192)
+position = Vector2(576, 192)
 destination = NodePath("../TowerTeleporter2")
 
 [node name="TowerTeleporter2" parent="tower_list" unique_id=1671236844 node_paths=PackedStringArray("destination", "tower") instance=ExtResource("5_nfa13")]
@@ -34,6 +35,12 @@ tower = NodePath("../Strongest base")
 
 [node name="Strongest base" parent="tower_list" unique_id=2116366069 instance=ExtResource("4_q6ydw")]
 position = Vector2(320, 448)
+
+[node name="Base" parent="tower_list" unique_id=2088341078 instance=ExtResource("5_0ilef")]
+position = Vector2(320, 64)
+
+[node name="Base2" parent="tower_list" unique_id=2013148029 instance=ExtResource("5_0ilef")]
+position = Vector2(448, 320)
 
 [node name="visuals" type="Node2D" parent="." unique_id=283502484]
 metadata/_edit_lock_ = true

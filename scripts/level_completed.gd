@@ -1,6 +1,6 @@
 extends Node
 
-var furthest = 1
+var furthest = 20
 # Called when the node enters the scene tree for the first time.
 var stars = {0:[false,false,false]}
 
