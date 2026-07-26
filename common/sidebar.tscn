@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://joldxcfmycve" path="res://common/sidebar.gd" id="1_geqne"]
 [ext_resource type="Texture2D" uid="uid://dwvu21buvn44k" path="res://assets/sidebar1.png" id="1_ksp2n"]
 [ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="2_cvd14"]
+[ext_resource type="PackedScene" uid="uid://cnvmwqbsyu758" path="res://levels/menus/burger.tscn" id="2_e7nbm"]
+[ext_resource type="PackedScene" uid="uid://bptm7hqg0phtd" path="res://levels/menus/restart_button.tscn" id="3_6t1vi"]
 [ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="4_i141i"]
 [ext_resource type="Texture2D" uid="uid://vx7pbrei3j5l" path="res://assets/stars.png" id="5_ksp2n"]
 
@@ -112,11 +114,24 @@ animations = [{
 [node name="Sidebar" type="Node2D" unique_id=1662877161]
 script = ExtResource("1_geqne")
 
+[node name="Burger" parent="." unique_id=1089059563 instance=ExtResource("2_e7nbm")]
+offset_left = 54.0
+offset_top = -317.0
+offset_right = 118.0
+offset_bottom = -253.0
+
+[node name="RestartButton" parent="." unique_id=1522297315 instance=ExtResource("3_6t1vi")]
+offset_left = -11.0
+offset_top = -318.0
+offset_right = 53.0
+offset_bottom = -254.0
+
 [node name="Sidebar1" type="Sprite2D" parent="." unique_id=1213862611]
 texture = ExtResource("1_ksp2n")
 metadata/_edit_lock_ = true
 
 [node name="explode" type="Node2D" parent="." unique_id=144168104]
+position = Vector2(-3, 50)
 
 [node name="slime" type="AnimatedSprite2D" parent="explode" unique_id=403434904]
 position = Vector2(-80, -136)
@@ -174,6 +189,7 @@ Shift + E or 3 or D"
 
 [node name="boost" type="Node2D" parent="." unique_id=1805860286]
 visible = false
+position = Vector2(-3, 50)
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="boost" unique_id=649359359]
 position = Vector2(-83, 219)
@@ -192,40 +208,43 @@ Activate with
 Shift + R or 4 or F"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=8766539]
-offset_left = -124.0
-offset_top = -300.0
-offset_right = 92.0
-offset_bottom = -223.0
+offset_left = -127.0
+offset_top = -250.0
+offset_right = 89.0
+offset_bottom = -173.0
 theme = ExtResource("4_i141i")
 text = "Destroy green towers"
 
 [node name="Beats" type="RichTextLabel" parent="." unique_id=1175343161]
-offset_left = -123.0
-offset_top = -213.0
-offset_right = 86.0
-offset_bottom = -181.0
+offset_left = -126.0
+offset_top = -163.0
+offset_right = 83.0
+offset_bottom = -131.0
 theme = ExtResource("4_i141i")
 text = "Beats Left: "
 
 [node name="Troops" type="RichTextLabel" parent="." unique_id=1474357132]
-offset_left = -124.0
-offset_top = -259.0
-offset_right = 89.0
-offset_bottom = -226.0
+offset_left = -127.0
+offset_top = -209.0
+offset_right = 86.0
+offset_bottom = -176.0
 theme = ExtResource("4_i141i")
 text = "Troops Left:"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=168781169]
-position = Vector2(104, -296)
+position = Vector2(101, -246)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1207717911]
-position = Vector2(104, -208)
+position = Vector2(101, -158)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=594928605]
-position = Vector2(104, -253)
+position = Vector2(101, -203)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
+
+[connection signal="pressed" from="Burger" to="." method="_on_burger_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

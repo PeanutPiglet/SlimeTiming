@@ -12,3 +12,4 @@ stream = ExtResource("2_0o6oq")
 max_polyphony = 2
 
 [node name="Popup" parent="." unique_id=1956957411 instance=ExtResource("3_frel8")]
+visible = false

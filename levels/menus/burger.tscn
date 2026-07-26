@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cnvmwqbsyu758"]
+
+[ext_resource type="Texture2D" uid="uid://c8a0kfxo0gs3h" path="res://assets/buttons/burger_menu/burger_normal.png" id="1_vcmj2"]
+[ext_resource type="Texture2D" uid="uid://da45p6cb4f7fr" path="res://assets/buttons/burger_menu/burger_pressed.png" id="2_s3ima"]
+
+[node name="Burger" type="TextureButton" unique_id=1089059563]
+z_index = 99
+texture_normal = ExtResource("1_vcmj2")
+texture_pressed = ExtResource("2_s3ima")

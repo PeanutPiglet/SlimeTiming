@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://dcdqtetdoptcs" path="res://scripts/popup.gd" id="1_vfibl"]
 [ext_resource type="Texture2D" uid="uid://djsa0jnhw681o" path="res://assets/popup.png" id="2_i6by5"]
 [ext_resource type="Texture2D" uid="uid://vx7pbrei3j5l" path="res://assets/stars.png" id="3_ulybg"]
-[ext_resource type="Texture2D" uid="uid://bwfx5p2d7gvbj" path="res://assets/buttons/restart_button/restart_noraml.png" id="5_1mejo"]
-[ext_resource type="Texture2D" uid="uid://cweqs4c4uco55" path="res://assets/buttons/restart_button/restart_pressed.png" id="6_captd"]
-[ext_resource type="Texture2D" uid="uid://cl2168gbsvy7k" path="res://assets/buttons/next_button/next_noraml.png" id="6_mtlko"]
-[ext_resource type="Texture2D" uid="uid://mdw85k16fapl" path="res://assets/buttons/next_button/next_pressed.png" id="7_m0lxr"]
+[ext_resource type="PackedScene" uid="uid://huc2os3yyga2" path="res://levels/menus/next_button.tscn" id="4_captd"]
+[ext_resource type="PackedScene" uid="uid://bptm7hqg0phtd" path="res://levels/menus/restart_button.tscn" id="5_mtlko"]
+[ext_resource type="PackedScene" uid="uid://dou4tcx0cnuan" path="res://levels/menus/previous_button.tscn" id="6_m0lxr"]
 [ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="8_mtlko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mejo"]
@@ -67,32 +66,23 @@ sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
 frame_progress = 1.0
 
-[node name="restart" type="TextureButton" parent="." unique_id=1738587376]
-offset_left = -31.0
-offset_top = 48.0
-offset_right = 33.0
-offset_bottom = 112.0
-texture_normal = ExtResource("5_1mejo")
-texture_pressed = ExtResource("6_captd")
-
-[node name="next" type="TextureButton" parent="." unique_id=1312201741]
-offset_left = 90.0
-offset_top = 48.0
-offset_right = 154.0
-offset_bottom = 112.0
-texture_normal = ExtResource("6_mtlko")
-texture_pressed = ExtResource("7_m0lxr")
-
-[node name="previous" type="TextureButton" parent="." unique_id=1593440582]
-offset_left = -87.0
+[node name="next" parent="." unique_id=2131092750 instance=ExtResource("4_captd")]
+offset_left = 152.0
 offset_top = 47.0
-offset_right = -23.0
-offset_bottom = 111.0
-rotation = -6.2831855
-scale = Vector2(-1, 1)
-theme = ExtResource("8_mtlko")
-texture_normal = ExtResource("6_mtlko")
-texture_pressed = ExtResource("7_m0lxr")
+offset_right = 152.0
+offset_bottom = 47.0
+
+[node name="restart" parent="." unique_id=1725364385 instance=ExtResource("5_mtlko")]
+offset_left = -33.0
+offset_top = 42.0
+offset_right = -33.0
+offset_bottom = 42.0
+
+[node name="previous" parent="." unique_id=176185013 instance=ExtResource("6_m0lxr")]
+offset_left = -163.0
+offset_top = 40.0
+offset_right = -163.0
+offset_bottom = 40.0
 
 [node name="levelN" type="RichTextLabel" parent="." unique_id=540786031]
 offset_left = -128.0
@@ -104,6 +94,6 @@ theme_override_font_sizes/normal_font_size = 35
 text = "level N"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]

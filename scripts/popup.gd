@@ -8,7 +8,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("next_level"):
+		_on_next_pressed()
+	elif Input.is_action_just_pressed("previous_level"):
+		_on_previous_pressed()
+	#elif Input.is_action_just_pressed("restart"):
+		#_on_restart_pressed()
 
 func activate() -> void:
 	self.position = _get_viewport_center();

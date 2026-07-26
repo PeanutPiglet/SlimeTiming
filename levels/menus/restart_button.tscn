@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bptm7hqg0phtd"]
+
+[ext_resource type="Texture2D" uid="uid://bwfx5p2d7gvbj" path="res://assets/buttons/restart_button/restart_noraml.png" id="1_n2rn0"]
+[ext_resource type="Texture2D" uid="uid://cweqs4c4uco55" path="res://assets/buttons/restart_button/restart_pressed.png" id="2_a0b8n"]
+
+[node name="RestartButton" type="TextureButton" unique_id=1522297315]
+z_index = 99
+texture_normal = ExtResource("1_n2rn0")
+texture_pressed = ExtResource("2_a0b8n")
