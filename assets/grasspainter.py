@@ -1,6 +1,7 @@
 import sys
 from PIL import Image, ImageDraw
 import random
+from coloraid import Color
 
 im = Image.new("RGBA", size=(1280, 1280))
 

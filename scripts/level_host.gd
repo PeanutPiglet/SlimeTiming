@@ -124,6 +124,7 @@ func load_level(level_path: String, new_level_id: int = -1):
 	
 func restart_level():
 	$Popup.deactivate()
+	$RestartOverlay.activate()
 	var next_level_path = "res://levels/level" + str(current_level) + ".tscn"
 	load_level(next_level_path)
 	

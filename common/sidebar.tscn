@@ -135,115 +135,129 @@ metadata/_edit_lock_ = true
 position = Vector2(-3, 50)
 
 [node name="slime" type="AnimatedSprite2D" parent="explode" unique_id=403434904]
-position = Vector2(-80, -136)
+position = Vector2(-80, -172)
 sprite_frames = SubResource("SpriteFrames_0xmcs")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="explode" unique_id=404675642]
 offset_left = -40.0
-offset_top = -167.0
+offset_top = -203.0
 offset_right = 120.0
-offset_bottom = -85.0
+offset_bottom = -121.0
 theme = ExtResource("4_i141i")
-text = "Summon with q 
-
-Activate with 
-Shift + q or 1 or A"
+text = "Summon: [Q] 
+Activate: [Shift+Q] OR [1] or [A]"
 
 [node name="defense" type="Node2D" parent="." unique_id=1122954073]
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="defense" unique_id=529749863]
-position = Vector2(-80, -24)
+position = Vector2(-81, -56)
 sprite_frames = SubResource("SpriteFrames_hkp47")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="defense" unique_id=1285986759]
-offset_left = -42.0
-offset_top = -48.0
-offset_right = 126.0
-offset_bottom = 29.0
+offset_left = -43.0
+offset_top = -80.0
+offset_right = 125.0
+offset_bottom = -3.0
 theme = ExtResource("4_i141i")
-text = "Summon with W
-
-Activate with 
-Shift + W or 2 or S"
+text = "Summon: [W]
+Activate:
+[Shift + W] or [2] or [S]"
 
 [node name="cross" type="Node2D" parent="." unique_id=1050518950]
-visible = false
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="cross" unique_id=147380409]
-position = Vector2(-80, 112)
+position = Vector2(-80, 24)
 sprite_frames = SubResource("SpriteFrames_jwswx")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="cross" unique_id=96182149]
 offset_left = -43.0
-offset_top = 80.0
+offset_top = -8.0
 offset_right = 125.0
-offset_bottom = 157.0
+offset_bottom = 69.0
 theme = ExtResource("4_i141i")
-text = "Summon with E
-
-Activate with 
-Shift + E or 3 or D"
+text = "Summon: [E]
+Activate:
+[Shift + E] or [3] or [D]"
 
 [node name="boost" type="Node2D" parent="." unique_id=1805860286]
-visible = false
 position = Vector2(-3, 50)
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="boost" unique_id=649359359]
-position = Vector2(-83, 219)
+position = Vector2(-79, 47)
 sprite_frames = SubResource("SpriteFrames_1olay")
 autoplay = "default"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="boost" unique_id=2124938839]
-offset_left = -44.0
-offset_top = 191.0
-offset_right = 123.0
-offset_bottom = 268.0
+offset_left = -40.0
+offset_top = 19.0
+offset_right = 127.0
+offset_bottom = 96.0
 theme = ExtResource("4_i141i")
-text = "Summon with R
-
-Activate with 
-Shift + R or 4 or F"
+text = "Summon: R
+Activate: 
+[Shift + R] or [4] or [F]"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=8766539]
-offset_left = -127.0
-offset_top = -250.0
-offset_right = 89.0
-offset_bottom = -173.0
+offset_left = -113.0
+offset_top = -247.0
+offset_right = 90.0
+offset_bottom = -213.0
 theme = ExtResource("4_i141i")
-text = "Destroy green towers"
+text = "break Green towers"
 
 [node name="Beats" type="RichTextLabel" parent="." unique_id=1175343161]
-offset_left = -126.0
-offset_top = -163.0
-offset_right = 83.0
-offset_bottom = -131.0
+offset_left = -170.0
+offset_top = -185.0
+offset_right = -12.0
+offset_bottom = -146.0
 theme = ExtResource("4_i141i")
-text = "Beats Left: "
+theme_override_colors/default_color = Color(0.91579354, 0.40096954, 1.92523e-07, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "N"
+horizontal_alignment = 1
 
-[node name="Troops" type="RichTextLabel" parent="." unique_id=1474357132]
-offset_left = -127.0
-offset_top = -209.0
-offset_right = 86.0
-offset_bottom = -176.0
+[node name="BeatsText" type="RichTextLabel" parent="." unique_id=1360049157]
+offset_left = -62.0
+offset_top = -180.0
+offset_right = 70.0
+offset_bottom = -160.0
 theme = ExtResource("4_i141i")
-text = "Troops Left:"
+text = "beats left for"
+
+[node name="TroopsText" type="RichTextLabel" parent="." unique_id=1474357132]
+offset_left = -69.0
+offset_top = -213.0
+offset_right = 72.0
+offset_bottom = -197.0
+theme = ExtResource("4_i141i")
+text = "slimes left for"
+
+[node name="Troops" type="RichTextLabel" parent="." unique_id=876734949]
+offset_left = -139.0
+offset_top = -217.0
+offset_right = -43.0
+offset_bottom = -191.0
+theme = ExtResource("4_i141i")
+theme_override_colors/default_color = Color(0.91764706, 0.4, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "N"
+horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=168781169]
-position = Vector2(101, -246)
+position = Vector2(92, -242)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1207717911]
-position = Vector2(101, -158)
+position = Vector2(93, -175)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=594928605]
-position = Vector2(101, -203)
+position = Vector2(93, -208)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
