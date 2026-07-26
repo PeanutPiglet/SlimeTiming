@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cecp73e47b7hk"]
 
+[ext_resource type="Script" uid="uid://bws52q6bjc5ev" path="res://common/restart_overlay.gd" id="1_3n6go"]
 [ext_resource type="Texture2D" uid="uid://cujoitwnokvu4" path="res://assets/restart_overlay/restart_overlayaseprite.png" id="1_57l2e"]
 [ext_resource type="FontFile" uid="uid://do3ekmvsagx75" path="res://font/Action_Man.ttf" id="2_3n6go"]
 
@@ -29,11 +30,50 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_3n6go"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_85r64"]
+resource_name = "rotate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.5707963267948966]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v82se"]
+_data = {
+&"RESET": SubResource("Animation_3n6go"),
+&"rotate": SubResource("Animation_85r64")
+}
 
 [node name="RestartOverlay" type="Node2D" unique_id=469869890]
 z_index = 200
+scale = Vector2(3, 3)
+script = ExtResource("1_3n6go")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1152366320]
 sprite_frames = SubResource("SpriteFrames_cymu5")
@@ -43,7 +83,13 @@ offset_left = -126.0
 offset_top = 82.0
 offset_right = 140.0
 offset_bottom = 117.0
-theme_override_colors/default_color = Color(0.4117647, 0.41568628, 0.41568628, 1)
+theme_override_colors/default_color = Color(0.8871825, 0.8888493, 0.8888488, 1)
 theme_override_fonts/normal_font = ExtResource("2_3n6go")
 theme_override_font_sizes/normal_font_size = 20
 text = "press [P] or [↓] to restart"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=374503864]
+libraries/ = SubResource("AnimationLibrary_v82se")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

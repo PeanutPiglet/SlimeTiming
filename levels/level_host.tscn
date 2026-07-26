@@ -17,3 +17,4 @@ max_polyphony = 2
 visible = false
 
 [node name="RestartOverlay" parent="." unique_id=469869890 instance=ExtResource("4_ig25t")]
+visible = false

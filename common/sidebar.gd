@@ -24,10 +24,8 @@ func update(maxt,troop, maxb, beats):
 		b = 0
 		$star2.visible = false
 	
-	$Troops.text = "Slimes left for star: " + str(t)
-	$Beats.text = "Beats left for star: " + str(b)
-	
-	
+	$Troops.text = "%d" % t
+	$Beats.text = "%d" % b
 
 
 func _on_burger_pressed() -> void:
