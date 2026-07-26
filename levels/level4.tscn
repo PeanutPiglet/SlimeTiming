@@ -62,6 +62,7 @@ offset_left = 320.0
 offset_top = 128.0
 offset_right = 832.0
 offset_bottom = 416.0
+mouse_filter = 2
 theme = ExtResource("8_mj76i")
 theme_override_font_sizes/normal_font_size = 35
 text = "Watch out for dangerous towers! 

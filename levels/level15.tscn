@@ -54,6 +54,7 @@ position = Vector2(1024, 320)
 offset_left = 64.0
 offset_right = 704.0
 offset_bottom = 288.0
+mouse_filter = 2
 theme = ExtResource("8_aradp")
 theme_override_font_sizes/normal_font_size = 35
 text = "Another new slime! 

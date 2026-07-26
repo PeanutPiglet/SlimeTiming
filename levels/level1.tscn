@@ -49,13 +49,16 @@ position = Vector2(1024, 320)
 offset_left = 96.0
 offset_top = 8.0
 offset_right = 848.0
-offset_bottom = 256.0
+offset_bottom = 280.0
+mouse_filter = 2
 theme = ExtResource("7_8hd6v")
 theme_override_font_sizes/normal_font_size = 35
 text = "Slimes are becoming transparent over time because of the evil green towers. 
 
-Summon a slime and activate it at the perfect time when its next to the tower to explode it!
+Summon a slime and activate time when its next to the tower to explode it
 
-Check controls on the right!
+try counting down in your head to time it!
+
+Check controls on the right
 "
 horizontal_alignment = 1
