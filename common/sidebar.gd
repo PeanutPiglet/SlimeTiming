@@ -28,3 +28,10 @@ func update(maxt,troop, maxb, beats):
 	$Beats.text = "Beats left for star: " + str(b)
 	
 	
+
+
+func _on_burger_pressed() -> void:
+	get_tree().current_scene.toggle_selector()
+
+func _on_restart_button_pressed() -> void:
+	get_tree().current_scene.restart_level()

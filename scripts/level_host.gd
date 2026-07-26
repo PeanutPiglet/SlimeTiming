@@ -145,4 +145,3 @@ func previous_level():
 	else:
 		print("Error: Zeroth't level has no previous level.")
 		open_end()
-		

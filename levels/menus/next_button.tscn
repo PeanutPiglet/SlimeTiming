@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://huc2os3yyga2"]
+
+[ext_resource type="Texture2D" uid="uid://cl2168gbsvy7k" path="res://assets/buttons/next_button/next_noraml.png" id="1_sfe3w"]
+[ext_resource type="Texture2D" uid="uid://mdw85k16fapl" path="res://assets/buttons/next_button/next_pressed.png" id="2_nqgca"]
+
+[node name="NextButton" type="TextureButton" unique_id=1744743304]
+texture_normal = ExtResource("1_sfe3w")
+texture_pressed = ExtResource("2_nqgca")

@@ -8,7 +8,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if self.visible:
+		if Input.is_action_just_pressed("next_level"):
+			_on_next_pressed()
+		elif Input.is_action_just_pressed("previous_level"):
+			_on_previous_pressed()
+		#elif Input.is_action_just_pressed("restart"):
+			#_on_restart_pressed()
 
 func activate() -> void:
 	self.position = _get_viewport_center();
@@ -62,8 +68,9 @@ func _on_next_pressed() -> void:
 	get_tree().current_scene.next_level()
 
 func _on_previous_pressed() -> void:
-	self.deactivate()
-	get_tree().current_scene.previous_level()
+	if get_tree().current_scene.current_level > 0:
+		self.deactivate()
+		get_tree().current_scene.previous_level()
 
 func _get_viewport_center() -> Vector2:
 	#var scale : Vector2 = transform.get_scale()

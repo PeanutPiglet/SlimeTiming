@@ -62,7 +62,7 @@ func _process(_delta):
 		if Input.is_action_just_pressed("spawn4"):
 			spawn(4)
 	
-	if Input.is_action_just_pressed("reload"):
+	if Input.is_action_just_pressed("restart"):
 		restart_callback.call()
 
 func spawn(type):
