@@ -3,19 +3,20 @@
 [ext_resource type="Script" uid="uid://d1f2qo6m5k8js" path="res://scripts/level.gd" id="1_6j7hd"]
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_qsiuu"]
 [ext_resource type="PackedScene" uid="uid://comwdvb5utsao" path="res://towers/strongbase.tscn" id="3_0jg26"]
-[ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="4_0jg26"]
 [ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_wmygf"]
 [ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="6_3yipn"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="7_3yipn"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="8_ljohf"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="9_ljohf"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="9_ljohf"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_6j7hd")
+min_beats = 15
+min_troops = 2
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_qsiuu")]
 z_index = -1000
-tile_map_data = PackedByteArray("AAACAAMAAAADAAAAAGADAAMAAAADAAEAAFAJAAkAAAADAAEAADAPAAkAAAADAAMAAAAQAAkAAAADAAMAAAARAAkAAAADAAMAAAARAAgAAAADAAMAAAARAAcAAAADAAMAAAARAAYAAAADAAMAAAARAAUAAAADAAMAAAARAAQAAAADAAMAAAARAAMAAAADAAMAAAARAAIAAAADAAMAAAARAAEAAAADAAMAAAARAAAAAAADAAMAAAAQAAAAAAADAAMAAAAPAAAAAAADAAMAAAAEAAMAAAADAAEAAFAFAAMAAAAEAAAAAAAFAAcAAAAEAAAAADAPAAcAAAADAAMAAAAPAAgAAAADAAMAAAAQAAgAAAADAAMAAAAQAAcAAAADAAMAAAAQAAYAAAADAAMAAAAQAAUAAAADAAMAAAAQAAQAAAADAAMAAAAQAAMAAAADAAMAAAAQAAIAAAADAAMAAAAQAAEAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAADAAMAAAAJAAgAAAADAAEAADAGAAcAAAADAAEAAFAHAAcAAAADAAEAAFAIAAcAAAADAAEAAFAJAAcAAAAEAAAAAAAFAAYAAAADAAEAAAAFAAUAAAADAAEAAAAFAAQAAAADAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAAMAAAADAAAAAGADAAMAAAADAAEAAFAPAAkAAAADAAMAAAAQAAkAAAADAAMAAAARAAkAAAADAAMAAAARAAgAAAADAAMAAAARAAcAAAADAAMAAAARAAYAAAADAAMAAAARAAUAAAADAAMAAAARAAQAAAADAAMAAAARAAMAAAADAAMAAAARAAIAAAADAAMAAAARAAEAAAADAAMAAAARAAAAAAADAAMAAAAQAAAAAAADAAMAAAAPAAAAAAADAAMAAAAEAAMAAAADAAEAAFAFAAMAAAAEAAAAAAAFAAcAAAAEAAAAADAPAAcAAAADAAMAAAAPAAgAAAADAAMAAAAQAAgAAAADAAMAAAAQAAcAAAADAAMAAAAQAAYAAAADAAMAAAAQAAUAAAADAAMAAAAQAAQAAAADAAMAAAAQAAMAAAADAAMAAAAQAAIAAAADAAMAAAAQAAEAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAADAAMAAAAGAAcAAAADAAEAAFAHAAcAAAADAAEAAFAIAAcAAAAEAAAAAAAFAAYAAAADAAEAAAAFAAUAAAADAAEAAAAFAAQAAAADAAEAAAAIAAgAAAADAAEAAAAIAAkAAAADAAEAAAA=")
 metadata/_edit_lock_ = true
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1990253497]
@@ -24,10 +25,7 @@ position = Vector2(160, 224)
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
 [node name="Strongbase3" parent="tower_list" unique_id=2088341078 instance=ExtResource("3_0jg26")]
-position = Vector2(640, 384)
-
-[node name="Base" parent="tower_list" unique_id=272385497 instance=ExtResource("4_0jg26")]
-position = Vector2(256, 128)
+position = Vector2(576, 384)
 
 [node name="TowerTeleporter" parent="tower_list" unique_id=464087738 node_paths=PackedStringArray("destination", "tower") instance=ExtResource("6_3yipn")]
 position = Vector2(768, 448)

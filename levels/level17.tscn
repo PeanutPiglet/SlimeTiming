@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://comwdvb5utsao" path="res://towers/strongbase.tscn" id="3_6ffgp"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="4_4pcx1"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="5_6ffgp"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="6_6ffgp"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="6_6ffgp"]
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_sagll")
+min_beats = 20
+min_troops = 4
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_4pcx1")]
 z_index = -1000

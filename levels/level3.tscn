@@ -10,6 +10,8 @@
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_aaqj5")
+min_beats = 15
+min_troops = 4
 
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 

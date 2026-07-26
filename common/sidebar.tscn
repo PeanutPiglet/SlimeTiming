@@ -192,26 +192,26 @@ Activate with
 Shift + R or 4 or F"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=8766539]
-offset_left = -120.0
-offset_top = -304.0
-offset_right = 96.0
-offset_bottom = -227.0
+offset_left = -124.0
+offset_top = -300.0
+offset_right = 92.0
+offset_bottom = -223.0
 theme = ExtResource("4_i141i")
 text = "Destroy green towers"
 
 [node name="Beats" type="RichTextLabel" parent="." unique_id=1175343161]
-offset_left = -120.0
-offset_top = -216.0
-offset_right = 80.0
-offset_bottom = -184.0
+offset_left = -123.0
+offset_top = -213.0
+offset_right = 86.0
+offset_bottom = -181.0
 theme = ExtResource("4_i141i")
 text = "Beats Left: "
 
 [node name="Troops" type="RichTextLabel" parent="." unique_id=1474357132]
-offset_left = -120.0
-offset_top = -264.0
-offset_right = 80.0
-offset_bottom = -231.0
+offset_left = -124.0
+offset_top = -259.0
+offset_right = 89.0
+offset_bottom = -226.0
 theme = ExtResource("4_i141i")
 text = "Troops Left:"
 
@@ -221,11 +221,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1207717911]
-position = Vector2(104, -256)
+position = Vector2(104, -208)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=594928605]
-position = Vector2(104, -208)
+position = Vector2(104, -253)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n2rqo")

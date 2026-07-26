@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="5_c820m"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="6_wtim4"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="7_jvmxc"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="7_wtim4"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="7_wtim4"]
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_6mid5")
+min_beats = 13
+min_troops = 2
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_cwd2f")]
 z_index = -1000

@@ -11,6 +11,8 @@
 
 [node name="Level" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_xeoya")
+min_beats = 99
+min_troops = 99
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_4cabf")]
 z_index = -1000

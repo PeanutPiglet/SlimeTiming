@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://didd6tchmgnkh"]
 
 [ext_resource type="Script" uid="uid://d1f2qo6m5k8js" path="res://scripts/level.gd" id="1_q47jv"]
-[ext_resource type="PackedScene" uid="uid://b1vtkvgigcsvp" path="res://common/sidebar.tscn" id="2_pne10"]
+[ext_resource type="PackedScene" uid="uid://chorypnox8uxp" path="res://common/sidebar.tscn" id="2_pne10"]
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_triof"]
 [ext_resource type="PackedScene" uid="uid://bptuvu374ctg8" path="res://towers/base.tscn" id="3_qy1he"]
 [ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="4_pne10"]
@@ -10,6 +10,8 @@
 
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_q47jv")
+min_beats = 12
+min_troops = 3
 
 [node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("2_pne10")]
 position = Vector2(1024, 320)
