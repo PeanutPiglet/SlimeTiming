@@ -17,6 +17,7 @@ var end: Node;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#try_start_timer()
 	open_main()
 
 func open_main():

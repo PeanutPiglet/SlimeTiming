@@ -1,21 +1,125 @@
 [gd_scene format=3 uid="uid://col4rlq87npdh"]
 
-[ext_resource type="Texture2D" uid="uid://dk5qanadswldt" path="res://assets/endscreen.png" id="1_0bd6o"]
 [ext_resource type="Script" uid="uid://dnnpaurdfjhp0" path="res://scripts/end.gd" id="1_xdo5y"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="2_xaei0"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="3_ggwng"]
+[ext_resource type="Theme" uid="uid://d0kvhwouah0ce" path="res://font/big.tres" id="4_xpw7s"]
+[ext_resource type="Texture2D" uid="uid://d312jyfpwx3f7" path="res://assets/slimes.png" id="5_ggwng"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaei0"]
+content_margin_top = 7.0
+bg_color = Color(0.15937132, 0.5319879, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.40026933, 0.17463097, 0.006758135, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 5
+shadow_offset = Vector2(10, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggwng"]
+content_margin_top = 7.0
+bg_color = Color(0.10660196, 0.38918325, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.1764706, 0.007843138, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 6
+shadow_offset = Vector2(10, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpw7s"]
+content_margin_top = 7.0
+bg_color = Color(0.16270262, 0.5411097, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.1764706, 0.007843138, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 6
+shadow_offset = Vector2(10, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kf367"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ok7tn"]
 
 [node name="End" type="Node2D" unique_id=1771090445]
 script = ExtResource("1_xdo5y")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1787135397]
-position = Vector2(575.99994, 324)
-scale = Vector2(2.2499998, 1.265625)
-texture = ExtResource("1_0bd6o")
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1082829828]
+offset_top = 224.0
+offset_right = 1152.0
+offset_bottom = 480.0
+theme = ExtResource("4_xpw7s")
+theme_override_font_sizes/normal_font_size = 100
+text = "Thank you for 
+playing!!!"
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=749509159]
-offset_left = 320.0
-offset_top = 256.0
-offset_right = 832.0
-offset_bottom = 576.0
-text = "Go Back"
+[node name="Grass" type="Sprite2D" parent="." unique_id=440358745]
+z_index = -100
+position = Vector2(608, 192)
+texture = ExtResource("2_xaei0")
+metadata/_edit_lock_ = true
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="1" type="Button" parent="." unique_id=632906924]
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 704.0
+offset_bottom = 544.0
+theme = ExtResource("3_ggwng")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xaei0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ggwng")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xpw7s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kf367")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ok7tn")
+text = "Go back
+"
+
+[node name="Slimes" type="Sprite2D" parent="." unique_id=621089546]
+position = Vector2(192, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("5_ggwng")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Slimes2" type="Sprite2D" parent="." unique_id=560239780]
+position = Vector2(448, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("5_ggwng")
+region_enabled = true
+region_rect = Rect2(0, 128, 64, 64)
+
+[node name="Slimes3" type="Sprite2D" parent="." unique_id=742445827]
+position = Vector2(704, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("5_ggwng")
+region_enabled = true
+region_rect = Rect2(0, 192, 64, 64)
+
+[node name="Slimes4" type="Sprite2D" parent="." unique_id=69393889]
+position = Vector2(960, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("5_ggwng")
+region_enabled = true
+region_rect = Rect2(64, 64, 64, 64)
+
+[connection signal="pressed" from="1" to="." method="_on_button_button_up"]

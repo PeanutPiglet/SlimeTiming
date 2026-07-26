@@ -37,16 +37,16 @@ func activate() -> void:
 	
 	# set visible
 	self.visible = true
-	play_stars(stars)
+	play_stars(stars_punchcard)
 
-func play_stars(stars) -> void:
-	if stars > 1:
+func play_stars(stars_punchcard) -> void:
+	if stars_punchcard[0]:
 		$star1.visible = true
 		$star1.play()
-	if stars > 0:  # middle star
+	if stars_punchcard[1]:  # middle star
 		$star2.visible = true
 		$star2.play()
-	if stars > 2:
+	if stars_punchcard[2]:
 		$star3.visible = true
 		$star3.play()
 

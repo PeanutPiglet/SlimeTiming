@@ -1,16 +1,101 @@
 [gd_scene format=3 uid="uid://vne2vkx2qidt"]
 
 [ext_resource type="Script" uid="uid://dube1c6ff8cml" path="res://scripts/main_menu.gd" id="1_0ettg"]
+[ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="2_6ymyu"]
+[ext_resource type="Texture2D" uid="uid://bo4c3616o48us" path="res://assets/slimetiming.png" id="3_7rktv"]
+[ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="4_7rktv"]
+[ext_resource type="Theme" uid="uid://d0kvhwouah0ce" path="res://font/big.tres" id="5_3ye4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ye4h"]
+content_margin_top = 7.0
+bg_color = Color(0.15937132, 0.5319879, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.40026933, 0.17463097, 0.006758135, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 5
+shadow_offset = Vector2(10, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwbki"]
+content_margin_top = 7.0
+bg_color = Color(0.10660196, 0.38918325, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.1764706, 0.007843138, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 6
+shadow_offset = Vector2(10, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pppj1"]
+content_margin_top = 7.0
+bg_color = Color(0.16270262, 0.5411097, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.1764706, 0.007843138, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_size = 6
+shadow_offset = Vector2(10, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6flho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofye2"]
 
 [node name="MainMenu" type="Node2D" unique_id=307367670]
 script = ExtResource("1_0ettg")
 
-[node name="Button" type="Button" parent="." unique_id=28455932]
-offset_left = 328.0
-offset_top = 174.0
-offset_right = 701.0
-offset_bottom = 429.0
-text = "START
+[node name="Grass" type="Sprite2D" parent="." unique_id=786666676]
+position = Vector2(608, 192)
+texture = ExtResource("2_6ymyu")
+metadata/_edit_lock_ = true
+
+[node name="Slimetiming" type="Sprite2D" parent="." unique_id=502072398]
+position = Vector2(597, 251)
+texture = ExtResource("3_7rktv")
+
+[node name="1" type="Button" parent="." unique_id=892880260]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 608.0
+theme = ExtResource("4_7rktv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ye4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nwbki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pppj1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6flho")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ofye2")
+text = "Start
+
 "
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=321861730]
+offset_left = 832.0
+offset_top = 576.0
+offset_right = 1152.0
+offset_bottom = 672.0
+rotation = -0.2227048
+theme = ExtResource("5_3ye4h")
+theme_override_font_sizes/normal_font_size = 60
+text = "GMTK 2026!"
+
+[connection signal="pressed" from="1" to="." method="_on_button_button_up"]

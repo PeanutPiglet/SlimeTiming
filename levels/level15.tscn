@@ -51,12 +51,12 @@ region_rect = Rect2(0, 0, 1152, 640)
 position = Vector2(1024, 320)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=638459435]
-offset_left = 192.0
+offset_left = 64.0
 offset_right = 704.0
 offset_bottom = 288.0
 theme = ExtResource("8_aradp")
 theme_override_font_sizes/normal_font_size = 35
 text = "Another new slime! 
-they increase damage by 1 in a large area!"
+they increase damage by 1 in a large area! ANd they move 3 tiles!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
