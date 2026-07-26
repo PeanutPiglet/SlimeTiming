@@ -120,8 +120,9 @@ func beat():
 
 	if counting:
 		time_counter += 1
-	print("time:", time_counter, "spawn:", spawn_counter)
-	$Sidebar.update(min_troops, spawn_counter, min_beats, time_counter)
+	if not won:
+		print("time:", time_counter, "spawn:", spawn_counter)
+		$Sidebar.update(min_troops, spawn_counter, min_beats, time_counter)
 
 func get_towers():
 	return $tower_list.get_children()
