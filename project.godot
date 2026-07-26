@@ -14,7 +14,7 @@ config/name="GMTK2026"
 run/main_scene="uid://be37rre4os2yn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.09880219, 0.32696354, 1.4439226e-07, 1)
-boot_splash/image="uid://bo4c3616o48us"
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
