@@ -47,21 +47,21 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_i6by5")
 
 [node name="star1" type="AnimatedSprite2D" parent="." unique_id=884254089]
-position = Vector2(-6, -32)
+position = Vector2(-126, -14)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
 frame_progress = 1.0
 
 [node name="star2" type="AnimatedSprite2D" parent="." unique_id=1282754466]
-position = Vector2(118, -14)
+position = Vector2(-6, -32)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
 frame_progress = 1.0
 
 [node name="star3" type="AnimatedSprite2D" parent="." unique_id=397890098]
-position = Vector2(-126, -14)
+position = Vector2(118, -14)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cymu5")
 frame = 2
