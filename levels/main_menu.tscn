@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bo4c3616o48us" path="res://assets/slimetiming.png" id="3_7rktv"]
 [ext_resource type="Theme" uid="uid://bennoirdf5pl2" path="res://font/Action.tres" id="4_7rktv"]
 [ext_resource type="Theme" uid="uid://d0kvhwouah0ce" path="res://font/big.tres" id="5_3ye4h"]
-[ext_resource type="AudioStream" uid="uid://cre0doyd2cugx" path="res://assets/Focus.ogg" id="6_nwbki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ye4h"]
 content_margin_top = 7.0
@@ -98,11 +97,5 @@ rotation = -0.2227048
 theme = ExtResource("5_3ye4h")
 theme_override_font_sizes/normal_font_size = 60
 text = "GMTK 2026!"
-
-[node name="IntroMusic" type="AudioStreamPlayer" parent="." unique_id=892598834]
-stream = ExtResource("6_nwbki")
-volume_db = -6.0
-pitch_scale = 3.0
-parameters/looping = true
 
 [connection signal="pressed" from="1" to="." method="_on_button_button_up"]

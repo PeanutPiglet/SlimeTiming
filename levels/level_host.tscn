@@ -18,3 +18,9 @@ visible = false
 
 [node name="RestartOverlay" parent="." unique_id=469869890 instance=ExtResource("4_ig25t")]
 visible = false
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="." unique_id=2015491715]
+stream = ExtResource("2_0o6oq")
+volume_db = -6.0
+pitch_scale = 3.0
+parameters/looping = true

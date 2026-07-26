@@ -19,7 +19,3 @@ func play_game():
 func _on_button_button_up():
 	play_game()
 	
-	
-func play_intro():
-	$IntroMusic.play()
-	

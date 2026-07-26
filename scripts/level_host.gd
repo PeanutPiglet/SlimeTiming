@@ -18,17 +18,15 @@ var end: Node;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#try_start_timer()
-	open_main(true)
+	open_main()
+	$IntroMusic.play()
 
-func open_main(play_intro = false):
-	
+func open_main():
 	
 	if level_selector:
 		level_selector.queue_free()
 	main = start_scene.instantiate()
 	add_child(main)
-	if play_intro:
-		main.play_intro()
 	
 func open_end():
 	$Popup.deactivate()
@@ -42,6 +40,7 @@ func open_end():
 	add_child(end)
 	
 func main_start():
+	fade_out_intro()
 	if main:
 		main.queue_free()
 	if end:
@@ -51,6 +50,13 @@ func main_start():
 	else:
 		level_selector = level_selector_scene.instantiate()
 		add_child(level_selector)
+		
+func fade_out_intro():
+	var tween1 = create_tween()
+	tween1.tween_property($IntroMusic, "volume_db", -80, 1)
+	tween1.finished.connect($IntroMusic.stop)
+	var tween2 = create_tween()
+	tween2.tween_property($IntroMusic, "pitch_scale", 0.1, 0.5)
 		
 func try_start_timer():
 	if has_timer_began:
