@@ -18,15 +18,18 @@ var end: Node;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#try_start_timer()
-	open_main()
+	open_main(true)
 
-func open_main():
+func open_main(play_intro = false):
 	
 	
 	if level_selector:
 		level_selector.queue_free()
 	main = start_scene.instantiate()
 	add_child(main)
+	if play_intro:
+		main.play_intro()
+	
 func open_end():
 	$Popup.deactivate()
 	if level_selector:
@@ -37,8 +40,8 @@ func open_end():
 		active_level = null
 	end = END_SCREEN.instantiate()
 	add_child(end)
-func main_start():
 	
+func main_start():
 	if main:
 		main.queue_free()
 	if end:
@@ -48,6 +51,7 @@ func main_start():
 	else:
 		level_selector = level_selector_scene.instantiate()
 		add_child(level_selector)
+		
 func try_start_timer():
 	if has_timer_began:
 		return
