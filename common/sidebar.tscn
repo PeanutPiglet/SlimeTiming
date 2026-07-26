@@ -149,6 +149,7 @@ text = "Summon: [Q]
 Activate: [Shift+Q] OR [1] or [A]"
 
 [node name="defense" type="Node2D" parent="." unique_id=1122954073]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="defense" unique_id=529749863]
 position = Vector2(-81, -56)
@@ -166,6 +167,7 @@ Activate:
 [Shift + W] or [2] or [S]"
 
 [node name="cross" type="Node2D" parent="." unique_id=1050518950]
+visible = false
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="cross" unique_id=147380409]
 position = Vector2(-80, 24)
@@ -183,6 +185,7 @@ Activate:
 [Shift + E] or [3] or [D]"
 
 [node name="boost" type="Node2D" parent="." unique_id=1805860286]
+visible = false
 position = Vector2(-3, 50)
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="boost" unique_id=649359359]

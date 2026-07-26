@@ -75,8 +75,7 @@ func toggle_selector():
 		level_selector = level_selector_scene.instantiate()
 		add_child(level_selector)
 	else:
-		level_selector = level_selector_scene.instantiate()
-		add_child(level_selector)
+		return
 
 func _on_timer_timeout():
 	beat_counter += 1
