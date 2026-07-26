@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cecp73e47b7hk"]
+
+[ext_resource type="Texture2D" uid="uid://cujoitwnokvu4" path="res://assets/restart_overlay/restart_overlayaseprite.png" id="1_57l2e"]
+[ext_resource type="FontFile" uid="uid://do3ekmvsagx75" path="res://font/Action_Man.ttf" id="2_3n6go"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85r64"]
+atlas = ExtResource("1_57l2e")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85r64")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RestartOverlay" type="Node2D" unique_id=469869890]
+z_index = 200
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1152366320]
+sprite_frames = SubResource("SpriteFrames_cymu5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1194126776]
+offset_left = -126.0
+offset_top = 82.0
+offset_right = 140.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(0.4117647, 0.41568628, 0.41568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_3n6go")
+theme_override_font_sizes/normal_font_size = 20
+text = "press [P] or [↓] to restart"

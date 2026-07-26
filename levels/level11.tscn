@@ -14,6 +14,7 @@ min_beats = 12
 min_troops = 3
 
 [node name="Sidebar" parent="." unique_id=1662877161 instance=ExtResource("2_pne10")]
+z_index = 100
 position = Vector2(1024, 320)
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_triof")]
