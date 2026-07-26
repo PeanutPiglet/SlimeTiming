@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d1f2qo6m5k8js" path="res://scripts/level.gd" id="1_6j7hd"]
 [ext_resource type="PackedScene" uid="uid://b1rxcvtae7ibo" path="res://levels/grid.tscn" id="2_qsiuu"]
 [ext_resource type="PackedScene" uid="uid://comwdvb5utsao" path="res://towers/strongbase.tscn" id="3_0jg26"]
-[ext_resource type="PackedScene" uid="uid://xqoft64y02u2" path="res://towers/fire_tower.tscn" id="5_wmygf"]
+[ext_resource type="PackedScene" uid="uid://bf2cy6mf34wyl" path="res://towers/zap_tower.tscn" id="5_3yipn"]
 [ext_resource type="PackedScene" uid="uid://ceusvvbxxqo4l" path="res://special/tower_teleporter.tscn" id="6_3yipn"]
 [ext_resource type="Texture2D" uid="uid://bvvtme03me1y1" path="res://assets/grass.png" id="7_3yipn"]
 [ext_resource type="Texture2D" uid="uid://crfks4243quod" path="res://assets/grid.png" id="8_ljohf"]
@@ -12,7 +12,7 @@
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_6j7hd")
 min_beats = 15
-min_troops = 3
+min_troops = 4
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_qsiuu")]
 z_index = -1000
@@ -25,7 +25,7 @@ position = Vector2(160, 224)
 [node name="tower_list" type="Node2D" parent="." unique_id=1557023929]
 
 [node name="Strongbase3" parent="tower_list" unique_id=2088341078 instance=ExtResource("3_0jg26")]
-position = Vector2(576, 384)
+position = Vector2(512, 384)
 
 [node name="Strongbase4" parent="tower_list" unique_id=797555590 instance=ExtResource("3_0jg26")]
 position = Vector2(384, 320)
@@ -33,15 +33,14 @@ position = Vector2(384, 320)
 [node name="TowerTeleporter" parent="tower_list" unique_id=464087738 node_paths=PackedStringArray("destination", "tower") instance=ExtResource("6_3yipn")]
 position = Vector2(768, 448)
 destination = NodePath("../TowerTeleporter2")
-tower = NodePath("../Firetower")
+tower = NodePath("../Zaptower")
 
 [node name="TowerTeleporter2" parent="tower_list" unique_id=818251120 node_paths=PackedStringArray("destination") instance=ExtResource("6_3yipn")]
 position = Vector2(576, 192)
 destination = NodePath("../TowerTeleporter")
 
-[node name="Firetower" parent="tower_list" unique_id=1669962692 instance=ExtResource("5_wmygf")]
+[node name="Zaptower" parent="tower_list" unique_id=1669962692 instance=ExtResource("5_3yipn")]
 position = Vector2(768, 448)
-angles = Array[float]([270.0])
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=1035555915]
 z_index = -1001
