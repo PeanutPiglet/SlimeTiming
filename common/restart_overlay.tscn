@@ -3,19 +3,33 @@
 [ext_resource type="Texture2D" uid="uid://cujoitwnokvu4" path="res://assets/restart_overlay/restart_overlayaseprite.png" id="1_57l2e"]
 [ext_resource type="FontFile" uid="uid://do3ekmvsagx75" path="res://font/Action_Man.ttf" id="2_3n6go"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85r64"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_57l2e"]
 atlas = ExtResource("1_57l2e")
 region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n6go"]
+atlas = ExtResource("1_57l2e")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85r64"]
+atlas = ExtResource("1_57l2e")
+region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cymu5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_57l2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n6go")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_85r64")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="RestartOverlay" type="Node2D" unique_id=469869890]
