@@ -41,6 +41,7 @@ destination = NodePath("../TowerTeleporter")
 
 [node name="Zaptower" parent="tower_list" unique_id=1669962692 instance=ExtResource("5_3yipn")]
 position = Vector2(768, 448)
+angles = Array[float]([270.0])
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=1035555915]
 z_index = -1001
