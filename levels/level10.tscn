@@ -68,6 +68,7 @@ offset_left = 512.0
 offset_top = 32.0
 offset_right = 832.0
 offset_bottom = 320.0
+mouse_filter = 2
 theme = ExtResource("8_8oooe")
 theme_override_font_sizes/normal_font_size = 35
 text = "another new slime! try them out! "

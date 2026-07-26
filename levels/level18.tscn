@@ -12,7 +12,7 @@
 [node name="Level2" type="Node2D" unique_id=1507277628]
 script = ExtResource("1_6j7hd")
 min_beats = 15
-min_troops = 2
+min_troops = 3
 
 [node name="Grid" parent="." unique_id=1628908688 instance=ExtResource("2_qsiuu")]
 z_index = -1000
@@ -26,6 +26,9 @@ position = Vector2(160, 224)
 
 [node name="Strongbase3" parent="tower_list" unique_id=2088341078 instance=ExtResource("3_0jg26")]
 position = Vector2(576, 384)
+
+[node name="Strongbase4" parent="tower_list" unique_id=797555590 instance=ExtResource("3_0jg26")]
+position = Vector2(384, 320)
 
 [node name="TowerTeleporter" parent="tower_list" unique_id=464087738 node_paths=PackedStringArray("destination", "tower") instance=ExtResource("6_3yipn")]
 position = Vector2(768, 448)

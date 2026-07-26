@@ -242,8 +242,9 @@ sprite_frames = SubResource("SpriteFrames_n2rqo")
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=601889326]
 offset_left = -112.0
 offset_top = -296.0
-offset_right = 6.945709
+offset_right = -10.0
 offset_bottom = -256.0
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 0.8826667, 0.120000005, 1)
 theme_override_fonts/normal_font = ExtResource("8_e7nbm")
 theme_override_font_sizes/normal_font_size = 35

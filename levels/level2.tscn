@@ -51,11 +51,12 @@ position = Vector2(1024, 320)
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1455776169]
 offset_left = 96.0
 offset_top = 96.0
-offset_right = 704.0
+offset_right = 736.0
 offset_bottom = 288.0
+mouse_filter = 2
 theme = ExtResource("7_76ugp")
 theme_override_font_sizes/normal_font_size = 35
-text = "You can have many slimes at once! 
+text = "You can have many slimes at once, but they will explode at the same time
 
 Try to get 3 Stars by using few slimes and winning fast!"
 horizontal_alignment = 1
